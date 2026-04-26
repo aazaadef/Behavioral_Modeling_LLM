@@ -1,0 +1,2 @@
+model_name,gold_label,predicted_label,count
+rule-based,focused_attention,focused_attention,3

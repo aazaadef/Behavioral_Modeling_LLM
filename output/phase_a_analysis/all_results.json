@@ -1,0 +1,4847 @@
+{
+  "confusion_and_per_class": {
+    "bart": {
+      "confusion_labels": [
+        "exploratory_attention",
+        "focused_attention",
+        "mixed_attention",
+        "occluded_attention",
+        "reduced_visual_availability"
+      ],
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          31,
+          17,
+          0
+        ],
+        [
+          0,
+          0,
+          8,
+          9,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "balanced_accuracy": 0.2843,
+      "weighted_f1": 0.0746,
+      "classification_report": {
+        "exploratory_attention": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 1.0
+        },
+        "focused_attention": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 48.0
+        },
+        "mixed_attention": {
+          "precision": 0.2,
+          "recall": 0.47058823529411764,
+          "f1-score": 0.2807017543859649,
+          "support": 17.0
+        },
+        "occluded_attention": {
+          "precision": 0.06896551724137931,
+          "recall": 0.6666666666666666,
+          "f1-score": 0.125,
+          "support": 3.0
+        },
+        "reduced_visual_availability": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 0.0
+        },
+        "accuracy": 0.14492753623188406,
+        "macro avg": {
+          "precision": 0.053793103448275856,
+          "recall": 0.22745098039215686,
+          "f1-score": 0.08114035087719298,
+          "support": 69.0
+        },
+        "weighted avg": {
+          "precision": 0.05227386306846577,
+          "recall": 0.14492753623188406,
+          "f1-score": 0.07459318586320875,
+          "support": 69.0
+        }
+      }
+    },
+    "deberta": {
+      "confusion_labels": [
+        "exploratory_attention",
+        "focused_attention",
+        "mixed_attention",
+        "occluded_attention",
+        "reduced_visual_availability"
+      ],
+      "confusion_matrix": [
+        [
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          48,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          17,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          3,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "balanced_accuracy": 0.25,
+      "weighted_f1": 0.5708,
+      "classification_report": {
+        "exploratory_attention": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 1.0
+        },
+        "focused_attention": {
+          "precision": 0.6956521739130435,
+          "recall": 1.0,
+          "f1-score": 0.8205128205128205,
+          "support": 48.0
+        },
+        "mixed_attention": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 17.0
+        },
+        "occluded_attention": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 3.0
+        },
+        "reduced_visual_availability": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 0.0
+        },
+        "accuracy": 0.6956521739130435,
+        "macro avg": {
+          "precision": 0.1391304347826087,
+          "recall": 0.2,
+          "f1-score": 0.1641025641025641,
+          "support": 69.0
+        },
+        "weighted avg": {
+          "precision": 0.4839319470699433,
+          "recall": 0.6956521739130435,
+          "f1-score": 0.5707915273132664,
+          "support": 69.0
+        }
+      }
+    },
+    "distilbert": {
+      "confusion_labels": [
+        "exploratory_attention",
+        "focused_attention",
+        "mixed_attention",
+        "occluded_attention",
+        "reduced_visual_availability"
+      ],
+      "confusion_matrix": [
+        [
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          48,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          17,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          3,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "balanced_accuracy": 0.25,
+      "weighted_f1": 0.0004,
+      "classification_report": {
+        "exploratory_attention": {
+          "precision": 0.014492753623188406,
+          "recall": 1.0,
+          "f1-score": 0.02857142857142857,
+          "support": 1.0
+        },
+        "focused_attention": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 48.0
+        },
+        "mixed_attention": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 17.0
+        },
+        "occluded_attention": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 3.0
+        },
+        "reduced_visual_availability": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 0.0
+        },
+        "accuracy": 0.014492753623188406,
+        "macro avg": {
+          "precision": 0.002898550724637681,
+          "recall": 0.2,
+          "f1-score": 0.005714285714285714,
+          "support": 69.0
+        },
+        "weighted avg": {
+          "precision": 0.00021003990758244068,
+          "recall": 0.014492753623188406,
+          "f1-score": 0.00041407867494824016,
+          "support": 69.0
+        }
+      }
+    },
+    "llm_models_Qwen--Qwen2_5-72B-Instruct": {
+      "confusion_labels": [
+        "exploratory_attention",
+        "focused_attention",
+        "mixed_attention",
+        "occluded_attention",
+        "reduced_visual_availability"
+      ],
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          43,
+          4,
+          0,
+          0
+        ],
+        [
+          0,
+          4,
+          11,
+          0,
+          2
+        ],
+        [
+          0,
+          1,
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "balanced_accuracy": 0.3857,
+      "weighted_f1": 0.7781,
+      "classification_report": {
+        "exploratory_attention": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 1.0
+        },
+        "focused_attention": {
+          "precision": 0.8958333333333334,
+          "recall": 0.8958333333333334,
+          "f1-score": 0.8958333333333334,
+          "support": 48.0
+        },
+        "mixed_attention": {
+          "precision": 0.6111111111111112,
+          "recall": 0.6470588235294118,
+          "f1-score": 0.6285714285714286,
+          "support": 17.0
+        },
+        "occluded_attention": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 3.0
+        },
+        "reduced_visual_availability": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 0.0
+        },
+        "accuracy": 0.782608695652174,
+        "macro avg": {
+          "precision": 0.30138888888888893,
+          "recall": 0.30857843137254903,
+          "f1-score": 0.3048809523809524,
+          "support": 69.0
+        },
+        "weighted avg": {
+          "precision": 0.7737520128824477,
+          "recall": 0.782608695652174,
+          "f1-score": 0.7780538302277432,
+          "support": 69.0
+        }
+      }
+    },
+    "llm_models_Qwen--Qwen2_5-7B-Instruct": {
+      "confusion_labels": [
+        "exploratory_attention",
+        "focused_attention",
+        "mixed_attention",
+        "occluded_attention",
+        "reduced_visual_availability"
+      ],
+      "confusion_matrix": [
+        [
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          46,
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          14,
+          3,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "balanced_accuracy": 0.2837,
+      "weighted_f1": 0.6408,
+      "classification_report": {
+        "exploratory_attention": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 1.0
+        },
+        "focused_attention": {
+          "precision": 0.7301587301587301,
+          "recall": 0.9583333333333334,
+          "f1-score": 0.8288288288288288,
+          "support": 48.0
+        },
+        "mixed_attention": {
+          "precision": 0.5,
+          "recall": 0.17647058823529413,
+          "f1-score": 0.2608695652173913,
+          "support": 17.0
+        },
+        "occluded_attention": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 3.0
+        },
+        "reduced_visual_availability": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 0.0
+        },
+        "accuracy": 0.7101449275362319,
+        "macro avg": {
+          "precision": 0.24603174603174605,
+          "recall": 0.2269607843137255,
+          "f1-score": 0.21793967880924403,
+          "support": 69.0
+        },
+        "weighted avg": {
+          "precision": 0.6311249137336093,
+          "recall": 0.7101449275362319,
+          "f1-score": 0.6408487882968034,
+          "support": 69.0
+        }
+      }
+    },
+    "llm_models_qwen-7b": {
+      "confusion_labels": [
+        "exploratory_attention",
+        "focused_attention",
+        "mixed_attention",
+        "occluded_attention",
+        "reduced_visual_availability"
+      ],
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          36,
+          11,
+          0,
+          0
+        ],
+        [
+          0,
+          3,
+          14,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "balanced_accuracy": 0.3934,
+      "weighted_f1": 0.7225,
+      "classification_report": {
+        "exploratory_attention": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 1.0
+        },
+        "focused_attention": {
+          "precision": 0.9,
+          "recall": 0.75,
+          "f1-score": 0.8181818181818182,
+          "support": 48.0
+        },
+        "mixed_attention": {
+          "precision": 0.5,
+          "recall": 0.8235294117647058,
+          "f1-score": 0.6222222222222222,
+          "support": 17.0
+        },
+        "occluded_attention": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 3.0
+        },
+        "reduced_visual_availability": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 0.0
+        },
+        "accuracy": 0.7246376811594203,
+        "macro avg": {
+          "precision": 0.27999999999999997,
+          "recall": 0.31470588235294117,
+          "f1-score": 0.2880808080808081,
+          "support": 69.0
+        },
+        "weighted avg": {
+          "precision": 0.7492753623188406,
+          "recall": 0.7246376811594203,
+          "f1-score": 0.722471087688479,
+          "support": 69.0
+        }
+      }
+    },
+    "rule_based": {
+      "confusion_labels": [
+        "exploratory_attention",
+        "focused_attention",
+        "mixed_attention",
+        "occluded_attention",
+        "reduced_visual_availability"
+      ],
+      "confusion_matrix": [
+        [
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          44,
+          2,
+          0,
+          0
+        ],
+        [
+          1,
+          2,
+          14,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "balanced_accuracy": 0.685,
+      "weighted_f1": 0.8473,
+      "classification_report": {
+        "exploratory_attention": {
+          "precision": 0.25,
+          "recall": 1.0,
+          "f1-score": 0.4,
+          "support": 1.0
+        },
+        "focused_attention": {
+          "precision": 0.9361702127659575,
+          "recall": 0.9166666666666666,
+          "f1-score": 0.9263157894736842,
+          "support": 48.0
+        },
+        "mixed_attention": {
+          "precision": 0.7777777777777778,
+          "recall": 0.8235294117647058,
+          "f1-score": 0.8,
+          "support": 17.0
+        },
+        "occluded_attention": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 3.0
+        },
+        "reduced_visual_availability": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 0.0
+        },
+        "accuracy": 0.855072463768116,
+        "macro avg": {
+          "precision": 0.39278959810874703,
+          "recall": 0.5480392156862746,
+          "f1-score": 0.4252631578947369,
+          "support": 69.0
+        },
+        "weighted avg": {
+          "precision": 0.8464984410867852,
+          "recall": 0.855072463768116,
+          "f1-score": 0.8472921434019831,
+          "support": 69.0
+        }
+      }
+    },
+    "supervised_LinearSVM": {
+      "confusion_labels": [
+        "exploratory_attention",
+        "focused_attention",
+        "mixed_attention",
+        "occluded_attention",
+        "reduced_visual_availability"
+      ],
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          41,
+          7,
+          0,
+          0
+        ],
+        [
+          0,
+          9,
+          7,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "balanced_accuracy": 0.3998,
+      "weighted_f1": 0.6981,
+      "classification_report": {
+        "exploratory_attention": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 1.0
+        },
+        "focused_attention": {
+          "precision": 0.803921568627451,
+          "recall": 0.8541666666666666,
+          "f1-score": 0.8282828282828283,
+          "support": 48.0
+        },
+        "mixed_attention": {
+          "precision": 0.4375,
+          "recall": 0.4117647058823529,
+          "f1-score": 0.42424242424242425,
+          "support": 17.0
+        },
+        "occluded_attention": {
+          "precision": 0.5,
+          "recall": 0.3333333333333333,
+          "f1-score": 0.4,
+          "support": 3.0
+        },
+        "reduced_visual_availability": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 0.0
+        },
+        "accuracy": 0.7101449275362319,
+        "macro avg": {
+          "precision": 0.3482843137254902,
+          "recall": 0.31985294117647056,
+          "f1-score": 0.3305050505050505,
+          "support": 69.0
+        },
+        "weighted avg": {
+          "precision": 0.6887787723785167,
+          "recall": 0.7101449275362319,
+          "f1-score": 0.6981115502854633,
+          "support": 69.0
+        }
+      }
+    },
+    "supervised_LogisticRegression": {
+      "confusion_labels": [
+        "exploratory_attention",
+        "focused_attention",
+        "mixed_attention",
+        "occluded_attention",
+        "reduced_visual_availability"
+      ],
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          41,
+          7,
+          0,
+          0
+        ],
+        [
+          0,
+          9,
+          7,
+          1,
+          0
+        ],
+        [
+          0,
+          2,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "balanced_accuracy": 0.3165,
+      "weighted_f1": 0.675,
+      "classification_report": {
+        "exploratory_attention": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 1.0
+        },
+        "focused_attention": {
+          "precision": 0.7884615384615384,
+          "recall": 0.8541666666666666,
+          "f1-score": 0.82,
+          "support": 48.0
+        },
+        "mixed_attention": {
+          "precision": 0.4375,
+          "recall": 0.4117647058823529,
+          "f1-score": 0.42424242424242425,
+          "support": 17.0
+        },
+        "occluded_attention": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 3.0
+        },
+        "reduced_visual_availability": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 0.0
+        },
+        "accuracy": 0.6956521739130435,
+        "macro avg": {
+          "precision": 0.24519230769230765,
+          "recall": 0.2531862745098039,
+          "f1-score": 0.24884848484848482,
+          "support": 69.0
+        },
+        "weighted avg": {
+          "precision": 0.6562848383500558,
+          "recall": 0.6956521739130435,
+          "f1-score": 0.6749582784365393,
+          "support": 69.0
+        }
+      }
+    },
+    "supervised_RandomForest": {
+      "confusion_labels": [
+        "exploratory_attention",
+        "focused_attention",
+        "mixed_attention",
+        "occluded_attention",
+        "reduced_visual_availability"
+      ],
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          43,
+          5,
+          0,
+          0
+        ],
+        [
+          0,
+          7,
+          10,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "balanced_accuracy": 0.371,
+      "weighted_f1": 0.7451,
+      "classification_report": {
+        "exploratory_attention": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 1.0
+        },
+        "focused_attention": {
+          "precision": 0.8431372549019608,
+          "recall": 0.8958333333333334,
+          "f1-score": 0.8686868686868687,
+          "support": 48.0
+        },
+        "mixed_attention": {
+          "precision": 0.5555555555555556,
+          "recall": 0.5882352941176471,
+          "f1-score": 0.5714285714285714,
+          "support": 17.0
+        },
+        "occluded_attention": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 3.0
+        },
+        "reduced_visual_availability": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 0.0
+        },
+        "accuracy": 0.7681159420289855,
+        "macro avg": {
+          "precision": 0.2797385620915033,
+          "recall": 0.2968137254901961,
+          "f1-score": 0.288023088023088,
+          "support": 69.0
+        },
+        "weighted avg": {
+          "precision": 0.7234062707208487,
+          "recall": 0.7681159420289855,
+          "f1-score": 0.7450906581341364,
+          "support": 69.0
+        }
+      }
+    }
+  },
+  "bootstrap_ci": {
+    "bart": {
+      "accuracy": [
+        0.1442,
+        0.0725,
+        0.2319
+      ],
+      "kappa": [
+        -0.0207,
+        -0.0882,
+        0.051
+      ],
+      "macro_f1": [
+        0.1123,
+        0.0508,
+        0.1943
+      ]
+    },
+    "deberta": {
+      "accuracy": [
+        0.6956,
+        0.5938,
+        0.7971
+      ],
+      "kappa": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "macro_f1": [
+        0.2368,
+        0.1864,
+        0.3016
+      ]
+    },
+    "distilbert": {
+      "accuracy": [
+        0.0138,
+        0.0,
+        0.0435
+      ],
+      "kappa": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "macro_f1": [
+        0.0068,
+        0.0,
+        0.0208
+      ]
+    },
+    "llm_models_Qwen--Qwen2_5-72B-Instruct": {
+      "accuracy": [
+        0.7832,
+        0.6812,
+        0.8696
+      ],
+      "kappa": [
+        0.5146,
+        0.3378,
+        0.6989
+      ],
+      "macro_f1": [
+        0.33,
+        0.2593,
+        0.4893
+      ]
+    },
+    "llm_models_Qwen--Qwen2_5-7B-Instruct": {
+      "accuracy": [
+        0.7093,
+        0.6083,
+        0.8116
+      ],
+      "kappa": [
+        0.1508,
+        -0.0338,
+        0.3429
+      ],
+      "macro_f1": [
+        0.3107,
+        0.2076,
+        0.4509
+      ]
+    },
+    "llm_models_qwen-7b": {
+      "accuracy": [
+        0.7245,
+        0.6232,
+        0.8261
+      ],
+      "kappa": [
+        0.4406,
+        0.2604,
+        0.6202
+      ],
+      "macro_f1": [
+        0.3812,
+        0.303,
+        0.5271
+      ]
+    },
+    "rule_based": {
+      "accuracy": [
+        0.8539,
+        0.7681,
+        0.9275
+      ],
+      "kappa": [
+        0.6795,
+        0.4957,
+        0.8439
+      ],
+      "macro_f1": [
+        0.5213,
+        0.3978,
+        0.7114
+      ]
+    },
+    "supervised_LinearSVM": {
+      "accuracy": [
+        0.7096,
+        0.6087,
+        0.8116
+      ],
+      "kappa": [
+        0.3136,
+        0.0899,
+        0.5376
+      ],
+      "macro_f1": [
+        0.4458,
+        0.272,
+        0.6977
+      ]
+    },
+    "supervised_LogisticRegression": {
+      "accuracy": [
+        0.6956,
+        0.5942,
+        0.8116
+      ],
+      "kappa": [
+        0.2679,
+        0.0536,
+        0.4872
+      ],
+      "macro_f1": [
+        0.3527,
+        0.2518,
+        0.4953
+      ]
+    },
+    "supervised_RandomForest": {
+      "accuracy": [
+        0.7676,
+        0.6667,
+        0.8696
+      ],
+      "kappa": [
+        0.444,
+        0.2306,
+        0.6521
+      ],
+      "macro_f1": [
+        0.4139,
+        0.3017,
+        0.5621
+      ]
+    }
+  },
+  "mcnemar": [
+    {
+      "model_a": "bart",
+      "model_b": "deberta",
+      "b_only_a_correct": 10,
+      "c_only_b_correct": 48,
+      "p_value": 0.0,
+      "significant_at_0.05": true
+    },
+    {
+      "model_a": "bart",
+      "model_b": "distilbert",
+      "b_only_a_correct": 10,
+      "c_only_b_correct": 1,
+      "p_value": 0.011719,
+      "significant_at_0.05": true
+    },
+    {
+      "model_a": "bart",
+      "model_b": "llm_models_Qwen--Qwen2_5-72B-Instruct",
+      "b_only_a_correct": 6,
+      "c_only_b_correct": 50,
+      "p_value": 0.0,
+      "significant_at_0.05": true
+    },
+    {
+      "model_a": "bart",
+      "model_b": "llm_models_Qwen--Qwen2_5-7B-Instruct",
+      "b_only_a_correct": 8,
+      "c_only_b_correct": 47,
+      "p_value": 0.0,
+      "significant_at_0.05": true
+    },
+    {
+      "model_a": "bart",
+      "model_b": "llm_models_qwen-7b",
+      "b_only_a_correct": 3,
+      "c_only_b_correct": 43,
+      "p_value": 0.0,
+      "significant_at_0.05": true
+    },
+    {
+      "model_a": "bart",
+      "model_b": "rule_based",
+      "b_only_a_correct": 4,
+      "c_only_b_correct": 53,
+      "p_value": 0.0,
+      "significant_at_0.05": true
+    },
+    {
+      "model_a": "bart",
+      "model_b": "supervised_LinearSVM",
+      "b_only_a_correct": 5,
+      "c_only_b_correct": 44,
+      "p_value": 0.0,
+      "significant_at_0.05": true
+    },
+    {
+      "model_a": "bart",
+      "model_b": "supervised_LogisticRegression",
+      "b_only_a_correct": 6,
+      "c_only_b_correct": 44,
+      "p_value": 0.0,
+      "significant_at_0.05": true
+    },
+    {
+      "model_a": "bart",
+      "model_b": "supervised_RandomForest",
+      "b_only_a_correct": 5,
+      "c_only_b_correct": 48,
+      "p_value": 0.0,
+      "significant_at_0.05": true
+    },
+    {
+      "model_a": "deberta",
+      "model_b": "distilbert",
+      "b_only_a_correct": 48,
+      "c_only_b_correct": 1,
+      "p_value": 0.0,
+      "significant_at_0.05": true
+    },
+    {
+      "model_a": "deberta",
+      "model_b": "llm_models_Qwen--Qwen2_5-72B-Instruct",
+      "b_only_a_correct": 5,
+      "c_only_b_correct": 11,
+      "p_value": 0.210114,
+      "significant_at_0.05": false
+    },
+    {
+      "model_a": "deberta",
+      "model_b": "llm_models_Qwen--Qwen2_5-7B-Instruct",
+      "b_only_a_correct": 2,
+      "c_only_b_correct": 3,
+      "p_value": 1.0,
+      "significant_at_0.05": false
+    },
+    {
+      "model_a": "deberta",
+      "model_b": "llm_models_qwen-7b",
+      "b_only_a_correct": 12,
+      "c_only_b_correct": 14,
+      "p_value": 0.845019,
+      "significant_at_0.05": false
+    },
+    {
+      "model_a": "deberta",
+      "model_b": "rule_based",
+      "b_only_a_correct": 4,
+      "c_only_b_correct": 15,
+      "p_value": 0.019211,
+      "significant_at_0.05": true
+    },
+    {
+      "model_a": "deberta",
+      "model_b": "supervised_LinearSVM",
+      "b_only_a_correct": 7,
+      "c_only_b_correct": 8,
+      "p_value": 1.0,
+      "significant_at_0.05": false
+    },
+    {
+      "model_a": "deberta",
+      "model_b": "supervised_LogisticRegression",
+      "b_only_a_correct": 7,
+      "c_only_b_correct": 7,
+      "p_value": 1.0,
+      "significant_at_0.05": false
+    },
+    {
+      "model_a": "deberta",
+      "model_b": "supervised_RandomForest",
+      "b_only_a_correct": 5,
+      "c_only_b_correct": 10,
+      "p_value": 0.301758,
+      "significant_at_0.05": false
+    },
+    {
+      "model_a": "distilbert",
+      "model_b": "llm_models_Qwen--Qwen2_5-72B-Instruct",
+      "b_only_a_correct": 1,
+      "c_only_b_correct": 54,
+      "p_value": 0.0,
+      "significant_at_0.05": true
+    },
+    {
+      "model_a": "distilbert",
+      "model_b": "llm_models_Qwen--Qwen2_5-7B-Instruct",
+      "b_only_a_correct": 1,
+      "c_only_b_correct": 49,
+      "p_value": 0.0,
+      "significant_at_0.05": true
+    },
+    {
+      "model_a": "distilbert",
+      "model_b": "llm_models_qwen-7b",
+      "b_only_a_correct": 1,
+      "c_only_b_correct": 50,
+      "p_value": 0.0,
+      "significant_at_0.05": true
+    },
+    {
+      "model_a": "distilbert",
+      "model_b": "rule_based",
+      "b_only_a_correct": 0,
+      "c_only_b_correct": 58,
+      "p_value": 0.0,
+      "significant_at_0.05": true
+    },
+    {
+      "model_a": "distilbert",
+      "model_b": "supervised_LinearSVM",
+      "b_only_a_correct": 1,
+      "c_only_b_correct": 49,
+      "p_value": 0.0,
+      "significant_at_0.05": true
+    },
+    {
+      "model_a": "distilbert",
+      "model_b": "supervised_LogisticRegression",
+      "b_only_a_correct": 1,
+      "c_only_b_correct": 48,
+      "p_value": 0.0,
+      "significant_at_0.05": true
+    },
+    {
+      "model_a": "distilbert",
+      "model_b": "supervised_RandomForest",
+      "b_only_a_correct": 1,
+      "c_only_b_correct": 53,
+      "p_value": 0.0,
+      "significant_at_0.05": true
+    },
+    {
+      "model_a": "llm_models_Qwen--Qwen2_5-72B-Instruct",
+      "model_b": "llm_models_Qwen--Qwen2_5-7B-Instruct",
+      "b_only_a_correct": 10,
+      "c_only_b_correct": 5,
+      "p_value": 0.301758,
+      "significant_at_0.05": false
+    },
+    {
+      "model_a": "llm_models_Qwen--Qwen2_5-72B-Instruct",
+      "model_b": "llm_models_qwen-7b",
+      "b_only_a_correct": 9,
+      "c_only_b_correct": 5,
+      "p_value": 0.42395,
+      "significant_at_0.05": false
+    },
+    {
+      "model_a": "llm_models_Qwen--Qwen2_5-72B-Instruct",
+      "model_b": "rule_based",
+      "b_only_a_correct": 2,
+      "c_only_b_correct": 7,
+      "p_value": 0.179688,
+      "significant_at_0.05": false
+    },
+    {
+      "model_a": "llm_models_Qwen--Qwen2_5-72B-Instruct",
+      "model_b": "supervised_LinearSVM",
+      "b_only_a_correct": 9,
+      "c_only_b_correct": 4,
+      "p_value": 0.266846,
+      "significant_at_0.05": false
+    },
+    {
+      "model_a": "llm_models_Qwen--Qwen2_5-72B-Instruct",
+      "model_b": "supervised_LogisticRegression",
+      "b_only_a_correct": 9,
+      "c_only_b_correct": 3,
+      "p_value": 0.145996,
+      "significant_at_0.05": false
+    },
+    {
+      "model_a": "llm_models_Qwen--Qwen2_5-72B-Instruct",
+      "model_b": "supervised_RandomForest",
+      "b_only_a_correct": 4,
+      "c_only_b_correct": 3,
+      "p_value": 1.0,
+      "significant_at_0.05": false
+    },
+    {
+      "model_a": "llm_models_Qwen--Qwen2_5-7B-Instruct",
+      "model_b": "llm_models_qwen-7b",
+      "b_only_a_correct": 10,
+      "c_only_b_correct": 11,
+      "p_value": 1.0,
+      "significant_at_0.05": false
+    },
+    {
+      "model_a": "llm_models_Qwen--Qwen2_5-7B-Instruct",
+      "model_b": "rule_based",
+      "b_only_a_correct": 2,
+      "c_only_b_correct": 12,
+      "p_value": 0.012939,
+      "significant_at_0.05": true
+    },
+    {
+      "model_a": "llm_models_Qwen--Qwen2_5-7B-Instruct",
+      "model_b": "supervised_LinearSVM",
+      "b_only_a_correct": 6,
+      "c_only_b_correct": 6,
+      "p_value": 1.0,
+      "significant_at_0.05": false
+    },
+    {
+      "model_a": "llm_models_Qwen--Qwen2_5-7B-Instruct",
+      "model_b": "supervised_LogisticRegression",
+      "b_only_a_correct": 6,
+      "c_only_b_correct": 5,
+      "p_value": 1.0,
+      "significant_at_0.05": false
+    },
+    {
+      "model_a": "llm_models_Qwen--Qwen2_5-7B-Instruct",
+      "model_b": "supervised_RandomForest",
+      "b_only_a_correct": 5,
+      "c_only_b_correct": 9,
+      "p_value": 0.42395,
+      "significant_at_0.05": false
+    },
+    {
+      "model_a": "llm_models_qwen-7b",
+      "model_b": "rule_based",
+      "b_only_a_correct": 2,
+      "c_only_b_correct": 11,
+      "p_value": 0.022461,
+      "significant_at_0.05": true
+    },
+    {
+      "model_a": "llm_models_qwen-7b",
+      "model_b": "supervised_LinearSVM",
+      "b_only_a_correct": 10,
+      "c_only_b_correct": 9,
+      "p_value": 1.0,
+      "significant_at_0.05": false
+    },
+    {
+      "model_a": "llm_models_qwen-7b",
+      "model_b": "supervised_LogisticRegression",
+      "b_only_a_correct": 9,
+      "c_only_b_correct": 7,
+      "p_value": 0.803619,
+      "significant_at_0.05": false
+    },
+    {
+      "model_a": "llm_models_qwen-7b",
+      "model_b": "supervised_RandomForest",
+      "b_only_a_correct": 5,
+      "c_only_b_correct": 8,
+      "p_value": 0.581055,
+      "significant_at_0.05": false
+    },
+    {
+      "model_a": "rule_based",
+      "model_b": "supervised_LinearSVM",
+      "b_only_a_correct": 13,
+      "c_only_b_correct": 3,
+      "p_value": 0.021271,
+      "significant_at_0.05": true
+    },
+    {
+      "model_a": "rule_based",
+      "model_b": "supervised_LogisticRegression",
+      "b_only_a_correct": 13,
+      "c_only_b_correct": 2,
+      "p_value": 0.007385,
+      "significant_at_0.05": true
+    },
+    {
+      "model_a": "rule_based",
+      "model_b": "supervised_RandomForest",
+      "b_only_a_correct": 8,
+      "c_only_b_correct": 2,
+      "p_value": 0.109375,
+      "significant_at_0.05": false
+    },
+    {
+      "model_a": "supervised_LinearSVM",
+      "model_b": "supervised_LogisticRegression",
+      "b_only_a_correct": 3,
+      "c_only_b_correct": 2,
+      "p_value": 1.0,
+      "significant_at_0.05": false
+    },
+    {
+      "model_a": "supervised_LinearSVM",
+      "model_b": "supervised_RandomForest",
+      "b_only_a_correct": 4,
+      "c_only_b_correct": 8,
+      "p_value": 0.387695,
+      "significant_at_0.05": false
+    },
+    {
+      "model_a": "supervised_LogisticRegression",
+      "model_b": "supervised_RandomForest",
+      "b_only_a_correct": 2,
+      "c_only_b_correct": 7,
+      "p_value": 0.179688,
+      "significant_at_0.05": false
+    }
+  ],
+  "error_analysis": {
+    "num_samples": 69,
+    "num_models": 10,
+    "hard_samples_all_wrong": 1,
+    "easy_samples_all_right": 0,
+    "all_wrong_details": [
+      {
+        "child_id": "dUYIh1U2z-8_3300-3427:person_1",
+        "true_label": "occluded_attention",
+        "num_correct": 0,
+        "num_wrong": 10,
+        "difficulty": "hard",
+        "wrong_models": [
+          "bart",
+          "deberta",
+          "distilbert",
+          "llm_models_Qwen--Qwen2_5-72B-Instruct",
+          "llm_models_Qwen--Qwen2_5-7B-Instruct",
+          "llm_models_qwen-7b",
+          "rule_based",
+          "supervised_LinearSVM",
+          "supervised_LogisticRegression",
+          "supervised_RandomForest"
+        ],
+        "predictions": {
+          "bart": "mixed_attention",
+          "deberta": "focused_attention",
+          "distilbert": "exploratory_attention",
+          "llm_models_Qwen--Qwen2_5-72B-Instruct": "focused_attention",
+          "llm_models_Qwen--Qwen2_5-7B-Instruct": "focused_attention",
+          "llm_models_qwen-7b": "focused_attention",
+          "rule_based": "focused_attention",
+          "supervised_LinearSVM": "focused_attention",
+          "supervised_LogisticRegression": "focused_attention",
+          "supervised_RandomForest": "focused_attention"
+        }
+      }
+    ],
+    "per_sample_errors": [
+      {
+        "child_id": "1Ab4vLMMAbY_2354-2439:person_1",
+        "true_label": "focused_attention",
+        "num_correct": 8,
+        "num_wrong": 2,
+        "difficulty": "easy",
+        "wrong_models": [
+          "bart",
+          "distilbert"
+        ],
+        "predictions": {
+          "bart": "occluded_attention",
+          "deberta": "focused_attention",
+          "distilbert": "exploratory_attention",
+          "llm_models_Qwen--Qwen2_5-72B-Instruct": "focused_attention",
+          "llm_models_Qwen--Qwen2_5-7B-Instruct": "focused_attention",
+          "llm_models_qwen-7b": "focused_attention",
+          "rule_based": "focused_attention",
+          "supervised_LinearSVM": "focused_attention",
+          "supervised_LogisticRegression": "focused_attention",
+          "supervised_RandomForest": "focused_attention"
+        }
+      },
+      {
+        "child_id": "1Ab4vLMMAbY_412-554:person_1",
+        "true_label": "focused_attention",
+        "num_correct": 5,
+        "num_wrong": 5,
+        "difficulty": "medium",
+        "wrong_models": [
+          "bart",
+          "distilbert",
+          "llm_models_qwen-7b",
+          "supervised_LinearSVM",
+          "supervised_LogisticRegression"
+        ],
+        "predictions": {
+          "bart": "occluded_attention",
+          "deberta": "focused_attention",
+          "distilbert": "exploratory_attention",
+          "llm_models_Qwen--Qwen2_5-72B-Instruct": "focused_attention",
+          "llm_models_Qwen--Qwen2_5-7B-Instruct": "focused_attention",
+          "llm_models_qwen-7b": "mixed_attention",
+          "rule_based": "focused_attention",
+          "supervised_LinearSVM": "mixed_attention",
+          "supervised_LogisticRegression": "mixed_attention",
+          "supervised_RandomForest": "focused_attention"
+        }
+      },
+      {
+        "child_id": "1Ab4vLMMAbY_557-690:person_1",
+        "true_label": "focused_attention",
+        "num_correct": 8,
+        "num_wrong": 2,
+        "difficulty": "easy",
+        "wrong_models": [
+          "bart",
+          "distilbert"
+        ],
+        "predictions": {
+          "bart": "mixed_attention",
+          "deberta": "focused_attention",
+          "distilbert": "exploratory_attention",
+          "llm_models_Qwen--Qwen2_5-72B-Instruct": "focused_attention",
+          "llm_models_Qwen--Qwen2_5-7B-Instruct": "focused_attention",
+          "llm_models_qwen-7b": "focused_attention",
+          "rule_based": "focused_attention",
+          "supervised_LinearSVM": "focused_attention",
+          "supervised_LogisticRegression": "focused_attention",
+          "supervised_RandomForest": "focused_attention"
+        }
+      },
+      {
+        "child_id": "31lG75MDwSA_2857-2928:person_1",
+        "true_label": "focused_attention",
+        "num_correct": 8,
+        "num_wrong": 2,
+        "difficulty": "easy",
+        "wrong_models": [
+          "bart",
+          "distilbert"
+        ],
+        "predictions": {
+          "bart": "mixed_attention",
+          "deberta": "focused_attention",
+          "distilbert": "exploratory_attention",
+          "llm_models_Qwen--Qwen2_5-72B-Instruct": "focused_attention",
+          "llm_models_Qwen--Qwen2_5-7B-Instruct": "focused_attention",
+          "llm_models_qwen-7b": "focused_attention",
+          "rule_based": "focused_attention",
+          "supervised_LinearSVM": "focused_attention",
+          "supervised_LogisticRegression": "focused_attention",
+          "supervised_RandomForest": "focused_attention"
+        }
+      },
+      {
+        "child_id": "31lG75MDwSA_3180-3306:person_1",
+        "true_label": "focused_attention",
+        "num_correct": 8,
+        "num_wrong": 2,
+        "difficulty": "easy",
+        "wrong_models": [
+          "bart",
+          "distilbert"
+        ],
+        "predictions": {
+          "bart": "occluded_attention",
+          "deberta": "focused_attention",
+          "distilbert": "exploratory_attention",
+          "llm_models_Qwen--Qwen2_5-72B-Instruct": "focused_attention",
+          "llm_models_Qwen--Qwen2_5-7B-Instruct": "focused_attention",
+          "llm_models_qwen-7b": "focused_attention",
+          "rule_based": "focused_attention",
+          "supervised_LinearSVM": "focused_attention",
+          "supervised_LogisticRegression": "focused_attention",
+          "supervised_RandomForest": "focused_attention"
+        }
+      },
+      {
+        "child_id": "31lG75MDwSA_4686-4764:person_2",
+        "true_label": "mixed_attention",
+        "num_correct": 7,
+        "num_wrong": 3,
+        "difficulty": "medium",
+        "wrong_models": [
+          "deberta",
+          "distilbert",
+          "llm_models_Qwen--Qwen2_5-7B-Instruct"
+        ],
+        "predictions": {
+          "bart": "mixed_attention",
+          "deberta": "focused_attention",
+          "distilbert": "exploratory_attention",
+          "llm_models_Qwen--Qwen2_5-72B-Instruct": "mixed_attention",
+          "llm_models_Qwen--Qwen2_5-7B-Instruct": "focused_attention",
+          "llm_models_qwen-7b": "mixed_attention",
+          "rule_based": "mixed_attention",
+          "supervised_LinearSVM": "mixed_attention",
+          "supervised_LogisticRegression": "mixed_attention",
+          "supervised_RandomForest": "mixed_attention"
+        }
+      },
+      {
+        "child_id": "6mA6UAoT3M0_6165-6361:person_1",
+        "true_label": "occluded_attention",
+        "num_correct": 2,
+        "num_wrong": 8,
+        "difficulty": "hard",
+        "wrong_models": [
+          "deberta",
+          "distilbert",
+          "llm_models_Qwen--Qwen2_5-72B-Instruct",
+          "llm_models_Qwen--Qwen2_5-7B-Instruct",
+          "llm_models_qwen-7b",
+          "rule_based",
+          "supervised_LogisticRegression",
+          "supervised_RandomForest"
+        ],
+        "predictions": {
+          "bart": "occluded_attention",
+          "deberta": "focused_attention",
+          "distilbert": "exploratory_attention",
+          "llm_models_Qwen--Qwen2_5-72B-Instruct": "mixed_attention",
+          "llm_models_Qwen--Qwen2_5-7B-Instruct": "focused_attention",
+          "llm_models_qwen-7b": "mixed_attention",
+          "rule_based": "mixed_attention",
+          "supervised_LinearSVM": "occluded_attention",
+          "supervised_LogisticRegression": "focused_attention",
+          "supervised_RandomForest": "mixed_attention"
+        }
+      },
+      {
+        "child_id": "6mA6UAoT3M0_6165-6361:person_3",
+        "true_label": "focused_attention",
+        "num_correct": 8,
+        "num_wrong": 2,
+        "difficulty": "easy",
+        "wrong_models": [
+          "bart",
+          "distilbert"
+        ],
+        "predictions": {
+          "bart": "mixed_attention",
+          "deberta": "focused_attention",
+          "distilbert": "exploratory_attention",
+          "llm_models_Qwen--Qwen2_5-72B-Instruct": "focused_attention",
+          "llm_models_Qwen--Qwen2_5-7B-Instruct": "focused_attention",
+          "llm_models_qwen-7b": "focused_attention",
+          "rule_based": "focused_attention",
+          "supervised_LinearSVM": "focused_attention",
+          "supervised_LogisticRegression": "focused_attention",
+          "supervised_RandomForest": "focused_attention"
+        }
+      },
+      {
+        "child_id": "9DNwRwt5kI4_10666-10822:person_2",
+        "true_label": "focused_attention",
+        "num_correct": 7,
+        "num_wrong": 3,
+        "difficulty": "medium",
+        "wrong_models": [
+          "bart",
+          "distilbert",
+          "llm_models_qwen-7b"
+        ],
+        "predictions": {
+          "bart": "occluded_attention",
+          "deberta": "focused_attention",
+          "distilbert": "exploratory_attention",
+          "llm_models_Qwen--Qwen2_5-72B-Instruct": "focused_attention",
+          "llm_models_Qwen--Qwen2_5-7B-Instruct": "focused_attention",
+          "llm_models_qwen-7b": "mixed_attention",
+          "rule_based": "focused_attention",
+          "supervised_LinearSVM": "focused_attention",
+          "supervised_LogisticRegression": "focused_attention",
+          "supervised_RandomForest": "focused_attention"
+        }
+      },
+      {
+        "child_id": "9DNwRwt5kI4_10666-10822:person_3",
+        "true_label": "mixed_attention",
+        "num_correct": 7,
+        "num_wrong": 3,
+        "difficulty": "medium",
+        "wrong_models": [
+          "deberta",
+          "distilbert",
+          "llm_models_Qwen--Qwen2_5-72B-Instruct"
+        ],
+        "predictions": {
+          "bart": "mixed_attention",
+          "deberta": "focused_attention",
+          "distilbert": "exploratory_attention",
+          "llm_models_Qwen--Qwen2_5-72B-Instruct": "reduced_visual_availability",
+          "llm_models_Qwen--Qwen2_5-7B-Instruct": "mixed_attention",
+          "llm_models_qwen-7b": "mixed_attention",
+          "rule_based": "mixed_attention",
+          "supervised_LinearSVM": "mixed_attention",
+          "supervised_LogisticRegression": "mixed_attention",
+          "supervised_RandomForest": "mixed_attention"
+        }
+      },
+      {
+        "child_id": "9DNwRwt5kI4_14988-15270:person_2",
+        "true_label": "occluded_attention",
+        "num_correct": 1,
+        "num_wrong": 9,
+        "difficulty": "hard",
+        "wrong_models": [
+          "deberta",
+          "distilbert",
+          "llm_models_Qwen--Qwen2_5-72B-Instruct",
+          "llm_models_Qwen--Qwen2_5-7B-Instruct",
+          "llm_models_qwen-7b",
+          "rule_based",
+          "supervised_LinearSVM",
+          "supervised_LogisticRegression",
+          "supervised_RandomForest"
+        ],
+        "predictions": {
+          "bart": "occluded_attention",
+          "deberta": "focused_attention",
+          "distilbert": "exploratory_attention",
+          "llm_models_Qwen--Qwen2_5-72B-Instruct": "mixed_attention",
+          "llm_models_Qwen--Qwen2_5-7B-Instruct": "mixed_attention",
+          "llm_models_qwen-7b": "mixed_attention",
+          "rule_based": "mixed_attention",
+          "supervised_LinearSVM": "mixed_attention",
+          "supervised_LogisticRegression": "mixed_attention",
+          "supervised_RandomForest": "mixed_attention"
+        }
+      },
+      {
+        "child_id": "9DNwRwt5kI4_14988-15270:person_3",
+        "true_label": "mixed_attention",
+        "num_correct": 5,
+        "num_wrong": 5,
+        "difficulty": "medium",
+        "wrong_models": [
+          "bart",
+          "deberta",
+          "distilbert",
+          "llm_models_Qwen--Qwen2_5-7B-Instruct",
+          "supervised_LinearSVM"
+        ],
+        "predictions": {
+          "bart": "occluded_attention",
+          "deberta": "focused_attention",
+          "distilbert": "exploratory_attention",
+          "llm_models_Qwen--Qwen2_5-72B-Instruct": "mixed_attention",
+          "llm_models_Qwen--Qwen2_5-7B-Instruct": "focused_attention",
+          "llm_models_qwen-7b": "mixed_attention",
+          "rule_based": "mixed_attention",
+          "supervised_LinearSVM": "focused_attention",
+          "supervised_LogisticRegression": "mixed_attention",
+          "supervised_RandomForest": "mixed_attention"
+        }
+      },
+      {
+        "child_id": "9DNwRwt5kI4_2442-3179:person_1",
+        "true_label": "focused_attention",
+        "num_correct": 6,
+        "num_wrong": 4,
+        "difficulty": "medium",
+        "wrong_models": [
+          "bart",
+          "distilbert",
+          "llm_models_Qwen--Qwen2_5-72B-Instruct",
+          "llm_models_qwen-7b"
+        ],
+        "predictions": {
+          "bart": "occluded_attention",
+          "deberta": "focused_attention",
+          "distilbert": "exploratory_attention",
+          "llm_models_Qwen--Qwen2_5-72B-Instruct": "mixed_attention",
+          "llm_models_Qwen--Qwen2_5-7B-Instruct": "focused_attention",
+          "llm_models_qwen-7b": "mixed_attention",
+          "rule_based": "focused_attention",
+          "supervised_LinearSVM": "focused_attention",
+          "supervised_LogisticRegression": "focused_attention",
+          "supervised_RandomForest": "focused_attention"
+        }
+      },
+      {
+        "child_id": "9DNwRwt5kI4_2442-3179:person_3",
+        "true_label": "mixed_attention",
+        "num_correct": 4,
+        "num_wrong": 6,
+        "difficulty": "medium",
+        "wrong_models": [
+          "bart",
+          "deberta",
+          "distilbert",
+          "llm_models_Qwen--Qwen2_5-7B-Instruct",
+          "supervised_LinearSVM",
+          "supervised_LogisticRegression"
+        ],
+        "predictions": {
+          "bart": "occluded_attention",
+          "deberta": "focused_attention",
+          "distilbert": "exploratory_attention",
+          "llm_models_Qwen--Qwen2_5-72B-Instruct": "mixed_attention",
+          "llm_models_Qwen--Qwen2_5-7B-Instruct": "focused_attention",
+          "llm_models_qwen-7b": "mixed_attention",
+          "rule_based": "mixed_attention",
+          "supervised_LinearSVM": "focused_attention",
+          "supervised_LogisticRegression": "focused_attention",
+          "supervised_RandomForest": "mixed_attention"
+        }
+      },
+      {
+        "child_id": "LHT2zVYvObg_1790-1917:person_1",
+        "true_label": "focused_attention",
+        "num_correct": 8,
+        "num_wrong": 2,
+        "difficulty": "easy",
+        "wrong_models": [
+          "bart",
+          "distilbert"
+        ],
+        "predictions": {
+          "bart": "mixed_attention",
+          "deberta": "focused_attention",
+          "distilbert": "exploratory_attention",
+          "llm_models_Qwen--Qwen2_5-72B-Instruct": "focused_attention",
+          "llm_models_Qwen--Qwen2_5-7B-Instruct": "focused_attention",
+          "llm_models_qwen-7b": "focused_attention",
+          "rule_based": "focused_attention",
+          "supervised_LinearSVM": "focused_attention",
+          "supervised_LogisticRegression": "focused_attention",
+          "supervised_RandomForest": "focused_attention"
+        }
+      },
+      {
+        "child_id": "LHT2zVYvObg_1790-1917:person_2",
+        "true_label": "focused_attention",
+        "num_correct": 6,
+        "num_wrong": 4,
+        "difficulty": "medium",
+        "wrong_models": [
+          "bart",
+          "distilbert",
+          "llm_models_qwen-7b",
+          "rule_based"
+        ],
+        "predictions": {
+          "bart": "mixed_attention",
+          "deberta": "focused_attention",
+          "distilbert": "exploratory_attention",
+          "llm_models_Qwen--Qwen2_5-72B-Instruct": "focused_attention",
+          "llm_models_Qwen--Qwen2_5-7B-Instruct": "focused_attention",
+          "llm_models_qwen-7b": "mixed_attention",
+          "rule_based": "mixed_attention",
+          "supervised_LinearSVM": "focused_attention",
+          "supervised_LogisticRegression": "focused_attention",
+          "supervised_RandomForest": "focused_attention"
+        }
+      },
+      {
+        "child_id": "LHT2zVYvObg_1921-2099:person_1",
+        "true_label": "focused_attention",
+        "num_correct": 6,
+        "num_wrong": 4,
+        "difficulty": "medium",
+        "wrong_models": [
+          "bart",
+          "distilbert",
+          "llm_models_qwen-7b",
+          "supervised_RandomForest"
+        ],
+        "predictions": {
+          "bart": "occluded_attention",
+          "deberta": "focused_attention",
+          "distilbert": "exploratory_attention",
+          "llm_models_Qwen--Qwen2_5-72B-Instruct": "focused_attention",
+          "llm_models_Qwen--Qwen2_5-7B-Instruct": "focused_attention",
+          "llm_models_qwen-7b": "mixed_attention",
+          "rule_based": "focused_attention",
+          "supervised_LinearSVM": "focused_attention",
+          "supervised_LogisticRegression": "focused_attention",
+          "supervised_RandomForest": "mixed_attention"
+        }
+      },
+      {
+        "child_id": "LS9Hztyrmmw_1768-1839:person_2",
+        "true_label": "focused_attention",
+        "num_correct": 7,
+        "num_wrong": 3,
+        "difficulty": "medium",
+        "wrong_models": [
+          "bart",
+          "distilbert",
+          "llm_models_qwen-7b"
+        ],
+        "predictions": {
+          "bart": "occluded_attention",
+          "deberta": "focused_attention",
+          "distilbert": "exploratory_attention",
+          "llm_models_Qwen--Qwen2_5-72B-Instruct": "focused_attention",
+          "llm_models_Qwen--Qwen2_5-7B-Instruct": "focused_attention",
+          "llm_models_qwen-7b": "mixed_attention",
+          "rule_based": "focused_attention",
+          "supervised_LinearSVM": "focused_attention",
+          "supervised_LogisticRegression": "focused_attention",
+          "supervised_RandomForest": "focused_attention"
+        }
+      },
+      {
+        "child_id": "LS9Hztyrmmw_1768-1839:person_3",
+        "true_label": "focused_attention",
+        "num_correct": 1,
+        "num_wrong": 9,
+        "difficulty": "hard",
+        "wrong_models": [
+          "bart",
+          "distilbert",
+          "llm_models_Qwen--Qwen2_5-72B-Instruct",
+          "llm_models_Qwen--Qwen2_5-7B-Instruct",
+          "llm_models_qwen-7b",
+          "rule_based",
+          "supervised_LinearSVM",
+          "supervised_LogisticRegression",
+          "supervised_RandomForest"
+        ],
+        "predictions": {
+          "bart": "mixed_attention",
+          "deberta": "focused_attention",
+          "distilbert": "exploratory_attention",
+          "llm_models_Qwen--Qwen2_5-72B-Instruct": "mixed_attention",
+          "llm_models_Qwen--Qwen2_5-7B-Instruct": "mixed_attention",
+          "llm_models_qwen-7b": "mixed_attention",
+          "rule_based": "mixed_attention",
+          "supervised_LinearSVM": "mixed_attention",
+          "supervised_LogisticRegression": "mixed_attention",
+          "supervised_RandomForest": "mixed_attention"
+        }
+      },
+      {
+        "child_id": "LS9Hztyrmmw_2667-2845:person_2",
+        "true_label": "focused_attention",
+        "num_correct": 8,
+        "num_wrong": 2,
+        "difficulty": "easy",
+        "wrong_models": [
+          "bart",
+          "distilbert"
+        ],
+        "predictions": {
+          "bart": "mixed_attention",
+          "deberta": "focused_attention",
+          "distilbert": "exploratory_attention",
+          "llm_models_Qwen--Qwen2_5-72B-Instruct": "focused_attention",
+          "llm_models_Qwen--Qwen2_5-7B-Instruct": "focused_attention",
+          "llm_models_qwen-7b": "focused_attention",
+          "rule_based": "focused_attention",
+          "supervised_LinearSVM": "focused_attention",
+          "supervised_LogisticRegression": "focused_attention",
+          "supervised_RandomForest": "focused_attention"
+        }
+      },
+      {
+        "child_id": "LS9Hztyrmmw_2667-2845:person_3",
+        "true_label": "focused_attention",
+        "num_correct": 8,
+        "num_wrong": 2,
+        "difficulty": "easy",
+        "wrong_models": [
+          "bart",
+          "distilbert"
+        ],
+        "predictions": {
+          "bart": "mixed_attention",
+          "deberta": "focused_attention",
+          "distilbert": "exploratory_attention",
+          "llm_models_Qwen--Qwen2_5-72B-Instruct": "focused_attention",
+          "llm_models_Qwen--Qwen2_5-7B-Instruct": "focused_attention",
+          "llm_models_qwen-7b": "focused_attention",
+          "rule_based": "focused_attention",
+          "supervised_LinearSVM": "focused_attention",
+          "supervised_LogisticRegression": "focused_attention",
+          "supervised_RandomForest": "focused_attention"
+        }
+      },
+      {
+        "child_id": "Lva4fn4_q88_1270-1473:person_2",
+        "true_label": "focused_attention",
+        "num_correct": 8,
+        "num_wrong": 2,
+        "difficulty": "easy",
+        "wrong_models": [
+          "bart",
+          "distilbert"
+        ],
+        "predictions": {
+          "bart": "occluded_attention",
+          "deberta": "focused_attention",
+          "distilbert": "exploratory_attention",
+          "llm_models_Qwen--Qwen2_5-72B-Instruct": "focused_attention",
+          "llm_models_Qwen--Qwen2_5-7B-Instruct": "focused_attention",
+          "llm_models_qwen-7b": "focused_attention",
+          "rule_based": "focused_attention",
+          "supervised_LinearSVM": "focused_attention",
+          "supervised_LogisticRegression": "focused_attention",
+          "supervised_RandomForest": "focused_attention"
+        }
+      },
+      {
+        "child_id": "Lva4fn4_q88_1270-1473:person_3",
+        "true_label": "focused_attention",
+        "num_correct": 1,
+        "num_wrong": 9,
+        "difficulty": "hard",
+        "wrong_models": [
+          "bart",
+          "distilbert",
+          "llm_models_Qwen--Qwen2_5-72B-Instruct",
+          "llm_models_Qwen--Qwen2_5-7B-Instruct",
+          "llm_models_qwen-7b",
+          "rule_based",
+          "supervised_LinearSVM",
+          "supervised_LogisticRegression",
+          "supervised_RandomForest"
+        ],
+        "predictions": {
+          "bart": "occluded_attention",
+          "deberta": "focused_attention",
+          "distilbert": "exploratory_attention",
+          "llm_models_Qwen--Qwen2_5-72B-Instruct": "exploratory_attention",
+          "llm_models_Qwen--Qwen2_5-7B-Instruct": "mixed_attention",
+          "llm_models_qwen-7b": "exploratory_attention",
+          "rule_based": "exploratory_attention",
+          "supervised_LinearSVM": "mixed_attention",
+          "supervised_LogisticRegression": "mixed_attention",
+          "supervised_RandomForest": "mixed_attention"
+        }
+      },
+      {
+        "child_id": "Lva4fn4_q88_4391-4523:person_2",
+        "true_label": "focused_attention",
+        "num_correct": 8,
+        "num_wrong": 2,
+        "difficulty": "easy",
+        "wrong_models": [
+          "bart",
+          "distilbert"
+        ],
+        "predictions": {
+          "bart": "mixed_attention",
+          "deberta": "focused_attention",
+          "distilbert": "exploratory_attention",
+          "llm_models_Qwen--Qwen2_5-72B-Instruct": "focused_attention",
+          "llm_models_Qwen--Qwen2_5-7B-Instruct": "focused_attention",
+          "llm_models_qwen-7b": "focused_attention",
+          "rule_based": "focused_attention",
+          "supervised_LinearSVM": "focused_attention",
+          "supervised_LogisticRegression": "focused_attention",
+          "supervised_RandomForest": "focused_attention"
+        }
+      },
+      {
+        "child_id": "Lva4fn4_q88_4391-4523:person_3",
+        "true_label": "mixed_attention",
+        "num_correct": 1,
+        "num_wrong": 9,
+        "difficulty": "hard",
+        "wrong_models": [
+          "deberta",
+          "distilbert",
+          "llm_models_Qwen--Qwen2_5-72B-Instruct",
+          "llm_models_Qwen--Qwen2_5-7B-Instruct",
+          "llm_models_qwen-7b",
+          "rule_based",
+          "supervised_LinearSVM",
+          "supervised_LogisticRegression",
+          "supervised_RandomForest"
+        ],
+        "predictions": {
+          "bart": "mixed_attention",
+          "deberta": "focused_attention",
+          "distilbert": "exploratory_attention",
+          "llm_models_Qwen--Qwen2_5-72B-Instruct": "focused_attention",
+          "llm_models_Qwen--Qwen2_5-7B-Instruct": "focused_attention",
+          "llm_models_qwen-7b": "focused_attention",
+          "rule_based": "focused_attention",
+          "supervised_LinearSVM": "focused_attention",
+          "supervised_LogisticRegression": "focused_attention",
+          "supervised_RandomForest": "focused_attention"
+        }
+      },
+      {
+        "child_id": "Lva4fn4_q88_4691-4775:person_2",
+        "true_label": "focused_attention",
+        "num_correct": 8,
+        "num_wrong": 2,
+        "difficulty": "easy",
+        "wrong_models": [
+          "bart",
+          "distilbert"
+        ],
+        "predictions": {
+          "bart": "mixed_attention",
+          "deberta": "focused_attention",
+          "distilbert": "exploratory_attention",
+          "llm_models_Qwen--Qwen2_5-72B-Instruct": "focused_attention",
+          "llm_models_Qwen--Qwen2_5-7B-Instruct": "focused_attention",
+          "llm_models_qwen-7b": "focused_attention",
+          "rule_based": "focused_attention",
+          "supervised_LinearSVM": "focused_attention",
+          "supervised_LogisticRegression": "focused_attention",
+          "supervised_RandomForest": "focused_attention"
+        }
+      },
+      {
+        "child_id": "Lva4fn4_q88_4691-4775:person_3",
+        "true_label": "focused_attention",
+        "num_correct": 8,
+        "num_wrong": 2,
+        "difficulty": "easy",
+        "wrong_models": [
+          "bart",
+          "distilbert"
+        ],
+        "predictions": {
+          "bart": "occluded_attention",
+          "deberta": "focused_attention",
+          "distilbert": "exploratory_attention",
+          "llm_models_Qwen--Qwen2_5-72B-Instruct": "focused_attention",
+          "llm_models_Qwen--Qwen2_5-7B-Instruct": "focused_attention",
+          "llm_models_qwen-7b": "focused_attention",
+          "rule_based": "focused_attention",
+          "supervised_LinearSVM": "focused_attention",
+          "supervised_LogisticRegression": "focused_attention",
+          "supervised_RandomForest": "focused_attention"
+        }
+      },
+      {
+        "child_id": "Lva4fn4_q88_5291-5420:person_2",
+        "true_label": "focused_attention",
+        "num_correct": 8,
+        "num_wrong": 2,
+        "difficulty": "easy",
+        "wrong_models": [
+          "bart",
+          "distilbert"
+        ],
+        "predictions": {
+          "bart": "mixed_attention",
+          "deberta": "focused_attention",
+          "distilbert": "exploratory_attention",
+          "llm_models_Qwen--Qwen2_5-72B-Instruct": "focused_attention",
+          "llm_models_Qwen--Qwen2_5-7B-Instruct": "focused_attention",
+          "llm_models_qwen-7b": "focused_attention",
+          "rule_based": "focused_attention",
+          "supervised_LinearSVM": "focused_attention",
+          "supervised_LogisticRegression": "focused_attention",
+          "supervised_RandomForest": "focused_attention"
+        }
+      },
+      {
+        "child_id": "Lva4fn4_q88_5291-5420:person_3",
+        "true_label": "focused_attention",
+        "num_correct": 8,
+        "num_wrong": 2,
+        "difficulty": "easy",
+        "wrong_models": [
+          "bart",
+          "distilbert"
+        ],
+        "predictions": {
+          "bart": "occluded_attention",
+          "deberta": "focused_attention",
+          "distilbert": "exploratory_attention",
+          "llm_models_Qwen--Qwen2_5-72B-Instruct": "focused_attention",
+          "llm_models_Qwen--Qwen2_5-7B-Instruct": "focused_attention",
+          "llm_models_qwen-7b": "focused_attention",
+          "rule_based": "focused_attention",
+          "supervised_LinearSVM": "focused_attention",
+          "supervised_LogisticRegression": "focused_attention",
+          "supervised_RandomForest": "focused_attention"
+        }
+      },
+      {
+        "child_id": "ND7pXuhs3VM_1800-1925:person_2",
+        "true_label": "mixed_attention",
+        "num_correct": 6,
+        "num_wrong": 4,
+        "difficulty": "medium",
+        "wrong_models": [
+          "bart",
+          "deberta",
+          "distilbert",
+          "llm_models_Qwen--Qwen2_5-7B-Instruct"
+        ],
+        "predictions": {
+          "bart": "occluded_attention",
+          "deberta": "focused_attention",
+          "distilbert": "exploratory_attention",
+          "llm_models_Qwen--Qwen2_5-72B-Instruct": "mixed_attention",
+          "llm_models_Qwen--Qwen2_5-7B-Instruct": "focused_attention",
+          "llm_models_qwen-7b": "mixed_attention",
+          "rule_based": "mixed_attention",
+          "supervised_LinearSVM": "mixed_attention",
+          "supervised_LogisticRegression": "mixed_attention",
+          "supervised_RandomForest": "mixed_attention"
+        }
+      },
+      {
+        "child_id": "ND7pXuhs3VM_3066-3159:person_1",
+        "true_label": "mixed_attention",
+        "num_correct": 6,
+        "num_wrong": 4,
+        "difficulty": "medium",
+        "wrong_models": [
+          "deberta",
+          "distilbert",
+          "llm_models_Qwen--Qwen2_5-72B-Instruct",
+          "supervised_RandomForest"
+        ],
+        "predictions": {
+          "bart": "mixed_attention",
+          "deberta": "focused_attention",
+          "distilbert": "exploratory_attention",
+          "llm_models_Qwen--Qwen2_5-72B-Instruct": "reduced_visual_availability",
+          "llm_models_Qwen--Qwen2_5-7B-Instruct": "mixed_attention",
+          "llm_models_qwen-7b": "mixed_attention",
+          "rule_based": "mixed_attention",
+          "supervised_LinearSVM": "mixed_attention",
+          "supervised_LogisticRegression": "mixed_attention",
+          "supervised_RandomForest": "focused_attention"
+        }
+      },
+      {
+        "child_id": "NIk1-ck4c6Q_13651-13719:person_2",
+        "true_label": "mixed_attention",
+        "num_correct": 2,
+        "num_wrong": 8,
+        "difficulty": "hard",
+        "wrong_models": [
+          "bart",
+          "deberta",
+          "distilbert",
+          "llm_models_Qwen--Qwen2_5-72B-Instruct",
+          "llm_models_Qwen--Qwen2_5-7B-Instruct",
+          "supervised_LinearSVM",
+          "supervised_LogisticRegression",
+          "supervised_RandomForest"
+        ],
+        "predictions": {
+          "bart": "occluded_attention",
+          "deberta": "focused_attention",
+          "distilbert": "exploratory_attention",
+          "llm_models_Qwen--Qwen2_5-72B-Instruct": "focused_attention",
+          "llm_models_Qwen--Qwen2_5-7B-Instruct": "focused_attention",
+          "llm_models_qwen-7b": "mixed_attention",
+          "rule_based": "mixed_attention",
+          "supervised_LinearSVM": "focused_attention",
+          "supervised_LogisticRegression": "focused_attention",
+          "supervised_RandomForest": "focused_attention"
+        }
+      },
+      {
+        "child_id": "NIk1-ck4c6Q_13651-13719:person_3",
+        "true_label": "mixed_attention",
+        "num_correct": 6,
+        "num_wrong": 4,
+        "difficulty": "medium",
+        "wrong_models": [
+          "deberta",
+          "distilbert",
+          "llm_models_Qwen--Qwen2_5-7B-Instruct",
+          "rule_based"
+        ],
+        "predictions": {
+          "bart": "mixed_attention",
+          "deberta": "focused_attention",
+          "distilbert": "exploratory_attention",
+          "llm_models_Qwen--Qwen2_5-72B-Instruct": "mixed_attention",
+          "llm_models_Qwen--Qwen2_5-7B-Instruct": "focused_attention",
+          "llm_models_qwen-7b": "mixed_attention",
+          "rule_based": "exploratory_attention",
+          "supervised_LinearSVM": "mixed_attention",
+          "supervised_LogisticRegression": "mixed_attention",
+          "supervised_RandomForest": "mixed_attention"
+        }
+      },
+      {
+        "child_id": "NIk1-ck4c6Q_22766-22806:person_2",
+        "true_label": "focused_attention",
+        "num_correct": 8,
+        "num_wrong": 2,
+        "difficulty": "easy",
+        "wrong_models": [
+          "bart",
+          "distilbert"
+        ],
+        "predictions": {
+          "bart": "mixed_attention",
+          "deberta": "focused_attention",
+          "distilbert": "exploratory_attention",
+          "llm_models_Qwen--Qwen2_5-72B-Instruct": "focused_attention",
+          "llm_models_Qwen--Qwen2_5-7B-Instruct": "focused_attention",
+          "llm_models_qwen-7b": "focused_attention",
+          "rule_based": "focused_attention",
+          "supervised_LinearSVM": "focused_attention",
+          "supervised_LogisticRegression": "focused_attention",
+          "supervised_RandomForest": "focused_attention"
+        }
+      },
+      {
+        "child_id": "NIk1-ck4c6Q_22766-22806:person_3",
+        "true_label": "focused_attention",
+        "num_correct": 8,
+        "num_wrong": 2,
+        "difficulty": "easy",
+        "wrong_models": [
+          "bart",
+          "distilbert"
+        ],
+        "predictions": {
+          "bart": "mixed_attention",
+          "deberta": "focused_attention",
+          "distilbert": "exploratory_attention",
+          "llm_models_Qwen--Qwen2_5-72B-Instruct": "focused_attention",
+          "llm_models_Qwen--Qwen2_5-7B-Instruct": "focused_attention",
+          "llm_models_qwen-7b": "focused_attention",
+          "rule_based": "focused_attention",
+          "supervised_LinearSVM": "focused_attention",
+          "supervised_LogisticRegression": "focused_attention",
+          "supervised_RandomForest": "focused_attention"
+        }
+      },
+      {
+        "child_id": "N_9vfhsDz8w_5785-5911:person_2",
+        "true_label": "focused_attention",
+        "num_correct": 8,
+        "num_wrong": 2,
+        "difficulty": "easy",
+        "wrong_models": [
+          "bart",
+          "distilbert"
+        ],
+        "predictions": {
+          "bart": "mixed_attention",
+          "deberta": "focused_attention",
+          "distilbert": "exploratory_attention",
+          "llm_models_Qwen--Qwen2_5-72B-Instruct": "focused_attention",
+          "llm_models_Qwen--Qwen2_5-7B-Instruct": "focused_attention",
+          "llm_models_qwen-7b": "focused_attention",
+          "rule_based": "focused_attention",
+          "supervised_LinearSVM": "focused_attention",
+          "supervised_LogisticRegression": "focused_attention",
+          "supervised_RandomForest": "focused_attention"
+        }
+      },
+      {
+        "child_id": "N_9vfhsDz8w_5785-5911:person_3",
+        "true_label": "focused_attention",
+        "num_correct": 8,
+        "num_wrong": 2,
+        "difficulty": "easy",
+        "wrong_models": [
+          "bart",
+          "distilbert"
+        ],
+        "predictions": {
+          "bart": "mixed_attention",
+          "deberta": "focused_attention",
+          "distilbert": "exploratory_attention",
+          "llm_models_Qwen--Qwen2_5-72B-Instruct": "focused_attention",
+          "llm_models_Qwen--Qwen2_5-7B-Instruct": "focused_attention",
+          "llm_models_qwen-7b": "focused_attention",
+          "rule_based": "focused_attention",
+          "supervised_LinearSVM": "focused_attention",
+          "supervised_LogisticRegression": "focused_attention",
+          "supervised_RandomForest": "focused_attention"
+        }
+      },
+      {
+        "child_id": "N_9vfhsDz8w_6085-6298:person_2",
+        "true_label": "focused_attention",
+        "num_correct": 8,
+        "num_wrong": 2,
+        "difficulty": "easy",
+        "wrong_models": [
+          "bart",
+          "distilbert"
+        ],
+        "predictions": {
+          "bart": "mixed_attention",
+          "deberta": "focused_attention",
+          "distilbert": "exploratory_attention",
+          "llm_models_Qwen--Qwen2_5-72B-Instruct": "focused_attention",
+          "llm_models_Qwen--Qwen2_5-7B-Instruct": "focused_attention",
+          "llm_models_qwen-7b": "focused_attention",
+          "rule_based": "focused_attention",
+          "supervised_LinearSVM": "focused_attention",
+          "supervised_LogisticRegression": "focused_attention",
+          "supervised_RandomForest": "focused_attention"
+        }
+      },
+      {
+        "child_id": "N_9vfhsDz8w_6085-6298:person_3",
+        "true_label": "focused_attention",
+        "num_correct": 8,
+        "num_wrong": 2,
+        "difficulty": "easy",
+        "wrong_models": [
+          "bart",
+          "distilbert"
+        ],
+        "predictions": {
+          "bart": "mixed_attention",
+          "deberta": "focused_attention",
+          "distilbert": "exploratory_attention",
+          "llm_models_Qwen--Qwen2_5-72B-Instruct": "focused_attention",
+          "llm_models_Qwen--Qwen2_5-7B-Instruct": "focused_attention",
+          "llm_models_qwen-7b": "focused_attention",
+          "rule_based": "focused_attention",
+          "supervised_LinearSVM": "focused_attention",
+          "supervised_LogisticRegression": "focused_attention",
+          "supervised_RandomForest": "focused_attention"
+        }
+      },
+      {
+        "child_id": "Pyb0z_YQjjI_7332-7429:person_2",
+        "true_label": "exploratory_attention",
+        "num_correct": 2,
+        "num_wrong": 8,
+        "difficulty": "hard",
+        "wrong_models": [
+          "bart",
+          "deberta",
+          "llm_models_Qwen--Qwen2_5-72B-Instruct",
+          "llm_models_Qwen--Qwen2_5-7B-Instruct",
+          "llm_models_qwen-7b",
+          "supervised_LinearSVM",
+          "supervised_LogisticRegression",
+          "supervised_RandomForest"
+        ],
+        "predictions": {
+          "bart": "occluded_attention",
+          "deberta": "focused_attention",
+          "distilbert": "exploratory_attention",
+          "llm_models_Qwen--Qwen2_5-72B-Instruct": "mixed_attention",
+          "llm_models_Qwen--Qwen2_5-7B-Instruct": "focused_attention",
+          "llm_models_qwen-7b": "mixed_attention",
+          "rule_based": "exploratory_attention",
+          "supervised_LinearSVM": "mixed_attention",
+          "supervised_LogisticRegression": "mixed_attention",
+          "supervised_RandomForest": "mixed_attention"
+        }
+      },
+      {
+        "child_id": "Pyb0z_YQjjI_7332-7429:person_3",
+        "true_label": "focused_attention",
+        "num_correct": 8,
+        "num_wrong": 2,
+        "difficulty": "easy",
+        "wrong_models": [
+          "bart",
+          "distilbert"
+        ],
+        "predictions": {
+          "bart": "mixed_attention",
+          "deberta": "focused_attention",
+          "distilbert": "exploratory_attention",
+          "llm_models_Qwen--Qwen2_5-72B-Instruct": "focused_attention",
+          "llm_models_Qwen--Qwen2_5-7B-Instruct": "focused_attention",
+          "llm_models_qwen-7b": "focused_attention",
+          "rule_based": "focused_attention",
+          "supervised_LinearSVM": "focused_attention",
+          "supervised_LogisticRegression": "focused_attention",
+          "supervised_RandomForest": "focused_attention"
+        }
+      },
+      {
+        "child_id": "Pyb0z_YQjjI_7632-7685:person_2",
+        "true_label": "focused_attention",
+        "num_correct": 8,
+        "num_wrong": 2,
+        "difficulty": "easy",
+        "wrong_models": [
+          "bart",
+          "distilbert"
+        ],
+        "predictions": {
+          "bart": "occluded_attention",
+          "deberta": "focused_attention",
+          "distilbert": "exploratory_attention",
+          "llm_models_Qwen--Qwen2_5-72B-Instruct": "focused_attention",
+          "llm_models_Qwen--Qwen2_5-7B-Instruct": "focused_attention",
+          "llm_models_qwen-7b": "focused_attention",
+          "rule_based": "focused_attention",
+          "supervised_LinearSVM": "focused_attention",
+          "supervised_LogisticRegression": "focused_attention",
+          "supervised_RandomForest": "focused_attention"
+        }
+      },
+      {
+        "child_id": "Pyb0z_YQjjI_7632-7685:person_3",
+        "true_label": "focused_attention",
+        "num_correct": 6,
+        "num_wrong": 4,
+        "difficulty": "medium",
+        "wrong_models": [
+          "bart",
+          "distilbert",
+          "supervised_LinearSVM",
+          "supervised_LogisticRegression"
+        ],
+        "predictions": {
+          "bart": "mixed_attention",
+          "deberta": "focused_attention",
+          "distilbert": "exploratory_attention",
+          "llm_models_Qwen--Qwen2_5-72B-Instruct": "focused_attention",
+          "llm_models_Qwen--Qwen2_5-7B-Instruct": "focused_attention",
+          "llm_models_qwen-7b": "focused_attention",
+          "rule_based": "focused_attention",
+          "supervised_LinearSVM": "mixed_attention",
+          "supervised_LogisticRegression": "mixed_attention",
+          "supervised_RandomForest": "focused_attention"
+        }
+      },
+      {
+        "child_id": "UUwGLDeYN8c_266-474:person_1",
+        "true_label": "focused_attention",
+        "num_correct": 6,
+        "num_wrong": 4,
+        "difficulty": "medium",
+        "wrong_models": [
+          "bart",
+          "distilbert",
+          "llm_models_qwen-7b",
+          "supervised_LogisticRegression"
+        ],
+        "predictions": {
+          "bart": "occluded_attention",
+          "deberta": "focused_attention",
+          "distilbert": "exploratory_attention",
+          "llm_models_Qwen--Qwen2_5-72B-Instruct": "focused_attention",
+          "llm_models_Qwen--Qwen2_5-7B-Instruct": "focused_attention",
+          "llm_models_qwen-7b": "mixed_attention",
+          "rule_based": "focused_attention",
+          "supervised_LinearSVM": "focused_attention",
+          "supervised_LogisticRegression": "mixed_attention",
+          "supervised_RandomForest": "focused_attention"
+        }
+      },
+      {
+        "child_id": "WpbXt04qWEk_1166-1611:person_1",
+        "true_label": "focused_attention",
+        "num_correct": 3,
+        "num_wrong": 7,
+        "difficulty": "hard",
+        "wrong_models": [
+          "bart",
+          "distilbert",
+          "llm_models_Qwen--Qwen2_5-72B-Instruct",
+          "llm_models_qwen-7b",
+          "supervised_LinearSVM",
+          "supervised_LogisticRegression",
+          "supervised_RandomForest"
+        ],
+        "predictions": {
+          "bart": "occluded_attention",
+          "deberta": "focused_attention",
+          "distilbert": "exploratory_attention",
+          "llm_models_Qwen--Qwen2_5-72B-Instruct": "mixed_attention",
+          "llm_models_Qwen--Qwen2_5-7B-Instruct": "focused_attention",
+          "llm_models_qwen-7b": "mixed_attention",
+          "rule_based": "focused_attention",
+          "supervised_LinearSVM": "mixed_attention",
+          "supervised_LogisticRegression": "mixed_attention",
+          "supervised_RandomForest": "mixed_attention"
+        }
+      },
+      {
+        "child_id": "WpbXt04qWEk_924-1135:person_1",
+        "true_label": "focused_attention",
+        "num_correct": 8,
+        "num_wrong": 2,
+        "difficulty": "easy",
+        "wrong_models": [
+          "bart",
+          "distilbert"
+        ],
+        "predictions": {
+          "bart": "mixed_attention",
+          "deberta": "focused_attention",
+          "distilbert": "exploratory_attention",
+          "llm_models_Qwen--Qwen2_5-72B-Instruct": "focused_attention",
+          "llm_models_Qwen--Qwen2_5-7B-Instruct": "focused_attention",
+          "llm_models_qwen-7b": "focused_attention",
+          "rule_based": "focused_attention",
+          "supervised_LinearSVM": "focused_attention",
+          "supervised_LogisticRegression": "focused_attention",
+          "supervised_RandomForest": "focused_attention"
+        }
+      },
+      {
+        "child_id": "aWV7UUMddCU_5934-6205:person_2",
+        "true_label": "mixed_attention",
+        "num_correct": 5,
+        "num_wrong": 5,
+        "difficulty": "medium",
+        "wrong_models": [
+          "bart",
+          "deberta",
+          "distilbert",
+          "llm_models_Qwen--Qwen2_5-7B-Instruct",
+          "llm_models_qwen-7b"
+        ],
+        "predictions": {
+          "bart": "occluded_attention",
+          "deberta": "focused_attention",
+          "distilbert": "exploratory_attention",
+          "llm_models_Qwen--Qwen2_5-72B-Instruct": "mixed_attention",
+          "llm_models_Qwen--Qwen2_5-7B-Instruct": "focused_attention",
+          "llm_models_qwen-7b": "focused_attention",
+          "rule_based": "mixed_attention",
+          "supervised_LinearSVM": "mixed_attention",
+          "supervised_LogisticRegression": "mixed_attention",
+          "supervised_RandomForest": "mixed_attention"
+        }
+      },
+      {
+        "child_id": "aWV7UUMddCU_6517-7514:person_1",
+        "true_label": "mixed_attention",
+        "num_correct": 3,
+        "num_wrong": 7,
+        "difficulty": "hard",
+        "wrong_models": [
+          "bart",
+          "deberta",
+          "distilbert",
+          "llm_models_Qwen--Qwen2_5-7B-Instruct",
+          "llm_models_qwen-7b",
+          "supervised_LogisticRegression",
+          "supervised_RandomForest"
+        ],
+        "predictions": {
+          "bart": "occluded_attention",
+          "deberta": "focused_attention",
+          "distilbert": "exploratory_attention",
+          "llm_models_Qwen--Qwen2_5-72B-Instruct": "mixed_attention",
+          "llm_models_Qwen--Qwen2_5-7B-Instruct": "focused_attention",
+          "llm_models_qwen-7b": "focused_attention",
+          "rule_based": "mixed_attention",
+          "supervised_LinearSVM": "mixed_attention",
+          "supervised_LogisticRegression": "focused_attention",
+          "supervised_RandomForest": "focused_attention"
+        }
+      },
+      {
+        "child_id": "dUYIh1U2z-8_3300-3427:person_1",
+        "true_label": "occluded_attention",
+        "num_correct": 0,
+        "num_wrong": 10,
+        "difficulty": "hard",
+        "wrong_models": [
+          "bart",
+          "deberta",
+          "distilbert",
+          "llm_models_Qwen--Qwen2_5-72B-Instruct",
+          "llm_models_Qwen--Qwen2_5-7B-Instruct",
+          "llm_models_qwen-7b",
+          "rule_based",
+          "supervised_LinearSVM",
+          "supervised_LogisticRegression",
+          "supervised_RandomForest"
+        ],
+        "predictions": {
+          "bart": "mixed_attention",
+          "deberta": "focused_attention",
+          "distilbert": "exploratory_attention",
+          "llm_models_Qwen--Qwen2_5-72B-Instruct": "focused_attention",
+          "llm_models_Qwen--Qwen2_5-7B-Instruct": "focused_attention",
+          "llm_models_qwen-7b": "focused_attention",
+          "rule_based": "focused_attention",
+          "supervised_LinearSVM": "focused_attention",
+          "supervised_LogisticRegression": "focused_attention",
+          "supervised_RandomForest": "focused_attention"
+        }
+      },
+      {
+        "child_id": "dUYIh1U2z-8_3300-3427:person_2",
+        "true_label": "focused_attention",
+        "num_correct": 8,
+        "num_wrong": 2,
+        "difficulty": "easy",
+        "wrong_models": [
+          "bart",
+          "distilbert"
+        ],
+        "predictions": {
+          "bart": "mixed_attention",
+          "deberta": "focused_attention",
+          "distilbert": "exploratory_attention",
+          "llm_models_Qwen--Qwen2_5-72B-Instruct": "focused_attention",
+          "llm_models_Qwen--Qwen2_5-7B-Instruct": "focused_attention",
+          "llm_models_qwen-7b": "focused_attention",
+          "rule_based": "focused_attention",
+          "supervised_LinearSVM": "focused_attention",
+          "supervised_LogisticRegression": "focused_attention",
+          "supervised_RandomForest": "focused_attention"
+        }
+      },
+      {
+        "child_id": "dUYIh1U2z-8_4007-4220:person_1",
+        "true_label": "focused_attention",
+        "num_correct": 8,
+        "num_wrong": 2,
+        "difficulty": "easy",
+        "wrong_models": [
+          "bart",
+          "distilbert"
+        ],
+        "predictions": {
+          "bart": "occluded_attention",
+          "deberta": "focused_attention",
+          "distilbert": "exploratory_attention",
+          "llm_models_Qwen--Qwen2_5-72B-Instruct": "focused_attention",
+          "llm_models_Qwen--Qwen2_5-7B-Instruct": "focused_attention",
+          "llm_models_qwen-7b": "focused_attention",
+          "rule_based": "focused_attention",
+          "supervised_LinearSVM": "focused_attention",
+          "supervised_LogisticRegression": "focused_attention",
+          "supervised_RandomForest": "focused_attention"
+        }
+      },
+      {
+        "child_id": "dUYIh1U2z-8_4007-4220:person_2",
+        "true_label": "focused_attention",
+        "num_correct": 8,
+        "num_wrong": 2,
+        "difficulty": "easy",
+        "wrong_models": [
+          "bart",
+          "distilbert"
+        ],
+        "predictions": {
+          "bart": "mixed_attention",
+          "deberta": "focused_attention",
+          "distilbert": "exploratory_attention",
+          "llm_models_Qwen--Qwen2_5-72B-Instruct": "focused_attention",
+          "llm_models_Qwen--Qwen2_5-7B-Instruct": "focused_attention",
+          "llm_models_qwen-7b": "focused_attention",
+          "rule_based": "focused_attention",
+          "supervised_LinearSVM": "focused_attention",
+          "supervised_LogisticRegression": "focused_attention",
+          "supervised_RandomForest": "focused_attention"
+        }
+      },
+      {
+        "child_id": "dUYIh1U2z-8_4007-4220:person_3",
+        "true_label": "focused_attention",
+        "num_correct": 8,
+        "num_wrong": 2,
+        "difficulty": "easy",
+        "wrong_models": [
+          "bart",
+          "distilbert"
+        ],
+        "predictions": {
+          "bart": "mixed_attention",
+          "deberta": "focused_attention",
+          "distilbert": "exploratory_attention",
+          "llm_models_Qwen--Qwen2_5-72B-Instruct": "focused_attention",
+          "llm_models_Qwen--Qwen2_5-7B-Instruct": "focused_attention",
+          "llm_models_qwen-7b": "focused_attention",
+          "rule_based": "focused_attention",
+          "supervised_LinearSVM": "focused_attention",
+          "supervised_LogisticRegression": "focused_attention",
+          "supervised_RandomForest": "focused_attention"
+        }
+      },
+      {
+        "child_id": "f6wqlpG9rd0_1402-1688:person_1",
+        "true_label": "focused_attention",
+        "num_correct": 8,
+        "num_wrong": 2,
+        "difficulty": "easy",
+        "wrong_models": [
+          "bart",
+          "distilbert"
+        ],
+        "predictions": {
+          "bart": "occluded_attention",
+          "deberta": "focused_attention",
+          "distilbert": "exploratory_attention",
+          "llm_models_Qwen--Qwen2_5-72B-Instruct": "focused_attention",
+          "llm_models_Qwen--Qwen2_5-7B-Instruct": "focused_attention",
+          "llm_models_qwen-7b": "focused_attention",
+          "rule_based": "focused_attention",
+          "supervised_LinearSVM": "focused_attention",
+          "supervised_LogisticRegression": "focused_attention",
+          "supervised_RandomForest": "focused_attention"
+        }
+      },
+      {
+        "child_id": "f6wqlpG9rd0_203-262:person_1",
+        "true_label": "focused_attention",
+        "num_correct": 8,
+        "num_wrong": 2,
+        "difficulty": "easy",
+        "wrong_models": [
+          "bart",
+          "distilbert"
+        ],
+        "predictions": {
+          "bart": "mixed_attention",
+          "deberta": "focused_attention",
+          "distilbert": "exploratory_attention",
+          "llm_models_Qwen--Qwen2_5-72B-Instruct": "focused_attention",
+          "llm_models_Qwen--Qwen2_5-7B-Instruct": "focused_attention",
+          "llm_models_qwen-7b": "focused_attention",
+          "rule_based": "focused_attention",
+          "supervised_LinearSVM": "focused_attention",
+          "supervised_LogisticRegression": "focused_attention",
+          "supervised_RandomForest": "focused_attention"
+        }
+      },
+      {
+        "child_id": "f6wqlpG9rd0_9404-9541:person_1",
+        "true_label": "mixed_attention",
+        "num_correct": 4,
+        "num_wrong": 6,
+        "difficulty": "medium",
+        "wrong_models": [
+          "bart",
+          "deberta",
+          "distilbert",
+          "supervised_LinearSVM",
+          "supervised_LogisticRegression",
+          "supervised_RandomForest"
+        ],
+        "predictions": {
+          "bart": "occluded_attention",
+          "deberta": "focused_attention",
+          "distilbert": "exploratory_attention",
+          "llm_models_Qwen--Qwen2_5-72B-Instruct": "mixed_attention",
+          "llm_models_Qwen--Qwen2_5-7B-Instruct": "mixed_attention",
+          "llm_models_qwen-7b": "mixed_attention",
+          "rule_based": "mixed_attention",
+          "supervised_LinearSVM": "occluded_attention",
+          "supervised_LogisticRegression": "occluded_attention",
+          "supervised_RandomForest": "focused_attention"
+        }
+      },
+      {
+        "child_id": "f6wqlpG9rd0_9704-9949:person_1",
+        "true_label": "mixed_attention",
+        "num_correct": 4,
+        "num_wrong": 6,
+        "difficulty": "medium",
+        "wrong_models": [
+          "bart",
+          "deberta",
+          "distilbert",
+          "llm_models_Qwen--Qwen2_5-7B-Instruct",
+          "supervised_LinearSVM",
+          "supervised_LogisticRegression"
+        ],
+        "predictions": {
+          "bart": "occluded_attention",
+          "deberta": "focused_attention",
+          "distilbert": "exploratory_attention",
+          "llm_models_Qwen--Qwen2_5-72B-Instruct": "mixed_attention",
+          "llm_models_Qwen--Qwen2_5-7B-Instruct": "focused_attention",
+          "llm_models_qwen-7b": "mixed_attention",
+          "rule_based": "mixed_attention",
+          "supervised_LinearSVM": "focused_attention",
+          "supervised_LogisticRegression": "focused_attention",
+          "supervised_RandomForest": "mixed_attention"
+        }
+      },
+      {
+        "child_id": "fvJbRuIu4-0_1308-1370:person_1",
+        "true_label": "focused_attention",
+        "num_correct": 8,
+        "num_wrong": 2,
+        "difficulty": "easy",
+        "wrong_models": [
+          "bart",
+          "distilbert"
+        ],
+        "predictions": {
+          "bart": "mixed_attention",
+          "deberta": "focused_attention",
+          "distilbert": "exploratory_attention",
+          "llm_models_Qwen--Qwen2_5-72B-Instruct": "focused_attention",
+          "llm_models_Qwen--Qwen2_5-7B-Instruct": "focused_attention",
+          "llm_models_qwen-7b": "focused_attention",
+          "rule_based": "focused_attention",
+          "supervised_LinearSVM": "focused_attention",
+          "supervised_LogisticRegression": "focused_attention",
+          "supervised_RandomForest": "focused_attention"
+        }
+      },
+      {
+        "child_id": "fvJbRuIu4-0_1308-1370:person_2",
+        "true_label": "focused_attention",
+        "num_correct": 8,
+        "num_wrong": 2,
+        "difficulty": "easy",
+        "wrong_models": [
+          "bart",
+          "distilbert"
+        ],
+        "predictions": {
+          "bart": "mixed_attention",
+          "deberta": "focused_attention",
+          "distilbert": "exploratory_attention",
+          "llm_models_Qwen--Qwen2_5-72B-Instruct": "focused_attention",
+          "llm_models_Qwen--Qwen2_5-7B-Instruct": "focused_attention",
+          "llm_models_qwen-7b": "focused_attention",
+          "rule_based": "focused_attention",
+          "supervised_LinearSVM": "focused_attention",
+          "supervised_LogisticRegression": "focused_attention",
+          "supervised_RandomForest": "focused_attention"
+        }
+      },
+      {
+        "child_id": "fvJbRuIu4-0_1907-2018:person_1",
+        "true_label": "mixed_attention",
+        "num_correct": 4,
+        "num_wrong": 6,
+        "difficulty": "medium",
+        "wrong_models": [
+          "deberta",
+          "distilbert",
+          "llm_models_Qwen--Qwen2_5-7B-Instruct",
+          "supervised_LinearSVM",
+          "supervised_LogisticRegression",
+          "supervised_RandomForest"
+        ],
+        "predictions": {
+          "bart": "mixed_attention",
+          "deberta": "focused_attention",
+          "distilbert": "exploratory_attention",
+          "llm_models_Qwen--Qwen2_5-72B-Instruct": "mixed_attention",
+          "llm_models_Qwen--Qwen2_5-7B-Instruct": "focused_attention",
+          "llm_models_qwen-7b": "mixed_attention",
+          "rule_based": "mixed_attention",
+          "supervised_LinearSVM": "focused_attention",
+          "supervised_LogisticRegression": "focused_attention",
+          "supervised_RandomForest": "focused_attention"
+        }
+      },
+      {
+        "child_id": "fvJbRuIu4-0_1907-2018:person_2",
+        "true_label": "focused_attention",
+        "num_correct": 8,
+        "num_wrong": 2,
+        "difficulty": "easy",
+        "wrong_models": [
+          "bart",
+          "distilbert"
+        ],
+        "predictions": {
+          "bart": "mixed_attention",
+          "deberta": "focused_attention",
+          "distilbert": "exploratory_attention",
+          "llm_models_Qwen--Qwen2_5-72B-Instruct": "focused_attention",
+          "llm_models_Qwen--Qwen2_5-7B-Instruct": "focused_attention",
+          "llm_models_qwen-7b": "focused_attention",
+          "rule_based": "focused_attention",
+          "supervised_LinearSVM": "focused_attention",
+          "supervised_LogisticRegression": "focused_attention",
+          "supervised_RandomForest": "focused_attention"
+        }
+      },
+      {
+        "child_id": "ivX3JXIV1W4_1-1920:person_1",
+        "true_label": "focused_attention",
+        "num_correct": 2,
+        "num_wrong": 8,
+        "difficulty": "hard",
+        "wrong_models": [
+          "bart",
+          "distilbert",
+          "llm_models_Qwen--Qwen2_5-72B-Instruct",
+          "llm_models_qwen-7b",
+          "rule_based",
+          "supervised_LinearSVM",
+          "supervised_LogisticRegression",
+          "supervised_RandomForest"
+        ],
+        "predictions": {
+          "bart": "mixed_attention",
+          "deberta": "focused_attention",
+          "distilbert": "exploratory_attention",
+          "llm_models_Qwen--Qwen2_5-72B-Instruct": "mixed_attention",
+          "llm_models_Qwen--Qwen2_5-7B-Instruct": "focused_attention",
+          "llm_models_qwen-7b": "mixed_attention",
+          "rule_based": "exploratory_attention",
+          "supervised_LinearSVM": "mixed_attention",
+          "supervised_LogisticRegression": "mixed_attention",
+          "supervised_RandomForest": "mixed_attention"
+        }
+      },
+      {
+        "child_id": "ivX3JXIV1W4_1-1920:person_2",
+        "true_label": "focused_attention",
+        "num_correct": 6,
+        "num_wrong": 4,
+        "difficulty": "medium",
+        "wrong_models": [
+          "bart",
+          "distilbert",
+          "llm_models_qwen-7b",
+          "supervised_LinearSVM"
+        ],
+        "predictions": {
+          "bart": "occluded_attention",
+          "deberta": "focused_attention",
+          "distilbert": "exploratory_attention",
+          "llm_models_Qwen--Qwen2_5-72B-Instruct": "focused_attention",
+          "llm_models_Qwen--Qwen2_5-7B-Instruct": "focused_attention",
+          "llm_models_qwen-7b": "mixed_attention",
+          "rule_based": "focused_attention",
+          "supervised_LinearSVM": "mixed_attention",
+          "supervised_LogisticRegression": "focused_attention",
+          "supervised_RandomForest": "focused_attention"
+        }
+      },
+      {
+        "child_id": "odFKscFdEas_14127-14292:person_2",
+        "true_label": "mixed_attention",
+        "num_correct": 5,
+        "num_wrong": 5,
+        "difficulty": "medium",
+        "wrong_models": [
+          "deberta",
+          "distilbert",
+          "llm_models_Qwen--Qwen2_5-7B-Instruct",
+          "supervised_LinearSVM",
+          "supervised_LogisticRegression"
+        ],
+        "predictions": {
+          "bart": "mixed_attention",
+          "deberta": "focused_attention",
+          "distilbert": "exploratory_attention",
+          "llm_models_Qwen--Qwen2_5-72B-Instruct": "mixed_attention",
+          "llm_models_Qwen--Qwen2_5-7B-Instruct": "focused_attention",
+          "llm_models_qwen-7b": "mixed_attention",
+          "rule_based": "mixed_attention",
+          "supervised_LinearSVM": "focused_attention",
+          "supervised_LogisticRegression": "focused_attention",
+          "supervised_RandomForest": "mixed_attention"
+        }
+      },
+      {
+        "child_id": "odFKscFdEas_15822-16030:person_2",
+        "true_label": "mixed_attention",
+        "num_correct": 1,
+        "num_wrong": 9,
+        "difficulty": "hard",
+        "wrong_models": [
+          "bart",
+          "deberta",
+          "distilbert",
+          "llm_models_Qwen--Qwen2_5-72B-Instruct",
+          "llm_models_Qwen--Qwen2_5-7B-Instruct",
+          "rule_based",
+          "supervised_LinearSVM",
+          "supervised_LogisticRegression",
+          "supervised_RandomForest"
+        ],
+        "predictions": {
+          "bart": "occluded_attention",
+          "deberta": "focused_attention",
+          "distilbert": "exploratory_attention",
+          "llm_models_Qwen--Qwen2_5-72B-Instruct": "focused_attention",
+          "llm_models_Qwen--Qwen2_5-7B-Instruct": "focused_attention",
+          "llm_models_qwen-7b": "mixed_attention",
+          "rule_based": "focused_attention",
+          "supervised_LinearSVM": "focused_attention",
+          "supervised_LogisticRegression": "focused_attention",
+          "supervised_RandomForest": "focused_attention"
+        }
+      },
+      {
+        "child_id": "whHPATlDw8M_33039-33248-downsampled:person_1",
+        "true_label": "focused_attention",
+        "num_correct": 8,
+        "num_wrong": 2,
+        "difficulty": "easy",
+        "wrong_models": [
+          "bart",
+          "distilbert"
+        ],
+        "predictions": {
+          "bart": "mixed_attention",
+          "deberta": "focused_attention",
+          "distilbert": "exploratory_attention",
+          "llm_models_Qwen--Qwen2_5-72B-Instruct": "focused_attention",
+          "llm_models_Qwen--Qwen2_5-7B-Instruct": "focused_attention",
+          "llm_models_qwen-7b": "focused_attention",
+          "rule_based": "focused_attention",
+          "supervised_LinearSVM": "focused_attention",
+          "supervised_LogisticRegression": "focused_attention",
+          "supervised_RandomForest": "focused_attention"
+        }
+      },
+      {
+        "child_id": "whHPATlDw8M_5014-5313-downsampled:person_2",
+        "true_label": "focused_attention",
+        "num_correct": 8,
+        "num_wrong": 2,
+        "difficulty": "easy",
+        "wrong_models": [
+          "bart",
+          "distilbert"
+        ],
+        "predictions": {
+          "bart": "mixed_attention",
+          "deberta": "focused_attention",
+          "distilbert": "exploratory_attention",
+          "llm_models_Qwen--Qwen2_5-72B-Instruct": "focused_attention",
+          "llm_models_Qwen--Qwen2_5-7B-Instruct": "focused_attention",
+          "llm_models_qwen-7b": "focused_attention",
+          "rule_based": "focused_attention",
+          "supervised_LinearSVM": "focused_attention",
+          "supervised_LogisticRegression": "focused_attention",
+          "supervised_RandomForest": "focused_attention"
+        }
+      },
+      {
+        "child_id": "zmZpa1p5zaE_1028-1129:person_1",
+        "true_label": "focused_attention",
+        "num_correct": 8,
+        "num_wrong": 2,
+        "difficulty": "easy",
+        "wrong_models": [
+          "bart",
+          "distilbert"
+        ],
+        "predictions": {
+          "bart": "mixed_attention",
+          "deberta": "focused_attention",
+          "distilbert": "exploratory_attention",
+          "llm_models_Qwen--Qwen2_5-72B-Instruct": "focused_attention",
+          "llm_models_Qwen--Qwen2_5-7B-Instruct": "focused_attention",
+          "llm_models_qwen-7b": "focused_attention",
+          "rule_based": "focused_attention",
+          "supervised_LinearSVM": "focused_attention",
+          "supervised_LogisticRegression": "focused_attention",
+          "supervised_RandomForest": "focused_attention"
+        }
+      },
+      {
+        "child_id": "zmZpa1p5zaE_1028-1129:person_2",
+        "true_label": "mixed_attention",
+        "num_correct": 4,
+        "num_wrong": 6,
+        "difficulty": "medium",
+        "wrong_models": [
+          "deberta",
+          "distilbert",
+          "llm_models_Qwen--Qwen2_5-72B-Instruct",
+          "llm_models_Qwen--Qwen2_5-7B-Instruct",
+          "supervised_LinearSVM",
+          "supervised_LogisticRegression"
+        ],
+        "predictions": {
+          "bart": "mixed_attention",
+          "deberta": "focused_attention",
+          "distilbert": "exploratory_attention",
+          "llm_models_Qwen--Qwen2_5-72B-Instruct": "focused_attention",
+          "llm_models_Qwen--Qwen2_5-7B-Instruct": "focused_attention",
+          "llm_models_qwen-7b": "mixed_attention",
+          "rule_based": "mixed_attention",
+          "supervised_LinearSVM": "focused_attention",
+          "supervised_LogisticRegression": "focused_attention",
+          "supervised_RandomForest": "mixed_attention"
+        }
+      }
+    ],
+    "per_class_error_rates": {
+      "bart": {
+        "focused_attention": {
+          "total": 48,
+          "wrong": 48
+        },
+        "mixed_attention": {
+          "total": 17,
+          "wrong": 9
+        },
+        "occluded_attention": {
+          "total": 3,
+          "wrong": 1
+        },
+        "exploratory_attention": {
+          "total": 1,
+          "wrong": 1
+        }
+      },
+      "deberta": {
+        "focused_attention": {
+          "total": 48,
+          "wrong": 0
+        },
+        "mixed_attention": {
+          "total": 17,
+          "wrong": 17
+        },
+        "occluded_attention": {
+          "total": 3,
+          "wrong": 3
+        },
+        "exploratory_attention": {
+          "total": 1,
+          "wrong": 1
+        }
+      },
+      "distilbert": {
+        "focused_attention": {
+          "total": 48,
+          "wrong": 48
+        },
+        "mixed_attention": {
+          "total": 17,
+          "wrong": 17
+        },
+        "occluded_attention": {
+          "total": 3,
+          "wrong": 3
+        },
+        "exploratory_attention": {
+          "total": 1,
+          "wrong": 0
+        }
+      },
+      "llm_models_Qwen--Qwen2_5-72B-Instruct": {
+        "focused_attention": {
+          "total": 48,
+          "wrong": 5
+        },
+        "mixed_attention": {
+          "total": 17,
+          "wrong": 6
+        },
+        "occluded_attention": {
+          "total": 3,
+          "wrong": 3
+        },
+        "exploratory_attention": {
+          "total": 1,
+          "wrong": 1
+        }
+      },
+      "llm_models_Qwen--Qwen2_5-7B-Instruct": {
+        "focused_attention": {
+          "total": 48,
+          "wrong": 2
+        },
+        "mixed_attention": {
+          "total": 17,
+          "wrong": 14
+        },
+        "occluded_attention": {
+          "total": 3,
+          "wrong": 3
+        },
+        "exploratory_attention": {
+          "total": 1,
+          "wrong": 1
+        }
+      },
+      "llm_models_qwen-7b": {
+        "focused_attention": {
+          "total": 48,
+          "wrong": 12
+        },
+        "mixed_attention": {
+          "total": 17,
+          "wrong": 3
+        },
+        "occluded_attention": {
+          "total": 3,
+          "wrong": 3
+        },
+        "exploratory_attention": {
+          "total": 1,
+          "wrong": 1
+        }
+      },
+      "rule_based": {
+        "focused_attention": {
+          "total": 48,
+          "wrong": 4
+        },
+        "mixed_attention": {
+          "total": 17,
+          "wrong": 3
+        },
+        "occluded_attention": {
+          "total": 3,
+          "wrong": 3
+        },
+        "exploratory_attention": {
+          "total": 1,
+          "wrong": 0
+        }
+      },
+      "supervised_LinearSVM": {
+        "focused_attention": {
+          "total": 48,
+          "wrong": 7
+        },
+        "mixed_attention": {
+          "total": 17,
+          "wrong": 10
+        },
+        "occluded_attention": {
+          "total": 3,
+          "wrong": 2
+        },
+        "exploratory_attention": {
+          "total": 1,
+          "wrong": 1
+        }
+      },
+      "supervised_LogisticRegression": {
+        "focused_attention": {
+          "total": 48,
+          "wrong": 7
+        },
+        "mixed_attention": {
+          "total": 17,
+          "wrong": 10
+        },
+        "occluded_attention": {
+          "total": 3,
+          "wrong": 3
+        },
+        "exploratory_attention": {
+          "total": 1,
+          "wrong": 1
+        }
+      },
+      "supervised_RandomForest": {
+        "focused_attention": {
+          "total": 48,
+          "wrong": 5
+        },
+        "mixed_attention": {
+          "total": 17,
+          "wrong": 7
+        },
+        "occluded_attention": {
+          "total": 3,
+          "wrong": 3
+        },
+        "exploratory_attention": {
+          "total": 1,
+          "wrong": 1
+        }
+      }
+    }
+  },
+  "ablation": {
+    "full": {
+      "accuracy": 0.7105,
+      "kappa": 0.3178,
+      "macro_f1": 0.4495,
+      "num_features": 14,
+      "feature_set": [
+        "observed_frames",
+        "visible_ratio",
+        "on_screen_ratio",
+        "gaze_shift_ratio",
+        "occlusion_ratio",
+        "eyes_closed_ratio",
+        "mean_head_area",
+        "mean_head_motion",
+        "mean_gaze_motion",
+        "visible_gaze_fraction",
+        "gaze_shift_events",
+        "max_visible_streak",
+        "max_occlusion_streak",
+        "attention_stability_score"
+      ]
+    },
+    "without_visibility": {
+      "accuracy": 0.6962,
+      "kappa": 0.2566,
+      "macro_f1": 0.362,
+      "num_features": 10,
+      "feature_set": [
+        "observed_frames",
+        "gaze_shift_ratio",
+        "occlusion_ratio",
+        "eyes_closed_ratio",
+        "mean_head_area",
+        "mean_head_motion",
+        "mean_gaze_motion",
+        "gaze_shift_events",
+        "max_occlusion_streak",
+        "attention_stability_score"
+      ]
+    },
+    "without_motion": {
+      "accuracy": 0.7248,
+      "kappa": 0.3508,
+      "macro_f1": 0.5059,
+      "num_features": 12,
+      "feature_set": [
+        "observed_frames",
+        "visible_ratio",
+        "on_screen_ratio",
+        "gaze_shift_ratio",
+        "occlusion_ratio",
+        "eyes_closed_ratio",
+        "mean_head_area",
+        "visible_gaze_fraction",
+        "gaze_shift_events",
+        "max_visible_streak",
+        "max_occlusion_streak",
+        "attention_stability_score"
+      ]
+    },
+    "without_shifts": {
+      "accuracy": 0.6958,
+      "kappa": 0.278,
+      "macro_f1": 0.3597,
+      "num_features": 12,
+      "feature_set": [
+        "observed_frames",
+        "visible_ratio",
+        "on_screen_ratio",
+        "occlusion_ratio",
+        "eyes_closed_ratio",
+        "mean_head_area",
+        "mean_head_motion",
+        "mean_gaze_motion",
+        "visible_gaze_fraction",
+        "max_visible_streak",
+        "max_occlusion_streak",
+        "attention_stability_score"
+      ]
+    },
+    "without_occlusion": {
+      "accuracy": 0.7109,
+      "kappa": 0.2944,
+      "macro_f1": 0.3705,
+      "num_features": 11,
+      "feature_set": [
+        "observed_frames",
+        "visible_ratio",
+        "on_screen_ratio",
+        "gaze_shift_ratio",
+        "mean_head_area",
+        "mean_head_motion",
+        "mean_gaze_motion",
+        "visible_gaze_fraction",
+        "gaze_shift_events",
+        "max_visible_streak",
+        "attention_stability_score"
+      ]
+    },
+    "without_temporal": {
+      "accuracy": 0.6815,
+      "kappa": 0.2027,
+      "macro_f1": 0.3392,
+      "num_features": 12,
+      "feature_set": [
+        "visible_ratio",
+        "on_screen_ratio",
+        "gaze_shift_ratio",
+        "occlusion_ratio",
+        "eyes_closed_ratio",
+        "mean_head_area",
+        "mean_head_motion",
+        "mean_gaze_motion",
+        "visible_gaze_fraction",
+        "gaze_shift_events",
+        "max_visible_streak",
+        "max_occlusion_streak"
+      ]
+    },
+    "without_head": {
+      "accuracy": 0.6958,
+      "kappa": 0.2684,
+      "macro_f1": 0.4088,
+      "num_features": 13,
+      "feature_set": [
+        "observed_frames",
+        "visible_ratio",
+        "on_screen_ratio",
+        "gaze_shift_ratio",
+        "occlusion_ratio",
+        "eyes_closed_ratio",
+        "mean_head_motion",
+        "mean_gaze_motion",
+        "visible_gaze_fraction",
+        "gaze_shift_events",
+        "max_visible_streak",
+        "max_occlusion_streak",
+        "attention_stability_score"
+      ]
+    },
+    "only_visibility": {
+      "accuracy": 0.6958,
+      "kappa": 0.2452,
+      "macro_f1": 0.3511,
+      "num_features": 4,
+      "feature_set": [
+        "visible_ratio",
+        "on_screen_ratio",
+        "visible_gaze_fraction",
+        "max_visible_streak"
+      ]
+    },
+    "only_motion": {
+      "accuracy": 0.6811,
+      "kappa": 0.027,
+      "macro_f1": 0.258,
+      "num_features": 2,
+      "feature_set": [
+        "mean_head_motion",
+        "mean_gaze_motion"
+      ]
+    },
+    "only_shifts": {
+      "accuracy": 0.7101,
+      "kappa": 0.1635,
+      "macro_f1": 0.2985,
+      "num_features": 2,
+      "feature_set": [
+        "gaze_shift_ratio",
+        "gaze_shift_events"
+      ]
+    },
+    "only_occlusion": {
+      "accuracy": 0.6664,
+      "kappa": 0.0425,
+      "macro_f1": 0.2612,
+      "num_features": 3,
+      "feature_set": [
+        "occlusion_ratio",
+        "eyes_closed_ratio",
+        "max_occlusion_streak"
+      ]
+    },
+    "only_temporal": {
+      "accuracy": 0.7538,
+      "kappa": 0.3707,
+      "macro_f1": 0.3839,
+      "num_features": 2,
+      "feature_set": [
+        "observed_frames",
+        "attention_stability_score"
+      ]
+    },
+    "only_head": {
+      "accuracy": 0.6958,
+      "kappa": 0.0,
+      "macro_f1": 0.2396,
+      "num_features": 1,
+      "feature_set": [
+        "mean_head_area"
+      ]
+    }
+  },
+  "additional_baselines": {
+    "Dummy_majority": {
+      "mean_accuracy": 0.6958,
+      "std_accuracy": 0.0101,
+      "mean_macro_f1": 0.2396,
+      "mean_kappa": 0.0,
+      "num_folds": 2,
+      "all_child_ids": [
+        "6mA6UAoT3M0_6165-6361:person_1",
+        "9DNwRwt5kI4_10666-10822:person_2",
+        "9DNwRwt5kI4_10666-10822:person_3",
+        "9DNwRwt5kI4_2442-3179:person_1",
+        "9DNwRwt5kI4_2442-3179:person_3",
+        "LHT2zVYvObg_1790-1917:person_1",
+        "LHT2zVYvObg_1921-2099:person_1",
+        "LS9Hztyrmmw_1768-1839:person_2",
+        "LS9Hztyrmmw_1768-1839:person_3",
+        "Lva4fn4_q88_1270-1473:person_2",
+        "Lva4fn4_q88_1270-1473:person_3",
+        "Lva4fn4_q88_4391-4523:person_3",
+        "Lva4fn4_q88_4691-4775:person_2",
+        "Lva4fn4_q88_4691-4775:person_3",
+        "Lva4fn4_q88_5291-5420:person_2",
+        "ND7pXuhs3VM_1800-1925:person_2",
+        "NIk1-ck4c6Q_13651-13719:person_3",
+        "N_9vfhsDz8w_5785-5911:person_2",
+        "N_9vfhsDz8w_6085-6298:person_3",
+        "Pyb0z_YQjjI_7332-7429:person_2",
+        "Pyb0z_YQjjI_7332-7429:person_3",
+        "Pyb0z_YQjjI_7632-7685:person_3",
+        "WpbXt04qWEk_1166-1611:person_1",
+        "WpbXt04qWEk_924-1135:person_1",
+        "aWV7UUMddCU_5934-6205:person_2",
+        "dUYIh1U2z-8_4007-4220:person_2",
+        "f6wqlpG9rd0_1402-1688:person_1",
+        "f6wqlpG9rd0_203-262:person_1",
+        "f6wqlpG9rd0_9404-9541:person_1",
+        "fvJbRuIu4-0_1308-1370:person_1",
+        "fvJbRuIu4-0_1907-2018:person_1",
+        "fvJbRuIu4-0_1907-2018:person_2",
+        "ivX3JXIV1W4_1-1920:person_1",
+        "odFKscFdEas_15822-16030:person_2",
+        "whHPATlDw8M_33039-33248-downsampled:person_1",
+        "1Ab4vLMMAbY_2354-2439:person_1",
+        "1Ab4vLMMAbY_412-554:person_1",
+        "1Ab4vLMMAbY_557-690:person_1",
+        "31lG75MDwSA_2857-2928:person_1",
+        "31lG75MDwSA_3180-3306:person_1",
+        "31lG75MDwSA_4686-4764:person_2",
+        "6mA6UAoT3M0_6165-6361:person_3",
+        "9DNwRwt5kI4_14988-15270:person_2",
+        "9DNwRwt5kI4_14988-15270:person_3",
+        "LHT2zVYvObg_1790-1917:person_2",
+        "LS9Hztyrmmw_2667-2845:person_2",
+        "LS9Hztyrmmw_2667-2845:person_3",
+        "Lva4fn4_q88_4391-4523:person_2",
+        "Lva4fn4_q88_5291-5420:person_3",
+        "ND7pXuhs3VM_3066-3159:person_1",
+        "NIk1-ck4c6Q_13651-13719:person_2",
+        "NIk1-ck4c6Q_22766-22806:person_2",
+        "NIk1-ck4c6Q_22766-22806:person_3",
+        "N_9vfhsDz8w_5785-5911:person_3",
+        "N_9vfhsDz8w_6085-6298:person_2",
+        "Pyb0z_YQjjI_7632-7685:person_2",
+        "UUwGLDeYN8c_266-474:person_1",
+        "aWV7UUMddCU_6517-7514:person_1",
+        "dUYIh1U2z-8_3300-3427:person_1",
+        "dUYIh1U2z-8_3300-3427:person_2",
+        "dUYIh1U2z-8_4007-4220:person_1",
+        "dUYIh1U2z-8_4007-4220:person_3",
+        "f6wqlpG9rd0_9704-9949:person_1",
+        "fvJbRuIu4-0_1308-1370:person_2",
+        "ivX3JXIV1W4_1-1920:person_2",
+        "odFKscFdEas_14127-14292:person_2",
+        "whHPATlDw8M_5014-5313-downsampled:person_2",
+        "zmZpa1p5zaE_1028-1129:person_1",
+        "zmZpa1p5zaE_1028-1129:person_2"
+      ],
+      "all_true": [
+        "occluded_attention",
+        "focused_attention",
+        "mixed_attention",
+        "focused_attention",
+        "mixed_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "mixed_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "mixed_attention",
+        "mixed_attention",
+        "focused_attention",
+        "focused_attention",
+        "exploratory_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "mixed_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "mixed_attention",
+        "focused_attention",
+        "mixed_attention",
+        "focused_attention",
+        "focused_attention",
+        "mixed_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "mixed_attention",
+        "focused_attention",
+        "occluded_attention",
+        "mixed_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "mixed_attention",
+        "mixed_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "mixed_attention",
+        "occluded_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "mixed_attention",
+        "focused_attention",
+        "focused_attention",
+        "mixed_attention",
+        "focused_attention",
+        "focused_attention",
+        "mixed_attention"
+      ],
+      "all_pred": [
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention"
+      ],
+      "classification_report": {
+        "exploratory_attention": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 1.0
+        },
+        "focused_attention": {
+          "precision": 0.6956521739130435,
+          "recall": 1.0,
+          "f1-score": 0.8205128205128205,
+          "support": 48.0
+        },
+        "mixed_attention": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 17.0
+        },
+        "occluded_attention": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 3.0
+        },
+        "accuracy": 0.6956521739130435,
+        "macro avg": {
+          "precision": 0.17391304347826086,
+          "recall": 0.25,
+          "f1-score": 0.20512820512820512,
+          "support": 69.0
+        },
+        "weighted avg": {
+          "precision": 0.4839319470699433,
+          "recall": 0.6956521739130435,
+          "f1-score": 0.5707915273132664,
+          "support": 69.0
+        }
+      }
+    },
+    "Dummy_stratified": {
+      "mean_accuracy": 0.6101,
+      "std_accuracy": 0.0958,
+      "mean_macro_f1": 0.2556,
+      "mean_kappa": 0.0972,
+      "num_folds": 2,
+      "all_child_ids": [
+        "6mA6UAoT3M0_6165-6361:person_1",
+        "9DNwRwt5kI4_10666-10822:person_2",
+        "9DNwRwt5kI4_10666-10822:person_3",
+        "9DNwRwt5kI4_2442-3179:person_1",
+        "9DNwRwt5kI4_2442-3179:person_3",
+        "LHT2zVYvObg_1790-1917:person_1",
+        "LHT2zVYvObg_1921-2099:person_1",
+        "LS9Hztyrmmw_1768-1839:person_2",
+        "LS9Hztyrmmw_1768-1839:person_3",
+        "Lva4fn4_q88_1270-1473:person_2",
+        "Lva4fn4_q88_1270-1473:person_3",
+        "Lva4fn4_q88_4391-4523:person_3",
+        "Lva4fn4_q88_4691-4775:person_2",
+        "Lva4fn4_q88_4691-4775:person_3",
+        "Lva4fn4_q88_5291-5420:person_2",
+        "ND7pXuhs3VM_1800-1925:person_2",
+        "NIk1-ck4c6Q_13651-13719:person_3",
+        "N_9vfhsDz8w_5785-5911:person_2",
+        "N_9vfhsDz8w_6085-6298:person_3",
+        "Pyb0z_YQjjI_7332-7429:person_2",
+        "Pyb0z_YQjjI_7332-7429:person_3",
+        "Pyb0z_YQjjI_7632-7685:person_3",
+        "WpbXt04qWEk_1166-1611:person_1",
+        "WpbXt04qWEk_924-1135:person_1",
+        "aWV7UUMddCU_5934-6205:person_2",
+        "dUYIh1U2z-8_4007-4220:person_2",
+        "f6wqlpG9rd0_1402-1688:person_1",
+        "f6wqlpG9rd0_203-262:person_1",
+        "f6wqlpG9rd0_9404-9541:person_1",
+        "fvJbRuIu4-0_1308-1370:person_1",
+        "fvJbRuIu4-0_1907-2018:person_1",
+        "fvJbRuIu4-0_1907-2018:person_2",
+        "ivX3JXIV1W4_1-1920:person_1",
+        "odFKscFdEas_15822-16030:person_2",
+        "whHPATlDw8M_33039-33248-downsampled:person_1",
+        "1Ab4vLMMAbY_2354-2439:person_1",
+        "1Ab4vLMMAbY_412-554:person_1",
+        "1Ab4vLMMAbY_557-690:person_1",
+        "31lG75MDwSA_2857-2928:person_1",
+        "31lG75MDwSA_3180-3306:person_1",
+        "31lG75MDwSA_4686-4764:person_2",
+        "6mA6UAoT3M0_6165-6361:person_3",
+        "9DNwRwt5kI4_14988-15270:person_2",
+        "9DNwRwt5kI4_14988-15270:person_3",
+        "LHT2zVYvObg_1790-1917:person_2",
+        "LS9Hztyrmmw_2667-2845:person_2",
+        "LS9Hztyrmmw_2667-2845:person_3",
+        "Lva4fn4_q88_4391-4523:person_2",
+        "Lva4fn4_q88_5291-5420:person_3",
+        "ND7pXuhs3VM_3066-3159:person_1",
+        "NIk1-ck4c6Q_13651-13719:person_2",
+        "NIk1-ck4c6Q_22766-22806:person_2",
+        "NIk1-ck4c6Q_22766-22806:person_3",
+        "N_9vfhsDz8w_5785-5911:person_3",
+        "N_9vfhsDz8w_6085-6298:person_2",
+        "Pyb0z_YQjjI_7632-7685:person_2",
+        "UUwGLDeYN8c_266-474:person_1",
+        "aWV7UUMddCU_6517-7514:person_1",
+        "dUYIh1U2z-8_3300-3427:person_1",
+        "dUYIh1U2z-8_3300-3427:person_2",
+        "dUYIh1U2z-8_4007-4220:person_1",
+        "dUYIh1U2z-8_4007-4220:person_3",
+        "f6wqlpG9rd0_9704-9949:person_1",
+        "fvJbRuIu4-0_1308-1370:person_2",
+        "ivX3JXIV1W4_1-1920:person_2",
+        "odFKscFdEas_14127-14292:person_2",
+        "whHPATlDw8M_5014-5313-downsampled:person_2",
+        "zmZpa1p5zaE_1028-1129:person_1",
+        "zmZpa1p5zaE_1028-1129:person_2"
+      ],
+      "all_true": [
+        "occluded_attention",
+        "focused_attention",
+        "mixed_attention",
+        "focused_attention",
+        "mixed_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "mixed_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "mixed_attention",
+        "mixed_attention",
+        "focused_attention",
+        "focused_attention",
+        "exploratory_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "mixed_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "mixed_attention",
+        "focused_attention",
+        "mixed_attention",
+        "focused_attention",
+        "focused_attention",
+        "mixed_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "mixed_attention",
+        "focused_attention",
+        "occluded_attention",
+        "mixed_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "mixed_attention",
+        "mixed_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "mixed_attention",
+        "occluded_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "mixed_attention",
+        "focused_attention",
+        "focused_attention",
+        "mixed_attention",
+        "focused_attention",
+        "focused_attention",
+        "mixed_attention"
+      ],
+      "all_pred": [
+        "focused_attention",
+        "mixed_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "mixed_attention",
+        "mixed_attention",
+        "occluded_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "mixed_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "occluded_attention",
+        "mixed_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "mixed_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "mixed_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "mixed_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "mixed_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "mixed_attention",
+        "focused_attention",
+        "focused_attention",
+        "mixed_attention",
+        "mixed_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "mixed_attention",
+        "focused_attention",
+        "mixed_attention",
+        "exploratory_attention",
+        "focused_attention",
+        "mixed_attention",
+        "mixed_attention"
+      ],
+      "classification_report": {
+        "exploratory_attention": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 1.0
+        },
+        "focused_attention": {
+          "precision": 0.74,
+          "recall": 0.7708333333333334,
+          "f1-score": 0.7551020408163265,
+          "support": 48.0
+        },
+        "mixed_attention": {
+          "precision": 0.3125,
+          "recall": 0.29411764705882354,
+          "f1-score": 0.30303030303030304,
+          "support": 17.0
+        },
+        "occluded_attention": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 3.0
+        },
+        "accuracy": 0.6086956521739131,
+        "macro avg": {
+          "precision": 0.263125,
+          "recall": 0.2662377450980392,
+          "f1-score": 0.26453308596165737,
+          "support": 69.0
+        },
+        "weighted avg": {
+          "precision": 0.5917753623188405,
+          "recall": 0.6086956521739131,
+          "f1-score": 0.5999480160970844,
+          "support": 69.0
+        }
+      }
+    },
+    "XGBoost": {
+      "mean_accuracy": 0.6815,
+      "std_accuracy": 0.0244,
+      "mean_macro_f1": 0.355,
+      "mean_kappa": 0.2283,
+      "num_folds": 2,
+      "all_child_ids": [
+        "6mA6UAoT3M0_6165-6361:person_1",
+        "9DNwRwt5kI4_10666-10822:person_2",
+        "9DNwRwt5kI4_10666-10822:person_3",
+        "9DNwRwt5kI4_2442-3179:person_1",
+        "9DNwRwt5kI4_2442-3179:person_3",
+        "LHT2zVYvObg_1790-1917:person_1",
+        "LHT2zVYvObg_1921-2099:person_1",
+        "LS9Hztyrmmw_1768-1839:person_2",
+        "LS9Hztyrmmw_1768-1839:person_3",
+        "Lva4fn4_q88_1270-1473:person_2",
+        "Lva4fn4_q88_1270-1473:person_3",
+        "Lva4fn4_q88_4391-4523:person_3",
+        "Lva4fn4_q88_4691-4775:person_2",
+        "Lva4fn4_q88_4691-4775:person_3",
+        "Lva4fn4_q88_5291-5420:person_2",
+        "ND7pXuhs3VM_1800-1925:person_2",
+        "NIk1-ck4c6Q_13651-13719:person_3",
+        "N_9vfhsDz8w_5785-5911:person_2",
+        "N_9vfhsDz8w_6085-6298:person_3",
+        "Pyb0z_YQjjI_7332-7429:person_2",
+        "Pyb0z_YQjjI_7332-7429:person_3",
+        "Pyb0z_YQjjI_7632-7685:person_3",
+        "WpbXt04qWEk_1166-1611:person_1",
+        "WpbXt04qWEk_924-1135:person_1",
+        "aWV7UUMddCU_5934-6205:person_2",
+        "dUYIh1U2z-8_4007-4220:person_2",
+        "f6wqlpG9rd0_1402-1688:person_1",
+        "f6wqlpG9rd0_203-262:person_1",
+        "f6wqlpG9rd0_9404-9541:person_1",
+        "fvJbRuIu4-0_1308-1370:person_1",
+        "fvJbRuIu4-0_1907-2018:person_1",
+        "fvJbRuIu4-0_1907-2018:person_2",
+        "ivX3JXIV1W4_1-1920:person_1",
+        "odFKscFdEas_15822-16030:person_2",
+        "whHPATlDw8M_33039-33248-downsampled:person_1",
+        "1Ab4vLMMAbY_2354-2439:person_1",
+        "1Ab4vLMMAbY_412-554:person_1",
+        "1Ab4vLMMAbY_557-690:person_1",
+        "31lG75MDwSA_2857-2928:person_1",
+        "31lG75MDwSA_3180-3306:person_1",
+        "31lG75MDwSA_4686-4764:person_2",
+        "6mA6UAoT3M0_6165-6361:person_3",
+        "9DNwRwt5kI4_14988-15270:person_2",
+        "9DNwRwt5kI4_14988-15270:person_3",
+        "LHT2zVYvObg_1790-1917:person_2",
+        "LS9Hztyrmmw_2667-2845:person_2",
+        "LS9Hztyrmmw_2667-2845:person_3",
+        "Lva4fn4_q88_4391-4523:person_2",
+        "Lva4fn4_q88_5291-5420:person_3",
+        "ND7pXuhs3VM_3066-3159:person_1",
+        "NIk1-ck4c6Q_13651-13719:person_2",
+        "NIk1-ck4c6Q_22766-22806:person_2",
+        "NIk1-ck4c6Q_22766-22806:person_3",
+        "N_9vfhsDz8w_5785-5911:person_3",
+        "N_9vfhsDz8w_6085-6298:person_2",
+        "Pyb0z_YQjjI_7632-7685:person_2",
+        "UUwGLDeYN8c_266-474:person_1",
+        "aWV7UUMddCU_6517-7514:person_1",
+        "dUYIh1U2z-8_3300-3427:person_1",
+        "dUYIh1U2z-8_3300-3427:person_2",
+        "dUYIh1U2z-8_4007-4220:person_1",
+        "dUYIh1U2z-8_4007-4220:person_3",
+        "f6wqlpG9rd0_9704-9949:person_1",
+        "fvJbRuIu4-0_1308-1370:person_2",
+        "ivX3JXIV1W4_1-1920:person_2",
+        "odFKscFdEas_14127-14292:person_2",
+        "whHPATlDw8M_5014-5313-downsampled:person_2",
+        "zmZpa1p5zaE_1028-1129:person_1",
+        "zmZpa1p5zaE_1028-1129:person_2"
+      ],
+      "all_true": [
+        "occluded_attention",
+        "focused_attention",
+        "mixed_attention",
+        "focused_attention",
+        "mixed_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "mixed_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "mixed_attention",
+        "mixed_attention",
+        "focused_attention",
+        "focused_attention",
+        "exploratory_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "mixed_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "mixed_attention",
+        "focused_attention",
+        "mixed_attention",
+        "focused_attention",
+        "focused_attention",
+        "mixed_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "mixed_attention",
+        "focused_attention",
+        "occluded_attention",
+        "mixed_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "mixed_attention",
+        "mixed_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "mixed_attention",
+        "occluded_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "mixed_attention",
+        "focused_attention",
+        "focused_attention",
+        "mixed_attention",
+        "focused_attention",
+        "focused_attention",
+        "mixed_attention"
+      ],
+      "all_pred": [
+        "mixed_attention",
+        "focused_attention",
+        "mixed_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "mixed_attention",
+        "focused_attention",
+        "mixed_attention",
+        "focused_attention",
+        "mixed_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "mixed_attention",
+        "mixed_attention",
+        "focused_attention",
+        "focused_attention",
+        "mixed_attention",
+        "focused_attention",
+        "focused_attention",
+        "mixed_attention",
+        "focused_attention",
+        "mixed_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "mixed_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "mixed_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "mixed_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "mixed_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "mixed_attention",
+        "mixed_attention",
+        "focused_attention",
+        "mixed_attention"
+      ],
+      "classification_report": {
+        "exploratory_attention": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 1.0
+        },
+        "focused_attention": {
+          "precision": 0.7692307692307693,
+          "recall": 0.8333333333333334,
+          "f1-score": 0.8,
+          "support": 48.0
+        },
+        "mixed_attention": {
+          "precision": 0.4117647058823529,
+          "recall": 0.4117647058823529,
+          "f1-score": 0.4117647058823529,
+          "support": 17.0
+        },
+        "occluded_attention": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 3.0
+        },
+        "accuracy": 0.6811594202898551,
+        "macro avg": {
+          "precision": 0.29524886877828055,
+          "recall": 0.3112745098039216,
+          "f1-score": 0.30294117647058827,
+          "support": 69.0
+        },
+        "weighted avg": {
+          "precision": 0.6365663322185062,
+          "recall": 0.6811594202898551,
+          "f1-score": 0.6579710144927537,
+          "support": 69.0
+        }
+      }
+    },
+    "LightGBM": {
+      "mean_accuracy": 0.6958,
+      "std_accuracy": 0.0101,
+      "mean_macro_f1": 0.2396,
+      "mean_kappa": 0.0,
+      "num_folds": 2,
+      "all_child_ids": [
+        "6mA6UAoT3M0_6165-6361:person_1",
+        "9DNwRwt5kI4_10666-10822:person_2",
+        "9DNwRwt5kI4_10666-10822:person_3",
+        "9DNwRwt5kI4_2442-3179:person_1",
+        "9DNwRwt5kI4_2442-3179:person_3",
+        "LHT2zVYvObg_1790-1917:person_1",
+        "LHT2zVYvObg_1921-2099:person_1",
+        "LS9Hztyrmmw_1768-1839:person_2",
+        "LS9Hztyrmmw_1768-1839:person_3",
+        "Lva4fn4_q88_1270-1473:person_2",
+        "Lva4fn4_q88_1270-1473:person_3",
+        "Lva4fn4_q88_4391-4523:person_3",
+        "Lva4fn4_q88_4691-4775:person_2",
+        "Lva4fn4_q88_4691-4775:person_3",
+        "Lva4fn4_q88_5291-5420:person_2",
+        "ND7pXuhs3VM_1800-1925:person_2",
+        "NIk1-ck4c6Q_13651-13719:person_3",
+        "N_9vfhsDz8w_5785-5911:person_2",
+        "N_9vfhsDz8w_6085-6298:person_3",
+        "Pyb0z_YQjjI_7332-7429:person_2",
+        "Pyb0z_YQjjI_7332-7429:person_3",
+        "Pyb0z_YQjjI_7632-7685:person_3",
+        "WpbXt04qWEk_1166-1611:person_1",
+        "WpbXt04qWEk_924-1135:person_1",
+        "aWV7UUMddCU_5934-6205:person_2",
+        "dUYIh1U2z-8_4007-4220:person_2",
+        "f6wqlpG9rd0_1402-1688:person_1",
+        "f6wqlpG9rd0_203-262:person_1",
+        "f6wqlpG9rd0_9404-9541:person_1",
+        "fvJbRuIu4-0_1308-1370:person_1",
+        "fvJbRuIu4-0_1907-2018:person_1",
+        "fvJbRuIu4-0_1907-2018:person_2",
+        "ivX3JXIV1W4_1-1920:person_1",
+        "odFKscFdEas_15822-16030:person_2",
+        "whHPATlDw8M_33039-33248-downsampled:person_1",
+        "1Ab4vLMMAbY_2354-2439:person_1",
+        "1Ab4vLMMAbY_412-554:person_1",
+        "1Ab4vLMMAbY_557-690:person_1",
+        "31lG75MDwSA_2857-2928:person_1",
+        "31lG75MDwSA_3180-3306:person_1",
+        "31lG75MDwSA_4686-4764:person_2",
+        "6mA6UAoT3M0_6165-6361:person_3",
+        "9DNwRwt5kI4_14988-15270:person_2",
+        "9DNwRwt5kI4_14988-15270:person_3",
+        "LHT2zVYvObg_1790-1917:person_2",
+        "LS9Hztyrmmw_2667-2845:person_2",
+        "LS9Hztyrmmw_2667-2845:person_3",
+        "Lva4fn4_q88_4391-4523:person_2",
+        "Lva4fn4_q88_5291-5420:person_3",
+        "ND7pXuhs3VM_3066-3159:person_1",
+        "NIk1-ck4c6Q_13651-13719:person_2",
+        "NIk1-ck4c6Q_22766-22806:person_2",
+        "NIk1-ck4c6Q_22766-22806:person_3",
+        "N_9vfhsDz8w_5785-5911:person_3",
+        "N_9vfhsDz8w_6085-6298:person_2",
+        "Pyb0z_YQjjI_7632-7685:person_2",
+        "UUwGLDeYN8c_266-474:person_1",
+        "aWV7UUMddCU_6517-7514:person_1",
+        "dUYIh1U2z-8_3300-3427:person_1",
+        "dUYIh1U2z-8_3300-3427:person_2",
+        "dUYIh1U2z-8_4007-4220:person_1",
+        "dUYIh1U2z-8_4007-4220:person_3",
+        "f6wqlpG9rd0_9704-9949:person_1",
+        "fvJbRuIu4-0_1308-1370:person_2",
+        "ivX3JXIV1W4_1-1920:person_2",
+        "odFKscFdEas_14127-14292:person_2",
+        "whHPATlDw8M_5014-5313-downsampled:person_2",
+        "zmZpa1p5zaE_1028-1129:person_1",
+        "zmZpa1p5zaE_1028-1129:person_2"
+      ],
+      "all_true": [
+        "occluded_attention",
+        "focused_attention",
+        "mixed_attention",
+        "focused_attention",
+        "mixed_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "mixed_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "mixed_attention",
+        "mixed_attention",
+        "focused_attention",
+        "focused_attention",
+        "exploratory_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "mixed_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "mixed_attention",
+        "focused_attention",
+        "mixed_attention",
+        "focused_attention",
+        "focused_attention",
+        "mixed_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "mixed_attention",
+        "focused_attention",
+        "occluded_attention",
+        "mixed_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "mixed_attention",
+        "mixed_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "mixed_attention",
+        "occluded_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "mixed_attention",
+        "focused_attention",
+        "focused_attention",
+        "mixed_attention",
+        "focused_attention",
+        "focused_attention",
+        "mixed_attention"
+      ],
+      "all_pred": [
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention",
+        "focused_attention"
+      ],
+      "classification_report": {
+        "exploratory_attention": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 1.0
+        },
+        "focused_attention": {
+          "precision": 0.6956521739130435,
+          "recall": 1.0,
+          "f1-score": 0.8205128205128205,
+          "support": 48.0
+        },
+        "mixed_attention": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 17.0
+        },
+        "occluded_attention": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 3.0
+        },
+        "accuracy": 0.6956521739130435,
+        "macro avg": {
+          "precision": 0.17391304347826086,
+          "recall": 0.25,
+          "f1-score": 0.20512820512820512,
+          "support": 69.0
+        },
+        "weighted avg": {
+          "precision": 0.4839319470699433,
+          "recall": 0.6956521739130435,
+          "f1-score": 0.5707915273132664,
+          "support": 69.0
+        }
+      }
+    }
+  },
+  "merged_3class": {
+    "bart": {
+      "accuracy": 0.1594,
+      "balanced_accuracy": 0.4069,
+      "macro_f1": 0.1542,
+      "weighted_f1": 0.0797,
+      "kappa": -0.0093
+    },
+    "deberta": {
+      "accuracy": 0.6957,
+      "balanced_accuracy": 0.3333,
+      "macro_f1": 0.2735,
+      "weighted_f1": 0.5708,
+      "kappa": 0.0
+    },
+    "distilbert": {
+      "accuracy": 0.058,
+      "balanced_accuracy": 0.3333,
+      "macro_f1": 0.0365,
+      "weighted_f1": 0.0064,
+      "kappa": 0.0
+    },
+    "llm_models_Qwen--Qwen2_5-72B-Instruct": {
+      "accuracy": 0.7826,
+      "balanced_accuracy": 0.5143,
+      "macro_f1": 0.5081,
+      "weighted_f1": 0.7781,
+      "kappa": 0.5161
+    },
+    "llm_models_Qwen--Qwen2_5-7B-Instruct": {
+      "accuracy": 0.7101,
+      "balanced_accuracy": 0.3783,
+      "macro_f1": 0.3632,
+      "weighted_f1": 0.6408,
+      "kappa": 0.156
+    },
+    "llm_models_qwen-7b": {
+      "accuracy": 0.7246,
+      "balanced_accuracy": 0.5245,
+      "macro_f1": 0.4801,
+      "weighted_f1": 0.7225,
+      "kappa": 0.4447
+    },
+    "rule_based": {
+      "accuracy": 0.8551,
+      "balanced_accuracy": 0.6634,
+      "macro_f1": 0.6588,
+      "weighted_f1": 0.856,
+      "kappa": 0.6839
+    },
+    "supervised_LinearSVM": {
+      "accuracy": 0.7101,
+      "balanced_accuracy": 0.5053,
+      "macro_f1": 0.5286,
+      "weighted_f1": 0.7,
+      "kappa": 0.3212
+    },
+    "supervised_LogisticRegression": {
+      "accuracy": 0.6957,
+      "balanced_accuracy": 0.422,
+      "macro_f1": 0.4147,
+      "weighted_f1": 0.675,
+      "kappa": 0.2715
+    },
+    "supervised_RandomForest": {
+      "accuracy": 0.7681,
+      "balanced_accuracy": 0.4947,
+      "macro_f1": 0.48,
+      "weighted_f1": 0.7451,
+      "kappa": 0.4499
+    }
+  },
+  "feature_importance": {
+    "feature_names": [
+      "observed_frames",
+      "visible_ratio",
+      "on_screen_ratio",
+      "gaze_shift_ratio",
+      "occlusion_ratio",
+      "eyes_closed_ratio",
+      "mean_head_area",
+      "mean_head_motion",
+      "mean_gaze_motion",
+      "visible_gaze_fraction",
+      "gaze_shift_events",
+      "max_visible_streak",
+      "max_occlusion_streak",
+      "attention_stability_score"
+    ],
+    "impurity_importance": [
+      0.0566,
+      0.0587,
+      0.0675,
+      0.0891,
+      0.037,
+      0.0,
+      0.0448,
+      0.1003,
+      0.129,
+      0.0588,
+      0.0792,
+      0.1117,
+      0.059,
+      0.1083
+    ],
+    "permutation_importance_mean": [
+      0.0121,
+      0.0,
+      0.0039,
+      0.0063,
+      0.0,
+      0.0,
+      0.015,
+      0.0159,
+      0.014,
+      0.0043,
+      0.0072,
+      0.0208,
+      0.0266,
+      0.0527
+    ],
+    "permutation_importance_std": [
+      0.0106,
+      0.0,
+      0.0064,
+      0.0072,
+      0.0,
+      0.0,
+      0.0095,
+      0.0078,
+      0.0079,
+      0.0066,
+      0.0072,
+      0.0089,
+      0.0054,
+      0.0127
+    ],
+    "ranked_by_permutation": [
+      [
+        "attention_stability_score",
+        0.05265700483091787
+      ],
+      [
+        "max_occlusion_streak",
+        0.02657004830917875
+      ],
+      [
+        "max_visible_streak",
+        0.02077294685990337
+      ],
+      [
+        "mean_head_motion",
+        0.015942028985507218
+      ],
+      [
+        "mean_head_area",
+        0.014975845410627997
+      ],
+      [
+        "mean_gaze_motion",
+        0.014009661835748762
+      ],
+      [
+        "observed_frames",
+        0.01207729468599032
+      ],
+      [
+        "gaze_shift_events",
+        0.00724637681159418
+      ],
+      [
+        "gaze_shift_ratio",
+        0.006280193236714956
+      ],
+      [
+        "visible_gaze_fraction",
+        0.004347826086956508
+      ],
+      [
+        "on_screen_ratio",
+        0.003864734299516896
+      ],
+      [
+        "visible_ratio",
+        0.0
+      ],
+      [
+        "occlusion_ratio",
+        0.0
+      ],
+      [
+        "eyes_closed_ratio",
+        0.0
+      ]
+    ]
+  }
+}

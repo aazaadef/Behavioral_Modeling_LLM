@@ -1,0 +1,195 @@
+{
+  "n_samples": 69,
+  "raw_agreement": 0.7826,
+  "cohen_kappa": 0.531,
+  "n_disagreements": 15,
+  "label_set": [
+    "exploratory_attention",
+    "focused_attention",
+    "mixed_attention",
+    "occluded_attention"
+  ],
+  "confusion_matrix_rater1_vs_rater2": [
+    [
+      0,
+      1,
+      2,
+      0
+    ],
+    [
+      0,
+      43,
+      4,
+      0
+    ],
+    [
+      1,
+      4,
+      10,
+      2
+    ],
+    [
+      0,
+      0,
+      1,
+      1
+    ]
+  ],
+  "distribution_rater1": {
+    "focused_attention": 47,
+    "mixed_attention": 17,
+    "exploratory_attention": 3,
+    "occluded_attention": 2
+  },
+  "distribution_rater2": {
+    "focused_attention": 48,
+    "occluded_attention": 3,
+    "mixed_attention": 17,
+    "exploratory_attention": 1
+  },
+  "distribution_final_consensus": {
+    "focused_attention": 48,
+    "mixed_attention": 17,
+    "occluded_attention": 3,
+    "exploratory_attention": 1
+  },
+  "consensus_bias": {
+    "sided_with_rater1": 6,
+    "sided_with_rater2": 8,
+    "third_option": 1
+  },
+  "disagreements": [
+    {
+      "child_id": "31lG75MDwSA_4686-4764:person_2",
+      "rater1": "mixed_attention",
+      "rater2": "focused_attention",
+      "consensus": "mixed_attention"
+    },
+    {
+      "child_id": "6mA6UAoT3M0_6165-6361:person_1",
+      "rater1": "mixed_attention",
+      "rater2": "occluded_attention",
+      "consensus": "occluded_attention"
+    },
+    {
+      "child_id": "9DNwRwt5kI4_10666-10822:person_2",
+      "rater1": "mixed_attention",
+      "rater2": "focused_attention",
+      "consensus": "focused_attention"
+    },
+    {
+      "child_id": "9DNwRwt5kI4_10666-10822:person_3",
+      "rater1": "exploratory_attention",
+      "rater2": "mixed_attention",
+      "consensus": "mixed_attention"
+    },
+    {
+      "child_id": "9DNwRwt5kI4_14988-15270:person_2",
+      "rater1": "occluded_attention",
+      "rater2": "mixed_attention",
+      "consensus": "occluded_attention"
+    },
+    {
+      "child_id": "9DNwRwt5kI4_14988-15270:person_3",
+      "rater1": "focused_attention",
+      "rater2": "mixed_attention",
+      "consensus": "mixed_attention"
+    },
+    {
+      "child_id": "9DNwRwt5kI4_2442-3179:person_1",
+      "rater1": "mixed_attention",
+      "rater2": "occluded_attention",
+      "consensus": "focused_attention"
+    },
+    {
+      "child_id": "9DNwRwt5kI4_2442-3179:person_3",
+      "rater1": "mixed_attention",
+      "rater2": "exploratory_attention",
+      "consensus": "mixed_attention"
+    },
+    {
+      "child_id": "LHT2zVYvObg_1790-1917:person_2",
+      "rater1": "focused_attention",
+      "rater2": "mixed_attention",
+      "consensus": "focused_attention"
+    },
+    {
+      "child_id": "LS9Hztyrmmw_1768-1839:person_3",
+      "rater1": "mixed_attention",
+      "rater2": "focused_attention",
+      "consensus": "focused_attention"
+    },
+    {
+      "child_id": "Lva4fn4_q88_1270-1473:person_3",
+      "rater1": "exploratory_attention",
+      "rater2": "focused_attention",
+      "consensus": "focused_attention"
+    },
+    {
+      "child_id": "Lva4fn4_q88_4391-4523:person_3",
+      "rater1": "mixed_attention",
+      "rater2": "focused_attention",
+      "consensus": "mixed_attention"
+    },
+    {
+      "child_id": "ND7pXuhs3VM_1800-1925:person_2",
+      "rater1": "focused_attention",
+      "rater2": "mixed_attention",
+      "consensus": "mixed_attention"
+    },
+    {
+      "child_id": "Pyb0z_YQjjI_7332-7429:person_2",
+      "rater1": "exploratory_attention",
+      "rater2": "mixed_attention",
+      "consensus": "exploratory_attention"
+    },
+    {
+      "child_id": "aWV7UUMddCU_5934-6205:person_2",
+      "rater1": "focused_attention",
+      "rater2": "mixed_attention",
+      "consensus": "mixed_attention"
+    }
+  ],
+  "ground_truth_changes_vs_previous_final_label": [
+    {
+      "child_id": "6mA6UAoT3M0_6165-6361:person_1",
+      "old": "mixed_attention",
+      "new": "occluded_attention"
+    },
+    {
+      "child_id": "9DNwRwt5kI4_14988-15270:person_2",
+      "old": "mixed_attention",
+      "new": "occluded_attention"
+    },
+    {
+      "child_id": "LHT2zVYvObg_1790-1917:person_2",
+      "old": "mixed_attention",
+      "new": "focused_attention"
+    },
+    {
+      "child_id": "LS9Hztyrmmw_1768-1839:person_3",
+      "old": "mixed_attention",
+      "new": "focused_attention"
+    },
+    {
+      "child_id": "Lva4fn4_q88_1270-1473:person_3",
+      "old": "mixed_attention",
+      "new": "focused_attention"
+    },
+    {
+      "child_id": "Lva4fn4_q88_4391-4523:person_3",
+      "old": "focused_attention",
+      "new": "mixed_attention"
+    },
+    {
+      "child_id": "Lva4fn4_q88_4691-4775:person_3",
+      "old": "exploratory_attention",
+      "new": "focused_attention"
+    },
+    {
+      "child_id": "aWV7UUMddCU_5934-6205:person_2",
+      "old": "focused_attention",
+      "new": "mixed_attention"
+    }
+  ]
+}

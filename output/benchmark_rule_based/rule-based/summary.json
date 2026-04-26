@@ -1,0 +1,23 @@
+{
+  "num_child_sequences": 69,
+  "split_counts": {
+    "test": 69
+  },
+  "interaction_type_counts": {
+    "focused_attention": 47,
+    "mixed_attention": 18,
+    "exploratory_attention": 4
+  },
+  "interaction_event_counts": {
+    "reduced_visual_availability": 53,
+    "focused_attention": 151,
+    "attention_shift": 343,
+    "monitoring": 240,
+    "exploratory_behavior": 43
+  },
+  "mean_confidence_by_split": {
+    "test": 0.7959
+  },
+  "mean_attention_stability_score": 0.8233,
+  "average_attention_event_duration": 2.1683
+}

@@ -1,0 +1,3 @@
+Comparison built from existing saved baselines plus local hf-llm predictions.
+HF run directory: /home/d3849/project/project.LLM/output_experiments_v2/hf_llm_local_runs_v5
+Comparison directory: /home/d3849/project/project.LLM/output_experiments_v2/hf_llm_local_comparison_v5

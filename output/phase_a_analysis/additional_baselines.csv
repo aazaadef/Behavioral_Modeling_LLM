@@ -1,0 +1,5 @@
+classifier,accuracy,macro_f1,kappa,num_folds
+Dummy_majority,0.6958,0.2396,0.0,2
+Dummy_stratified,0.6101,0.2556,0.0972,2
+XGBoost,0.6815,0.355,0.2283,2
+LightGBM,0.6958,0.2396,0.0,2

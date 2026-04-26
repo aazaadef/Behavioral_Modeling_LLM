@@ -1,0 +1,71 @@
+# --- Heavyweight directories (excluded from GitHub) ---
+models/
+backup/
+.venv/
+venv/
+env/
+
+# --- Source videos (too large for GitHub) ---
+output/paper_eval/manual_labeling_package/source_videos/
+*.mp4
+*.mkv
+*.avi
+*.mov
+
+# --- HuggingFace / model caches ---
+.cache/
+hf_cache/
+**/checkpoints/
+**/checkpoint-*/
+*.bin
+*.safetensors
+*.pt
+*.pth
+*.ckpt
+*.onnx
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg
+*.egg-info/
+.eggs/
+build/
+dist/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.hypothesis/
+
+# --- Jupyter ---
+.ipynb_checkpoints/
+
+# --- IDE / OS ---
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# --- Secrets / local config ---
+.env
+.env.*
+*.pem
+*.key
+secrets.json
+.codex
+
+# --- AI coding assistant local state ---
+.claude/
+
+# --- Local logs ---
+*.log
+logs/

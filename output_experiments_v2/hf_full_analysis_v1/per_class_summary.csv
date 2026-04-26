@@ -1,0 +1,14 @@
+model_name,backend_family,label,predicted_count,per_class_accuracy
+rule-based,rule-based,exploratory_attention,16,0.3333
+rule-based,rule-based,focused_attention,399,1.0
+rule-based,rule-based,mixed_attention,136,
+rule-based,rule-based,occluded_attention,14,
+typeform/distilbert-base-uncased-mnli,zero-shot,exploratory_attention,486,1.0
+typeform/distilbert-base-uncased-mnli,zero-shot,focused_attention,2,0.0
+typeform/distilbert-base-uncased-mnli,zero-shot,occluded_attention,14,
+typeform/distilbert-base-uncased-mnli,zero-shot,reduced_visual_availability,63,
+facebook/bart-large-mnli,zero-shot,exploratory_attention,25,0.0833
+facebook/bart-large-mnli,zero-shot,focused_attention,166,0.0833
+facebook/bart-large-mnli,zero-shot,mixed_attention,136,
+facebook/bart-large-mnli,zero-shot,occluded_attention,40,
+facebook/bart-large-mnli,zero-shot,reduced_visual_availability,198,

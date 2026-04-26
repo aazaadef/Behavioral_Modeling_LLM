@@ -1,0 +1,47 @@
+{
+  "n": 69,
+  "raw_agreement": 57,
+  "raw_agreement_pct": 82.61,
+  "cohens_kappa_3class": 0.6129,
+  "label_counts": {
+    "rater1": {
+      "focused": 47,
+      "mix": 20,
+      "others": 2
+    },
+    "rater2": {
+      "focused": 48,
+      "mix": 18,
+      "others": 3
+    },
+    "consensus": {
+      "focused": 48,
+      "mix": 18,
+      "others": 3
+    }
+  },
+  "confusion_rater1_vs_rater2": {
+    "labels": [
+      "focused",
+      "mix",
+      "others"
+    ],
+    "matrix": [
+      [
+        43,
+        4,
+        0
+      ],
+      [
+        5,
+        13,
+        2
+      ],
+      [
+        0,
+        1,
+        1
+      ]
+    ]
+  }
+}

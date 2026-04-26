@@ -1,0 +1,892 @@
+{
+  "bart": {
+    "accuracy": 0.1304,
+    "macro_f1": 0.075,
+    "cohen_kappa": -0.0529,
+    "num_samples": 69,
+    "label_distribution_true": {
+      "focused_attention": 46,
+      "mixed_attention": 20,
+      "exploratory_attention": 2,
+      "occluded_attention": 1
+    },
+    "label_distribution_pred": {
+      "occluded_attention": 29,
+      "mixed_attention": 40
+    },
+    "confusion_matrix_labels": [
+      "exploratory_attention",
+      "focused_attention",
+      "mixed_attention",
+      "occluded_attention"
+    ],
+    "confusion_matrix": [
+      [
+        0,
+        0,
+        0,
+        2
+      ],
+      [
+        0,
+        0,
+        30,
+        16
+      ],
+      [
+        0,
+        0,
+        9,
+        11
+      ],
+      [
+        0,
+        0,
+        1,
+        0
+      ]
+    ],
+    "classification_report": {
+      "exploratory_attention": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 2.0
+      },
+      "focused_attention": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 46.0
+      },
+      "mixed_attention": {
+        "precision": 0.225,
+        "recall": 0.45,
+        "f1-score": 0.3,
+        "support": 20.0
+      },
+      "occluded_attention": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 1.0
+      },
+      "accuracy": 0.13043478260869565,
+      "macro avg": {
+        "precision": 0.05625,
+        "recall": 0.1125,
+        "f1-score": 0.075,
+        "support": 69.0
+      },
+      "weighted avg": {
+        "precision": 0.06521739130434782,
+        "recall": 0.13043478260869565,
+        "f1-score": 0.08695652173913043,
+        "support": 69.0
+      }
+    }
+  },
+  "deberta": {
+    "accuracy": 0.6667,
+    "macro_f1": 0.2,
+    "cohen_kappa": 0.0,
+    "num_samples": 69,
+    "label_distribution_true": {
+      "focused_attention": 46,
+      "mixed_attention": 20,
+      "exploratory_attention": 2,
+      "occluded_attention": 1
+    },
+    "label_distribution_pred": {
+      "focused_attention": 69
+    },
+    "confusion_matrix_labels": [
+      "exploratory_attention",
+      "focused_attention",
+      "mixed_attention",
+      "occluded_attention"
+    ],
+    "confusion_matrix": [
+      [
+        0,
+        2,
+        0,
+        0
+      ],
+      [
+        0,
+        46,
+        0,
+        0
+      ],
+      [
+        0,
+        20,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        0
+      ]
+    ],
+    "classification_report": {
+      "exploratory_attention": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 2.0
+      },
+      "focused_attention": {
+        "precision": 0.6666666666666666,
+        "recall": 1.0,
+        "f1-score": 0.8,
+        "support": 46.0
+      },
+      "mixed_attention": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 20.0
+      },
+      "occluded_attention": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 1.0
+      },
+      "accuracy": 0.6666666666666666,
+      "macro avg": {
+        "precision": 0.16666666666666666,
+        "recall": 0.25,
+        "f1-score": 0.2,
+        "support": 69.0
+      },
+      "weighted avg": {
+        "precision": 0.4444444444444444,
+        "recall": 0.6666666666666666,
+        "f1-score": 0.5333333333333334,
+        "support": 69.0
+      }
+    }
+  },
+  "distilbert": {
+    "accuracy": 0.029,
+    "macro_f1": 0.0141,
+    "cohen_kappa": 0.0,
+    "num_samples": 69,
+    "label_distribution_true": {
+      "focused_attention": 46,
+      "mixed_attention": 20,
+      "exploratory_attention": 2,
+      "occluded_attention": 1
+    },
+    "label_distribution_pred": {
+      "exploratory_attention": 69
+    },
+    "confusion_matrix_labels": [
+      "exploratory_attention",
+      "focused_attention",
+      "mixed_attention",
+      "occluded_attention"
+    ],
+    "confusion_matrix": [
+      [
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        46,
+        0,
+        0,
+        0
+      ],
+      [
+        20,
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        0,
+        0
+      ]
+    ],
+    "classification_report": {
+      "exploratory_attention": {
+        "precision": 0.028985507246376812,
+        "recall": 1.0,
+        "f1-score": 0.056338028169014086,
+        "support": 2.0
+      },
+      "focused_attention": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 46.0
+      },
+      "mixed_attention": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 20.0
+      },
+      "occluded_attention": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 1.0
+      },
+      "accuracy": 0.028985507246376812,
+      "macro avg": {
+        "precision": 0.007246376811594203,
+        "recall": 0.25,
+        "f1-score": 0.014084507042253521,
+        "support": 69.0
+      },
+      "weighted avg": {
+        "precision": 0.0008401596303297627,
+        "recall": 0.028985507246376812,
+        "f1-score": 0.0016329863237395388,
+        "support": 69.0
+      }
+    }
+  },
+  "llm_models_Qwen--Qwen2_5-72B-Instruct": {
+    "accuracy": 0.7971,
+    "macro_f1": 0.3156,
+    "cohen_kappa": 0.5591,
+    "num_samples": 69,
+    "label_distribution_true": {
+      "focused_attention": 46,
+      "mixed_attention": 20,
+      "exploratory_attention": 2,
+      "occluded_attention": 1
+    },
+    "label_distribution_pred": {
+      "focused_attention": 48,
+      "mixed_attention": 18,
+      "reduced_visual_availability": 2,
+      "exploratory_attention": 1
+    },
+    "confusion_matrix_labels": [
+      "exploratory_attention",
+      "focused_attention",
+      "mixed_attention",
+      "occluded_attention",
+      "reduced_visual_availability"
+    ],
+    "confusion_matrix": [
+      [
+        0,
+        1,
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        42,
+        4,
+        0,
+        0
+      ],
+      [
+        1,
+        4,
+        13,
+        0,
+        2
+      ],
+      [
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "classification_report": {
+      "exploratory_attention": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 2.0
+      },
+      "focused_attention": {
+        "precision": 0.875,
+        "recall": 0.9130434782608695,
+        "f1-score": 0.8936170212765957,
+        "support": 46.0
+      },
+      "mixed_attention": {
+        "precision": 0.7222222222222222,
+        "recall": 0.65,
+        "f1-score": 0.6842105263157895,
+        "support": 20.0
+      },
+      "occluded_attention": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 1.0
+      },
+      "reduced_visual_availability": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0
+      },
+      "accuracy": 0.7971014492753623,
+      "macro avg": {
+        "precision": 0.3194444444444445,
+        "recall": 0.3126086956521739,
+        "f1-score": 0.31556550951847706,
+        "support": 69.0
+      },
+      "weighted avg": {
+        "precision": 0.7926731078904992,
+        "recall": 0.7971014492753623,
+        "f1-score": 0.7940665725367999,
+        "support": 69.0
+      }
+    }
+  },
+  "llm_models_Qwen--Qwen2_5-7B-Instruct": {
+    "accuracy": 0.7536,
+    "macro_f1": 0.3264,
+    "cohen_kappa": 0.327,
+    "num_samples": 69,
+    "label_distribution_true": {
+      "focused_attention": 46,
+      "mixed_attention": 20,
+      "exploratory_attention": 2,
+      "occluded_attention": 1
+    },
+    "label_distribution_pred": {
+      "focused_attention": 63,
+      "mixed_attention": 6
+    },
+    "confusion_matrix_labels": [
+      "exploratory_attention",
+      "focused_attention",
+      "mixed_attention",
+      "occluded_attention"
+    ],
+    "confusion_matrix": [
+      [
+        0,
+        2,
+        0,
+        0
+      ],
+      [
+        0,
+        46,
+        0,
+        0
+      ],
+      [
+        0,
+        14,
+        6,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        0
+      ]
+    ],
+    "classification_report": {
+      "exploratory_attention": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 2.0
+      },
+      "focused_attention": {
+        "precision": 0.7301587301587301,
+        "recall": 1.0,
+        "f1-score": 0.8440366972477065,
+        "support": 46.0
+      },
+      "mixed_attention": {
+        "precision": 1.0,
+        "recall": 0.3,
+        "f1-score": 0.46153846153846156,
+        "support": 20.0
+      },
+      "occluded_attention": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 1.0
+      },
+      "accuracy": 0.7536231884057971,
+      "macro avg": {
+        "precision": 0.43253968253968256,
+        "recall": 0.325,
+        "f1-score": 0.326393789696542,
+        "support": 69.0
+      },
+      "weighted avg": {
+        "precision": 0.7766275592362549,
+        "recall": 0.7536231884057971,
+        "f1-score": 0.6964703957125178,
+        "support": 69.0
+      }
+    }
+  },
+  "llm_models_qwen-7b": {
+    "accuracy": 0.7971,
+    "macro_f1": 0.4026,
+    "cohen_kappa": 0.5905,
+    "num_samples": 69,
+    "label_distribution_true": {
+      "focused_attention": 46,
+      "mixed_attention": 20,
+      "exploratory_attention": 2,
+      "occluded_attention": 1
+    },
+    "label_distribution_pred": {
+      "focused_attention": 40,
+      "mixed_attention": 28,
+      "exploratory_attention": 1
+    },
+    "confusion_matrix_labels": [
+      "exploratory_attention",
+      "focused_attention",
+      "mixed_attention",
+      "occluded_attention"
+    ],
+    "confusion_matrix": [
+      [
+        0,
+        1,
+        1,
+        0
+      ],
+      [
+        0,
+        37,
+        9,
+        0
+      ],
+      [
+        1,
+        1,
+        18,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        0
+      ]
+    ],
+    "classification_report": {
+      "exploratory_attention": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 2.0
+      },
+      "focused_attention": {
+        "precision": 0.925,
+        "recall": 0.8043478260869565,
+        "f1-score": 0.8604651162790697,
+        "support": 46.0
+      },
+      "mixed_attention": {
+        "precision": 0.6428571428571429,
+        "recall": 0.9,
+        "f1-score": 0.75,
+        "support": 20.0
+      },
+      "occluded_attention": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 1.0
+      },
+      "accuracy": 0.7971014492753623,
+      "macro avg": {
+        "precision": 0.39196428571428577,
+        "recall": 0.4260869565217391,
+        "f1-score": 0.40261627906976744,
+        "support": 69.0
+      },
+      "weighted avg": {
+        "precision": 0.8030020703933748,
+        "recall": 0.7971014492753623,
+        "f1-score": 0.7910347152005393,
+        "support": 69.0
+      }
+    }
+  },
+  "rule_based": {
+    "accuracy": 0.8986,
+    "macro_f1": 0.5436,
+    "cohen_kappa": 0.7835,
+    "num_samples": 69,
+    "label_distribution_true": {
+      "focused_attention": 46,
+      "mixed_attention": 20,
+      "exploratory_attention": 2,
+      "occluded_attention": 1
+    },
+    "label_distribution_pred": {
+      "focused_attention": 47,
+      "mixed_attention": 18,
+      "exploratory_attention": 4
+    },
+    "confusion_matrix_labels": [
+      "exploratory_attention",
+      "focused_attention",
+      "mixed_attention",
+      "occluded_attention"
+    ],
+    "confusion_matrix": [
+      [
+        1,
+        1,
+        0,
+        0
+      ],
+      [
+        1,
+        44,
+        1,
+        0
+      ],
+      [
+        2,
+        1,
+        17,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        0
+      ]
+    ],
+    "classification_report": {
+      "exploratory_attention": {
+        "precision": 0.25,
+        "recall": 0.5,
+        "f1-score": 0.3333333333333333,
+        "support": 2.0
+      },
+      "focused_attention": {
+        "precision": 0.9361702127659575,
+        "recall": 0.9565217391304348,
+        "f1-score": 0.946236559139785,
+        "support": 46.0
+      },
+      "mixed_attention": {
+        "precision": 0.9444444444444444,
+        "recall": 0.85,
+        "f1-score": 0.8947368421052632,
+        "support": 20.0
+      },
+      "occluded_attention": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 1.0
+      },
+      "accuracy": 0.8985507246376812,
+      "macro avg": {
+        "precision": 0.5326536643026005,
+        "recall": 0.5766304347826087,
+        "f1-score": 0.5435766836445953,
+        "support": 69.0
+      },
+      "weighted avg": {
+        "precision": 0.9051118648713468,
+        "recall": 0.8985507246376812,
+        "f1-score": 0.8998302207130731,
+        "support": 69.0
+      }
+    }
+  },
+  "supervised_LinearSVM": {
+    "accuracy": 0.913,
+    "macro_f1": 0.4627,
+    "cohen_kappa": 0.8082,
+    "num_samples": 69,
+    "label_distribution_true": {
+      "focused_attention": 46,
+      "mixed_attention": 20,
+      "exploratory_attention": 2,
+      "occluded_attention": 1
+    },
+    "label_distribution_pred": {
+      "focused_attention": 47,
+      "mixed_attention": 22
+    },
+    "confusion_matrix_labels": [
+      "exploratory_attention",
+      "focused_attention",
+      "mixed_attention",
+      "occluded_attention"
+    ],
+    "confusion_matrix": [
+      [
+        0,
+        1,
+        1,
+        0
+      ],
+      [
+        0,
+        44,
+        2,
+        0
+      ],
+      [
+        0,
+        1,
+        19,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        0
+      ]
+    ],
+    "classification_report": {
+      "exploratory_attention": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 2.0
+      },
+      "focused_attention": {
+        "precision": 0.9361702127659575,
+        "recall": 0.9565217391304348,
+        "f1-score": 0.946236559139785,
+        "support": 46.0
+      },
+      "mixed_attention": {
+        "precision": 0.8636363636363636,
+        "recall": 0.95,
+        "f1-score": 0.9047619047619048,
+        "support": 20.0
+      },
+      "occluded_attention": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 1.0
+      },
+      "accuracy": 0.9130434782608695,
+      "macro avg": {
+        "precision": 0.4499516441005803,
+        "recall": 0.4766304347826087,
+        "f1-score": 0.4627496159754224,
+        "support": 69.0
+      },
+      "weighted avg": {
+        "precision": 0.8744428559414683,
+        "recall": 0.9130434782608695,
+        "f1-score": 0.8930742002270755,
+        "support": 69.0
+      }
+    }
+  },
+  "supervised_LogisticRegression": {
+    "accuracy": 0.913,
+    "macro_f1": 0.4627,
+    "cohen_kappa": 0.8082,
+    "num_samples": 69,
+    "label_distribution_true": {
+      "focused_attention": 46,
+      "mixed_attention": 20,
+      "exploratory_attention": 2,
+      "occluded_attention": 1
+    },
+    "label_distribution_pred": {
+      "focused_attention": 47,
+      "mixed_attention": 22
+    },
+    "confusion_matrix_labels": [
+      "exploratory_attention",
+      "focused_attention",
+      "mixed_attention",
+      "occluded_attention"
+    ],
+    "confusion_matrix": [
+      [
+        0,
+        1,
+        1,
+        0
+      ],
+      [
+        0,
+        44,
+        2,
+        0
+      ],
+      [
+        0,
+        1,
+        19,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        0
+      ]
+    ],
+    "classification_report": {
+      "exploratory_attention": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 2.0
+      },
+      "focused_attention": {
+        "precision": 0.9361702127659575,
+        "recall": 0.9565217391304348,
+        "f1-score": 0.946236559139785,
+        "support": 46.0
+      },
+      "mixed_attention": {
+        "precision": 0.8636363636363636,
+        "recall": 0.95,
+        "f1-score": 0.9047619047619048,
+        "support": 20.0
+      },
+      "occluded_attention": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 1.0
+      },
+      "accuracy": 0.9130434782608695,
+      "macro avg": {
+        "precision": 0.4499516441005803,
+        "recall": 0.4766304347826087,
+        "f1-score": 0.4627496159754224,
+        "support": 69.0
+      },
+      "weighted avg": {
+        "precision": 0.8744428559414683,
+        "recall": 0.9130434782608695,
+        "f1-score": 0.8930742002270755,
+        "support": 69.0
+      }
+    }
+  },
+  "supervised_RandomForest": {
+    "accuracy": 0.8841,
+    "macro_f1": 0.4467,
+    "cohen_kappa": 0.7503,
+    "num_samples": 69,
+    "label_distribution_true": {
+      "focused_attention": 46,
+      "mixed_attention": 20,
+      "exploratory_attention": 2,
+      "occluded_attention": 1
+    },
+    "label_distribution_pred": {
+      "focused_attention": 45,
+      "mixed_attention": 24
+    },
+    "confusion_matrix_labels": [
+      "exploratory_attention",
+      "focused_attention",
+      "mixed_attention",
+      "occluded_attention"
+    ],
+    "confusion_matrix": [
+      [
+        0,
+        1,
+        1,
+        0
+      ],
+      [
+        0,
+        42,
+        4,
+        0
+      ],
+      [
+        0,
+        1,
+        19,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        0
+      ]
+    ],
+    "classification_report": {
+      "exploratory_attention": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 2.0
+      },
+      "focused_attention": {
+        "precision": 0.9333333333333333,
+        "recall": 0.9130434782608695,
+        "f1-score": 0.9230769230769231,
+        "support": 46.0
+      },
+      "mixed_attention": {
+        "precision": 0.7916666666666666,
+        "recall": 0.95,
+        "f1-score": 0.8636363636363636,
+        "support": 20.0
+      },
+      "occluded_attention": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 1.0
+      },
+      "accuracy": 0.8840579710144928,
+      "macro avg": {
+        "precision": 0.43125,
+        "recall": 0.46576086956521734,
+        "f1-score": 0.44667832167832167,
+        "support": 69.0
+      },
+      "weighted avg": {
+        "precision": 0.8516908212560387,
+        "recall": 0.8840579710144928,
+        "f1-score": 0.8657139961487789,
+        "support": 69.0
+      }
+    }
+  }
+}

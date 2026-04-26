@@ -1,0 +1,14 @@
+{
+  "reused_model_specs": [
+    "rule-based",
+    "zero-shot:typeform/distilbert-base-uncased-mnli",
+    "zero-shot:facebook/bart-large-mnli",
+    "zero-shot:MoritzLaurer/deberta-v3-large-zeroshot-v2.0"
+  ],
+  "new_model_specs": [
+    "hf-llm:./models/qwen-7b"
+  ],
+  "num_sequences": 69,
+  "hf_run_dir": "/home/d3849/project/project.LLM/output_experiments_v2/hf_llm_local_runs_v5",
+  "notes": "Zero-shot baselines were reused exactly as-is; local hf-llm predictions were added from ./models/qwen-7b."
+}

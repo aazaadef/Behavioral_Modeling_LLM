@@ -1,0 +1,17 @@
+{
+  "models": [
+    {
+      "spec": "zero-shot:MoritzLaurer/deberta-v3-large-zeroshot-v2.0",
+      "num_sequences": 69,
+      "avg_confidence": 0.5889,
+      "interaction_type_counts": {
+        "focused_attention": 69
+      },
+      "mean_confidence_by_split": {
+        "test": 0.5889
+      }
+    }
+  ],
+  "pairwise_agreement": {},
+  "ranking_note": "Without high-level ground-truth labels, these comparisons reflect confidence and agreement, not accuracy."
+}

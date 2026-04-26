@@ -1,0 +1,317 @@
+[
+  {
+    "model_a": "bart",
+    "model_b": "deberta",
+    "agreement": 0.0,
+    "matches": 0,
+    "total": 69
+  },
+  {
+    "model_a": "bart",
+    "model_b": "distilbert",
+    "agreement": 0.0,
+    "matches": 0,
+    "total": 69
+  },
+  {
+    "model_a": "bart",
+    "model_b": "llm_models_Qwen--Qwen2_5-72B-Instruct",
+    "agreement": 0.087,
+    "matches": 6,
+    "total": 69
+  },
+  {
+    "model_a": "bart",
+    "model_b": "llm_models_Qwen--Qwen2_5-7B-Instruct",
+    "agreement": 0.0435,
+    "matches": 3,
+    "total": 69
+  },
+  {
+    "model_a": "bart",
+    "model_b": "llm_models_qwen-7b",
+    "agreement": 0.1449,
+    "matches": 10,
+    "total": 69
+  },
+  {
+    "model_a": "bart",
+    "model_b": "rule_based",
+    "agreement": 0.1159,
+    "matches": 8,
+    "total": 69
+  },
+  {
+    "model_a": "bart",
+    "model_b": "supervised_LinearSVM",
+    "agreement": 0.1449,
+    "matches": 10,
+    "total": 69
+  },
+  {
+    "model_a": "bart",
+    "model_b": "supervised_LogisticRegression",
+    "agreement": 0.1449,
+    "matches": 10,
+    "total": 69
+  },
+  {
+    "model_a": "bart",
+    "model_b": "supervised_RandomForest",
+    "agreement": 0.1449,
+    "matches": 10,
+    "total": 69
+  },
+  {
+    "model_a": "deberta",
+    "model_b": "distilbert",
+    "agreement": 0.0,
+    "matches": 0,
+    "total": 69
+  },
+  {
+    "model_a": "deberta",
+    "model_b": "llm_models_Qwen--Qwen2_5-72B-Instruct",
+    "agreement": 0.6957,
+    "matches": 48,
+    "total": 69
+  },
+  {
+    "model_a": "deberta",
+    "model_b": "llm_models_Qwen--Qwen2_5-7B-Instruct",
+    "agreement": 0.913,
+    "matches": 63,
+    "total": 69
+  },
+  {
+    "model_a": "deberta",
+    "model_b": "llm_models_qwen-7b",
+    "agreement": 0.5797,
+    "matches": 40,
+    "total": 69
+  },
+  {
+    "model_a": "deberta",
+    "model_b": "rule_based",
+    "agreement": 0.6812,
+    "matches": 47,
+    "total": 69
+  },
+  {
+    "model_a": "deberta",
+    "model_b": "supervised_LinearSVM",
+    "agreement": 0.6812,
+    "matches": 47,
+    "total": 69
+  },
+  {
+    "model_a": "deberta",
+    "model_b": "supervised_LogisticRegression",
+    "agreement": 0.6812,
+    "matches": 47,
+    "total": 69
+  },
+  {
+    "model_a": "deberta",
+    "model_b": "supervised_RandomForest",
+    "agreement": 0.6522,
+    "matches": 45,
+    "total": 69
+  },
+  {
+    "model_a": "distilbert",
+    "model_b": "llm_models_Qwen--Qwen2_5-72B-Instruct",
+    "agreement": 0.0145,
+    "matches": 1,
+    "total": 69
+  },
+  {
+    "model_a": "distilbert",
+    "model_b": "llm_models_Qwen--Qwen2_5-7B-Instruct",
+    "agreement": 0.0,
+    "matches": 0,
+    "total": 69
+  },
+  {
+    "model_a": "distilbert",
+    "model_b": "llm_models_qwen-7b",
+    "agreement": 0.0145,
+    "matches": 1,
+    "total": 69
+  },
+  {
+    "model_a": "distilbert",
+    "model_b": "rule_based",
+    "agreement": 0.058,
+    "matches": 4,
+    "total": 69
+  },
+  {
+    "model_a": "distilbert",
+    "model_b": "supervised_LinearSVM",
+    "agreement": 0.0,
+    "matches": 0,
+    "total": 69
+  },
+  {
+    "model_a": "distilbert",
+    "model_b": "supervised_LogisticRegression",
+    "agreement": 0.0,
+    "matches": 0,
+    "total": 69
+  },
+  {
+    "model_a": "distilbert",
+    "model_b": "supervised_RandomForest",
+    "agreement": 0.0,
+    "matches": 0,
+    "total": 69
+  },
+  {
+    "model_a": "llm_models_Qwen--Qwen2_5-72B-Instruct",
+    "model_b": "llm_models_Qwen--Qwen2_5-7B-Instruct",
+    "agreement": 0.7391,
+    "matches": 51,
+    "total": 69
+  },
+  {
+    "model_a": "llm_models_Qwen--Qwen2_5-72B-Instruct",
+    "model_b": "llm_models_qwen-7b",
+    "agreement": 0.7971,
+    "matches": 55,
+    "total": 69
+  },
+  {
+    "model_a": "llm_models_Qwen--Qwen2_5-72B-Instruct",
+    "model_b": "rule_based",
+    "agreement": 0.8551,
+    "matches": 59,
+    "total": 69
+  },
+  {
+    "model_a": "llm_models_Qwen--Qwen2_5-72B-Instruct",
+    "model_b": "supervised_LinearSVM",
+    "agreement": 0.8841,
+    "matches": 61,
+    "total": 69
+  },
+  {
+    "model_a": "llm_models_Qwen--Qwen2_5-72B-Instruct",
+    "model_b": "supervised_LogisticRegression",
+    "agreement": 0.8841,
+    "matches": 61,
+    "total": 69
+  },
+  {
+    "model_a": "llm_models_Qwen--Qwen2_5-72B-Instruct",
+    "model_b": "supervised_RandomForest",
+    "agreement": 0.8841,
+    "matches": 61,
+    "total": 69
+  },
+  {
+    "model_a": "llm_models_Qwen--Qwen2_5-7B-Instruct",
+    "model_b": "llm_models_qwen-7b",
+    "agreement": 0.6522,
+    "matches": 45,
+    "total": 69
+  },
+  {
+    "model_a": "llm_models_Qwen--Qwen2_5-7B-Instruct",
+    "model_b": "rule_based",
+    "agreement": 0.7536,
+    "matches": 52,
+    "total": 69
+  },
+  {
+    "model_a": "llm_models_Qwen--Qwen2_5-7B-Instruct",
+    "model_b": "supervised_LinearSVM",
+    "agreement": 0.7681,
+    "matches": 53,
+    "total": 69
+  },
+  {
+    "model_a": "llm_models_Qwen--Qwen2_5-7B-Instruct",
+    "model_b": "supervised_LogisticRegression",
+    "agreement": 0.7681,
+    "matches": 53,
+    "total": 69
+  },
+  {
+    "model_a": "llm_models_Qwen--Qwen2_5-7B-Instruct",
+    "model_b": "supervised_RandomForest",
+    "agreement": 0.7391,
+    "matches": 51,
+    "total": 69
+  },
+  {
+    "model_a": "llm_models_qwen-7b",
+    "model_b": "rule_based",
+    "agreement": 0.7971,
+    "matches": 55,
+    "total": 69
+  },
+  {
+    "model_a": "llm_models_qwen-7b",
+    "model_b": "supervised_LinearSVM",
+    "agreement": 0.8551,
+    "matches": 59,
+    "total": 69
+  },
+  {
+    "model_a": "llm_models_qwen-7b",
+    "model_b": "supervised_LogisticRegression",
+    "agreement": 0.8551,
+    "matches": 59,
+    "total": 69
+  },
+  {
+    "model_a": "llm_models_qwen-7b",
+    "model_b": "supervised_RandomForest",
+    "agreement": 0.8551,
+    "matches": 59,
+    "total": 69
+  },
+  {
+    "model_a": "rule_based",
+    "model_b": "supervised_LinearSVM",
+    "agreement": 0.913,
+    "matches": 63,
+    "total": 69
+  },
+  {
+    "model_a": "rule_based",
+    "model_b": "supervised_LogisticRegression",
+    "agreement": 0.913,
+    "matches": 63,
+    "total": 69
+  },
+  {
+    "model_a": "rule_based",
+    "model_b": "supervised_RandomForest",
+    "agreement": 0.913,
+    "matches": 63,
+    "total": 69
+  },
+  {
+    "model_a": "supervised_LinearSVM",
+    "model_b": "supervised_LogisticRegression",
+    "agreement": 1.0,
+    "matches": 69,
+    "total": 69
+  },
+  {
+    "model_a": "supervised_LinearSVM",
+    "model_b": "supervised_RandomForest",
+    "agreement": 0.971,
+    "matches": 67,
+    "total": 69
+  },
+  {
+    "model_a": "supervised_LogisticRegression",
+    "model_b": "supervised_RandomForest",
+    "agreement": 0.971,
+    "matches": 67,
+    "total": 69
+  }
+]

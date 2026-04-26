@@ -1,0 +1,20 @@
+[
+  {
+    "spec": "rule-based",
+    "backend_name": "rule-based",
+    "backend_family": "rule-based",
+    "model_name": "rule-based",
+    "run_dir": "output_experiments_v2/rule_based_verification/rule-based",
+    "prompt_version": "childplay-behavior-v2",
+    "num_samples": 3,
+    "label_distribution": {
+      "focused_attention": 3
+    },
+    "average_confidence": 0.84,
+    "overall_accuracy": 1.0,
+    "notable_failure_modes": [
+      "no_observed_errors_on_labeled_subset"
+    ],
+    "agreement_with_other_models": []
+  }
+]

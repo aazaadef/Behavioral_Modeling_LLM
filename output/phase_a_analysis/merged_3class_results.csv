@@ -1,0 +1,11 @@
+model,accuracy,balanced_accuracy,macro_f1,weighted_f1,kappa
+bart,0.1594,0.4069,0.1542,0.0797,-0.0093
+deberta,0.6957,0.3333,0.2735,0.5708,0.0
+distilbert,0.058,0.3333,0.0365,0.0064,0.0
+llm_models_Qwen--Qwen2_5-72B-Instruct,0.7826,0.5143,0.5081,0.7781,0.5161
+llm_models_Qwen--Qwen2_5-7B-Instruct,0.7101,0.3783,0.3632,0.6408,0.156
+llm_models_qwen-7b,0.7246,0.5245,0.4801,0.7225,0.4447
+rule_based,0.8551,0.6634,0.6588,0.856,0.6839
+supervised_LinearSVM,0.7101,0.5053,0.5286,0.7,0.3212
+supervised_LogisticRegression,0.6957,0.422,0.4147,0.675,0.2715
+supervised_RandomForest,0.7681,0.4947,0.48,0.7451,0.4499

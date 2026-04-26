@@ -1,0 +1,15 @@
+Setup issues encountered while building the extended experiment outputs.
+
+Model: zero-shot:MoritzLaurer/deberta-v3-large-zeroshot-v2.0
+Failure: (MaxRetryError('HTTPSConnectionPool(host=\'huggingface.co\', port=443): Max retries exceeded with url: /api/models/MoritzLaurer/deberta-v3-large-zeroshot-v2.0 (Caused by NameResolutionError("HTTPSConnection(host=\'huggingface.co\', port=443): Failed to resolve \'huggingface.co\' ([Errno -2] Name or service not known)"))'), '(Request ID: ea9dea8c-677f-4882-8e80-978a548522a5)')
+Why: Hugging Face zero-shot inference could not be initialized or executed in this environment.
+What to do:
+1. Activate the project venv.
+2. Install missing packages if needed.
+3. Pre-download or verify access to the model `MoritzLaurer/deberta-v3-large-zeroshot-v2.0`.
+Exact commands:
+source .venv/bin/activate
+pip install -r requirements.txt transformers scikit-learn torch
+python -c "from transformers import pipeline; pipeline('zero-shot-classification', model='MoritzLaurer/deberta-v3-large-zeroshot-v2.0')"
+Afterward: re-running the same experiment command should be enough if the model is accessible.
+

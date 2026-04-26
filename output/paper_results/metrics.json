@@ -1,0 +1,97 @@
+{
+  "total_rows": 69,
+  "labeled_rows": 24,
+  "unlabeled_rows": 45,
+  "coverage_by_model": {
+    "rule_based": {
+      "predictions": 69,
+      "missing_predictions": 0
+    },
+    "deberta": {
+      "predictions": 69,
+      "missing_predictions": 0
+    },
+    "distilbert": {
+      "predictions": 69,
+      "missing_predictions": 0
+    },
+    "bart": {
+      "predictions": 69,
+      "missing_predictions": 0
+    }
+  },
+  "pairwise_agreement": {
+    "bart__vs__deberta": {
+      "matches": 0,
+      "denominator": 69,
+      "agreement": 0.0
+    },
+    "bart__vs__distilbert": {
+      "matches": 0,
+      "denominator": 69,
+      "agreement": 0.0
+    },
+    "bart__vs__rule_based": {
+      "matches": 8,
+      "denominator": 69,
+      "agreement": 0.1159
+    },
+    "deberta__vs__distilbert": {
+      "matches": 0,
+      "denominator": 69,
+      "agreement": 0.0
+    },
+    "deberta__vs__rule_based": {
+      "matches": 47,
+      "denominator": 69,
+      "agreement": 0.6812
+    },
+    "distilbert__vs__rule_based": {
+      "matches": 4,
+      "denominator": 69,
+      "agreement": 0.058
+    }
+  },
+  "accuracy": {
+    "rule_based": 0.6667,
+    "deberta": 0.5,
+    "distilbert": 0.5,
+    "bart": 0.0
+  },
+  "per_class_accuracy": {
+    "rule_based": {
+      "focused_attention": 1.0,
+      "exploratory_attention": 0.3333,
+      "occluded_attention": null,
+      "no_attention": null
+    },
+    "deberta": {
+      "focused_attention": 1.0,
+      "exploratory_attention": 0.0,
+      "occluded_attention": null,
+      "no_attention": null
+    },
+    "distilbert": {
+      "focused_attention": 0.0,
+      "exploratory_attention": 1.0,
+      "occluded_attention": null,
+      "no_attention": null
+    },
+    "bart": {
+      "focused_attention": 0.0,
+      "exploratory_attention": 0.0,
+      "occluded_attention": null,
+      "no_attention": null
+    }
+  },
+  "gold_label_counts": {
+    "focused_attention": 12,
+    "exploratory_attention": 12
+  },
+  "agreement_stats": {
+    "total_samples": 69,
+    "disagreement_count": 22,
+    "agreement_count": 47,
+    "disagreement_percentage": 0.3188
+  }
+}

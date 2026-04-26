@@ -1,0 +1,1 @@
+(MaxRetryError('HTTPSConnectionPool(host=\'huggingface.co\', port=443): Max retries exceeded with url: /api/models/MoritzLaurer/deberta-v3-large-zeroshot-v2.0 (Caused by NameResolutionError("HTTPSConnection(host=\'huggingface.co\', port=443): Failed to resolve \'huggingface.co\' ([Errno -2] Name or service not known)"))'), '(Request ID: ea9dea8c-677f-4882-8e80-978a548522a5)')

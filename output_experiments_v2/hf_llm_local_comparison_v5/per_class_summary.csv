@@ -1,0 +1,10 @@
+model_name,backend_family,label,predicted_count,per_class_accuracy
+rule-based,rule-based,exploratory_attention,4,
+rule-based,rule-based,focused_attention,47,
+rule-based,rule-based,mixed_attention,18,
+typeform/distilbert-base-uncased-mnli,zero-shot,exploratory_attention,69,
+facebook/bart-large-mnli,zero-shot,mixed_attention,40,
+facebook/bart-large-mnli,zero-shot,occluded_attention,29,
+MoritzLaurer/deberta-v3-large-zeroshot-v2.0,zero-shot,focused_attention,69,
+./models/qwen-7b,hf-llm,inside_visible,66,
+./models/qwen-7b,hf-llm,outside,3,

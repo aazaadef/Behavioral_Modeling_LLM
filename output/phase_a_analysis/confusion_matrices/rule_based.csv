@@ -1,0 +1,6 @@
+true\predicted,exploratory_attention,focused_attention,mixed_attention,occluded_attention,reduced_visual_availability
+exploratory_attention,1,0,0,0,0
+focused_attention,2,44,2,0,0
+mixed_attention,1,2,14,0,0
+occluded_attention,0,1,2,0,0
+reduced_visual_availability,0,0,0,0,0

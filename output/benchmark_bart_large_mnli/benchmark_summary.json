@@ -1,0 +1,18 @@
+{
+  "models": [
+    {
+      "spec": "zero-shot:facebook/bart-large-mnli",
+      "num_sequences": 69,
+      "avg_confidence": 0.2843,
+      "interaction_type_counts": {
+        "occluded_attention": 29,
+        "mixed_attention": 40
+      },
+      "mean_confidence_by_split": {
+        "test": 0.2843
+      }
+    }
+  ],
+  "pairwise_agreement": {},
+  "ranking_note": "Without high-level ground-truth labels, these comparisons reflect confidence and agreement, not accuracy."
+}

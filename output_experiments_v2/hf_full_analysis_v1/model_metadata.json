@@ -1,0 +1,93 @@
+[
+  {
+    "spec": "rule-based",
+    "backend_name": "rule-based",
+    "backend_family": "rule-based",
+    "model_name": "rule-based",
+    "run_dir": "output_experiments_v2/hf_full_analysis_v1/rule-based",
+    "prompt_version": "childplay-behavior-v2",
+    "num_samples": 565,
+    "label_distribution": {
+      "focused_attention": 399,
+      "mixed_attention": 136,
+      "exploratory_attention": 16,
+      "occluded_attention": 14
+    },
+    "average_confidence": 0.7979,
+    "overall_accuracy": 0.6667,
+    "notable_failure_modes": [
+      "most_common_errors={'mixed_attention': 8}"
+    ],
+    "agreement_with_other_models": [
+      {
+        "other_model": "zero-shot:typeform/distilbert-base-uncased-mnli",
+        "agreement": 0.0283
+      },
+      {
+        "other_model": "zero-shot:facebook/bart-large-mnli",
+        "agreement": 0.2973
+      }
+    ]
+  },
+  {
+    "spec": "zero-shot:typeform/distilbert-base-uncased-mnli",
+    "backend_name": "zero-shot",
+    "backend_family": "zero-shot",
+    "model_name": "typeform/distilbert-base-uncased-mnli",
+    "run_dir": "output_experiments_v2/hf_full_analysis_v1/zero-shot__typeform_distilbert-base-uncased-mnli",
+    "prompt_version": "childplay-behavior-v2",
+    "num_samples": 565,
+    "label_distribution": {
+      "reduced_visual_availability": 63,
+      "exploratory_attention": 486,
+      "occluded_attention": 14,
+      "focused_attention": 2
+    },
+    "average_confidence": 0.3789,
+    "overall_accuracy": 0.5,
+    "notable_failure_modes": [
+      "most_common_errors={'exploratory_attention': 10, 'reduced_visual_availability': 2}"
+    ],
+    "agreement_with_other_models": [
+      {
+        "other_model": "rule-based",
+        "agreement": 0.0283
+      },
+      {
+        "other_model": "zero-shot:facebook/bart-large-mnli",
+        "agreement": 0.1381
+      }
+    ]
+  },
+  {
+    "spec": "zero-shot:facebook/bart-large-mnli",
+    "backend_name": "zero-shot",
+    "backend_family": "zero-shot",
+    "model_name": "facebook/bart-large-mnli",
+    "run_dir": "output_experiments_v2/hf_full_analysis_v1/zero-shot__facebook_bart-large-mnli",
+    "prompt_version": "childplay-behavior-v2",
+    "num_samples": 565,
+    "label_distribution": {
+      "reduced_visual_availability": 198,
+      "exploratory_attention": 25,
+      "mixed_attention": 136,
+      "occluded_attention": 40,
+      "focused_attention": 166
+    },
+    "average_confidence": 0.3809,
+    "overall_accuracy": 0.0833,
+    "notable_failure_modes": [
+      "most_common_errors={'reduced_visual_availability': 9, 'mixed_attention': 6, 'focused_attention': 4}"
+    ],
+    "agreement_with_other_models": [
+      {
+        "other_model": "rule-based",
+        "agreement": 0.2973
+      },
+      {
+        "other_model": "zero-shot:typeform/distilbert-base-uncased-mnli",
+        "agreement": 0.1381
+      }
+    ]
+  }
+]

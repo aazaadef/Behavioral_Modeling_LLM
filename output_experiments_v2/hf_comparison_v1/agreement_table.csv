@@ -1,0 +1,4 @@
+left_model,right_model,agreement,matches,denominator
+rule-based,zero-shot:typeform/distilbert-base-uncased-mnli,0.058,4,69
+rule-based,zero-shot:facebook/bart-large-mnli,0.2899,20,69
+zero-shot:typeform/distilbert-base-uncased-mnli,zero-shot:facebook/bart-large-mnli,0.1449,10,69

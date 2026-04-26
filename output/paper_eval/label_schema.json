@@ -1,0 +1,7 @@
+{
+  "focused_attention": "Predominantly stable, sustained visual attention on a target within the clip.",
+  "exploratory_attention": "Frequent shifts or scanning across multiple targets without one stable focus.",
+  "occluded_attention": "Attention cannot be characterized confidently because visible gaze is often unavailable or uncertain.",
+  "reduced_visual_availability": "Interpretation is limited by eyes closed, outside-frame gaze, or similar loss of visual evidence.",
+  "mixed_attention": "The clip contains both stable attention and notable shifts without one dominant pattern."
+}

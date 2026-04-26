@@ -1,0 +1,8 @@
+{
+  "rule-based__vs__zero-shot:typeform/distilbert-base-uncased-mnli": 0.058,
+  "rule-based__vs__zero-shot:facebook/bart-large-mnli": 0.1159,
+  "rule-based__vs__zero-shot:MoritzLaurer/deberta-v3-large-zeroshot-v2.0": 0.6812,
+  "zero-shot:typeform/distilbert-base-uncased-mnli__vs__zero-shot:facebook/bart-large-mnli": 0.0,
+  "zero-shot:typeform/distilbert-base-uncased-mnli__vs__zero-shot:MoritzLaurer/deberta-v3-large-zeroshot-v2.0": 0.0,
+  "zero-shot:facebook/bart-large-mnli__vs__zero-shot:MoritzLaurer/deberta-v3-large-zeroshot-v2.0": 0.0
+}

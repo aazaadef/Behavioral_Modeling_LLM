@@ -1,0 +1,90 @@
+[
+  {
+    "spec": "rule-based",
+    "backend_name": "rule-based",
+    "backend_family": "rule-based",
+    "model_name": "rule-based",
+    "run_dir": "output_experiments_v2/hf_comparison_v1/rule-based",
+    "prompt_version": "childplay-behavior-v2",
+    "num_samples": 69,
+    "label_distribution": {
+      "focused_attention": 47,
+      "mixed_attention": 18,
+      "exploratory_attention": 4
+    },
+    "average_confidence": 0.7959,
+    "overall_accuracy": 0.6667,
+    "notable_failure_modes": [
+      "most_common_errors={'mixed_attention': 8}"
+    ],
+    "agreement_with_other_models": [
+      {
+        "other_model": "zero-shot:typeform/distilbert-base-uncased-mnli",
+        "agreement": 0.058
+      },
+      {
+        "other_model": "zero-shot:facebook/bart-large-mnli",
+        "agreement": 0.2899
+      }
+    ]
+  },
+  {
+    "spec": "zero-shot:typeform/distilbert-base-uncased-mnli",
+    "backend_name": "zero-shot",
+    "backend_family": "zero-shot",
+    "model_name": "typeform/distilbert-base-uncased-mnli",
+    "run_dir": "output_experiments_v2/hf_comparison_v1/zero-shot__typeform_distilbert-base-uncased-mnli",
+    "prompt_version": "childplay-behavior-v2",
+    "num_samples": 69,
+    "label_distribution": {
+      "reduced_visual_availability": 3,
+      "exploratory_attention": 66
+    },
+    "average_confidence": 0.3739,
+    "overall_accuracy": 0.5,
+    "notable_failure_modes": [
+      "most_common_errors={'exploratory_attention': 10, 'reduced_visual_availability': 2}"
+    ],
+    "agreement_with_other_models": [
+      {
+        "other_model": "rule-based",
+        "agreement": 0.058
+      },
+      {
+        "other_model": "zero-shot:facebook/bart-large-mnli",
+        "agreement": 0.1449
+      }
+    ]
+  },
+  {
+    "spec": "zero-shot:facebook/bart-large-mnli",
+    "backend_name": "zero-shot",
+    "backend_family": "zero-shot",
+    "model_name": "facebook/bart-large-mnli",
+    "run_dir": "output_experiments_v2/hf_comparison_v1/zero-shot__facebook_bart-large-mnli",
+    "prompt_version": "childplay-behavior-v2",
+    "num_samples": 69,
+    "label_distribution": {
+      "reduced_visual_availability": 21,
+      "exploratory_attention": 7,
+      "mixed_attention": 16,
+      "occluded_attention": 4,
+      "focused_attention": 21
+    },
+    "average_confidence": 0.3462,
+    "overall_accuracy": 0.0833,
+    "notable_failure_modes": [
+      "most_common_errors={'reduced_visual_availability': 9, 'mixed_attention': 6, 'focused_attention': 4}"
+    ],
+    "agreement_with_other_models": [
+      {
+        "other_model": "rule-based",
+        "agreement": 0.2899
+      },
+      {
+        "other_model": "zero-shot:typeform/distilbert-base-uncased-mnli",
+        "agreement": 0.1449
+      }
+    ]
+  }
+]

@@ -144,8 +144,14 @@ def build_manual_eval_subset(
             "bart": bart[key].interaction_type,
         }
         unique_labels = sorted(set(labels.values()))
-        agreement_pattern = "full_agreement" if len(unique_labels) == 1 else (
-            "rule_deberta_agree" if labels["rule_based"] == labels["deberta"] else "disagreement"
+        agreement_pattern = (
+            "full_agreement"
+            if len(unique_labels) == 1
+            else (
+                "rule_deberta_agree"
+                if labels["rule_based"] == labels["deberta"]
+                else "disagreement"
+            )
         )
         clip_suffix = sequence.clip_id.rsplit("_", 1)[1]
         frame_range = clip_suffix.replace("-downsampled", "")
@@ -409,7 +415,11 @@ def _macro_f1(gold: list[str], pred: list[str], labels: list[str]) -> float:
         fn = sum(1 for g, p in zip(gold, pred) if g == label and p != label)
         precision = _safe_divide(tp, tp + fp)
         recall = _safe_divide(tp, tp + fn)
-        f1 = _safe_divide(2 * precision * recall, precision + recall) if (precision + recall) else 0.0
+        f1 = (
+            _safe_divide(2 * precision * recall, precision + recall)
+            if (precision + recall)
+            else 0.0
+        )
         f1_values.append(f1)
     return round(sum(f1_values) / len(labels), 4) if labels else 0.0
 
@@ -420,7 +430,10 @@ def _cohen_kappa(labels_a: list[str], labels_b: list[str], labels: list[str]) ->
     observed = _safe_divide(sum(1 for a, b in zip(labels_a, labels_b) if a == b), len(labels_a))
     a_counts = Counter(labels_a)
     b_counts = Counter(labels_b)
-    expected = sum(_safe_divide(a_counts[label], len(labels_a)) * _safe_divide(b_counts[label], len(labels_b)) for label in labels)
+    expected = sum(
+        _safe_divide(a_counts[label], len(labels_a)) * _safe_divide(b_counts[label], len(labels_b))
+        for label in labels
+    )
     return round(_safe_divide(observed - expected, 1 - expected) if expected != 1 else 0.0, 4)
 
 
@@ -439,7 +452,9 @@ def evaluate_against_manual_labels(
             "num_labeled_examples": 0,
             "message": "No final_label values found. Fill manual_eval_annotations.csv before running evaluation.",
         }
-        (output_dir / "paper_eval_summary.json").write_text(json.dumps(summary, ensure_ascii=True, indent=2), encoding="utf-8")
+        (output_dir / "paper_eval_summary.json").write_text(
+            json.dumps(summary, ensure_ascii=True, indent=2), encoding="utf-8"
+        )
         return summary
 
     gold = {(row["child_id"], row["clip_id"]): row["final_label"] for row in labeled_rows}
@@ -453,11 +468,12 @@ def evaluate_against_manual_labels(
             if key in predictions:
                 y_true.append(label)
                 y_pred.append(predictions[key].interaction_type)
-        accuracy = round(_safe_divide(sum(1 for g, p in zip(y_true, y_pred) if g == p), len(y_true)), 4) if y_true else 0.0
-        confusion = {
-            gold_label: {pred_label: 0 for pred_label in labels}
-            for gold_label in labels
-        }
+        accuracy = (
+            round(_safe_divide(sum(1 for g, p in zip(y_true, y_pred) if g == p), len(y_true)), 4)
+            if y_true
+            else 0.0
+        )
+        confusion = {gold_label: {pred_label: 0 for pred_label in labels} for gold_label in labels}
         for g, p in zip(y_true, y_pred):
             confusion[g][p] += 1
         model_results.append(
@@ -476,13 +492,17 @@ def evaluate_against_manual_labels(
         "num_labeled_examples": len(labeled_rows),
         "labels": labels,
         "inter_annotator_agreement": {
-            "cohen_kappa": _cohen_kappa(annotator_1, annotator_2, labels)
-            if len(annotator_1) == len(labeled_rows) and len(annotator_2) == len(labeled_rows)
-            else None,
+            "cohen_kappa": (
+                _cohen_kappa(annotator_1, annotator_2, labels)
+                if len(annotator_1) == len(labeled_rows) and len(annotator_2) == len(labeled_rows)
+                else None
+            ),
         },
         "models": model_results,
     }
-    (output_dir / "paper_eval_summary.json").write_text(json.dumps(summary, ensure_ascii=True, indent=2), encoding="utf-8")
+    (output_dir / "paper_eval_summary.json").write_text(
+        json.dumps(summary, ensure_ascii=True, indent=2), encoding="utf-8"
+    )
     return summary
 
 
@@ -552,9 +572,11 @@ def write_silver_label_subset(output_dir: Path, subset: list[SilverLabelExample]
     summary = {
         "num_examples": len(subset),
         "label_counts": dict(Counter(item.silver_label for item in subset)),
-        "mean_silver_confidence": round(
-            sum(item.silver_confidence for item in subset) / len(subset), 4
-        ) if subset else 0.0,
+        "mean_silver_confidence": (
+            round(sum(item.silver_confidence for item in subset) / len(subset), 4)
+            if subset
+            else 0.0
+        ),
     }
     summary_path.write_text(json.dumps(summary, ensure_ascii=True, indent=2), encoding="utf-8")
 
@@ -577,7 +599,11 @@ def evaluate_against_silver_labels(
             if key in predictions:
                 y_true.append(label)
                 y_pred.append(predictions[key].interaction_type)
-        accuracy = round(_safe_divide(sum(1 for g, p in zip(y_true, y_pred) if g == p), len(y_true)), 4) if y_true else 0.0
+        accuracy = (
+            round(_safe_divide(sum(1 for g, p in zip(y_true, y_pred) if g == p), len(y_true)), 4)
+            if y_true
+            else 0.0
+        )
         model_results.append(
             {
                 "spec": spec,
@@ -593,7 +619,9 @@ def evaluate_against_silver_labels(
         "models": model_results,
         "note": "Silver labels are consensus labels from rule-based and DeBERTa on high-confidence agreed examples; they are not human ground truth.",
     }
-    (output_dir / "silver_eval_summary.json").write_text(json.dumps(summary, ensure_ascii=True, indent=2), encoding="utf-8")
+    (output_dir / "silver_eval_summary.json").write_text(
+        json.dumps(summary, ensure_ascii=True, indent=2), encoding="utf-8"
+    )
     write_comparison_reports(
         output_dir,
         {
@@ -610,10 +638,15 @@ def evaluate_against_silver_labels(
             ],
             "failed_models": [],
             "ranking_by_avg_confidence": [
-                row["spec"] for row in sorted(model_results, key=lambda item: item["accuracy"], reverse=True)
+                row["spec"]
+                for row in sorted(model_results, key=lambda item: item["accuracy"], reverse=True)
             ],
             "recommendation": {
-                "best_current_model": max(model_results, key=lambda item: item["accuracy"])["spec"] if model_results else None,
+                "best_current_model": (
+                    max(model_results, key=lambda item: item["accuracy"])["spec"]
+                    if model_results
+                    else None
+                ),
                 "best_zero_shot_baseline": "zero-shot:MoritzLaurer/deberta-v3-large-zeroshot-v2.0",
                 "note": summary["note"],
             },

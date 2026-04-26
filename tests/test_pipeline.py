@@ -5,6 +5,11 @@ generation, benchmark orchestration, ensemble building, manual-eval
 artifact creation, and silver-label evaluation workflows.  All tests
 use the real ChildPlay-gaze dataset (test / val / train splits) with
 small sequence caps so they finish quickly.
+
+These tests require the ChildPlay-gaze dataset on disk under
+``data set/ChildPlay-gaze/`` and are therefore marked ``slow`` so the
+GitHub Actions CI run skips them. Run them locally with
+``pytest -m slow``.
 """
 
 from __future__ import annotations
@@ -14,6 +19,8 @@ import sys
 import tempfile
 import unittest
 from pathlib import Path
+
+import pytest
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -45,6 +52,9 @@ from project_llm.pipeline import run_pipeline, save_artifacts
 
 
 DATASET_ROOT = ROOT / "data set" / "ChildPlay-gaze" / "ChildPlay-gaze"
+
+
+pytestmark = pytest.mark.slow
 
 
 class DatasetTests(unittest.TestCase):
@@ -178,7 +188,9 @@ class DatasetTests(unittest.TestCase):
                 },
             ]
             left.write_text("".join(json.dumps(item) + "\n" for item in payloads), encoding="utf-8")
-            right.write_text("".join(json.dumps(item) + "\n" for item in alt_payloads), encoding="utf-8")
+            right.write_text(
+                "".join(json.dumps(item) + "\n" for item in alt_payloads), encoding="utf-8"
+            )
             summary = build_ensemble_from_saved_runs(
                 "rule-based",
                 left,
@@ -205,7 +217,9 @@ class DatasetTests(unittest.TestCase):
                         "clip_id": sequence.clip_id,
                         "backend_name": "rule-based",
                         "model_name": "rule-based",
-                        "interaction_type": "focused_attention" if index % 2 == 0 else "mixed_attention",
+                        "interaction_type": (
+                            "focused_attention" if index % 2 == 0 else "mixed_attention"
+                        ),
                         "interpretation": "x",
                         "confidence": 0.8,
                         "evidence": ["a"],
@@ -215,22 +229,53 @@ class DatasetTests(unittest.TestCase):
                 )
             rule.write_text("".join(json.dumps(item) + "\n" for item in rows), encoding="utf-8")
             deberta.write_text(
-                "".join(json.dumps({**item, "backend_name": "zero-shot", "model_name": "deberta"}) + "\n" for item in rows),
+                "".join(
+                    json.dumps({**item, "backend_name": "zero-shot", "model_name": "deberta"})
+                    + "\n"
+                    for item in rows
+                ),
                 encoding="utf-8",
             )
             distil.write_text(
-                "".join(json.dumps({**item, "backend_name": "zero-shot", "model_name": "distil", "interaction_type": "exploratory_attention"}) + "\n" for item in rows),
+                "".join(
+                    json.dumps(
+                        {
+                            **item,
+                            "backend_name": "zero-shot",
+                            "model_name": "distil",
+                            "interaction_type": "exploratory_attention",
+                        }
+                    )
+                    + "\n"
+                    for item in rows
+                ),
                 encoding="utf-8",
             )
             bart.write_text(
-                "".join(json.dumps({**item, "backend_name": "zero-shot", "model_name": "bart", "interaction_type": "occluded_attention"}) + "\n" for item in rows),
+                "".join(
+                    json.dumps(
+                        {
+                            **item,
+                            "backend_name": "zero-shot",
+                            "model_name": "bart",
+                            "interaction_type": "occluded_attention",
+                        }
+                    )
+                    + "\n"
+                    for item in rows
+                ),
                 encoding="utf-8",
             )
-            subset = build_manual_eval_subset(sequences, rule, deberta, distil, bart, max_examples=4)
+            subset = build_manual_eval_subset(
+                sequences, rule, deberta, distil, bart, max_examples=4
+            )
             self.assertTrue(subset)
             write_label_schema(temp / "paper_eval")
             write_manual_eval_subset(temp / "paper_eval", subset)
-            self.assertEqual(set(LABEL_SCHEMA), set(json.loads((temp / "paper_eval" / "label_schema.json").read_text())))
+            self.assertEqual(
+                set(LABEL_SCHEMA),
+                set(json.loads((temp / "paper_eval" / "label_schema.json").read_text())),
+            )
             summary = evaluate_against_manual_labels(
                 temp / "paper_eval" / "manual_eval_annotations.csv",
                 {"rule-based": rule},
@@ -266,7 +311,12 @@ class DatasetTests(unittest.TestCase):
                     )
                 path.write_text("".join(json.dumps(item) + "\n" for item in rows), encoding="utf-8")
 
-            write_rows(rule, "rule-based", "rule-based", lambda index: "focused_attention" if index % 2 == 0 else "mixed_attention")
+            write_rows(
+                rule,
+                "rule-based",
+                "rule-based",
+                lambda index: "focused_attention" if index % 2 == 0 else "mixed_attention",
+            )
             write_rows(deberta, "zero-shot", "deberta", lambda index: "focused_attention")
             write_rows(distil, "zero-shot", "distil", lambda index: "exploratory_attention")
             write_rows(bart, "zero-shot", "bart", lambda index: "occluded_attention")
@@ -312,12 +362,42 @@ class DatasetTests(unittest.TestCase):
                     "limitations": ["b"],
                     "interpretation": "x",
                 }
-                rows_rule.append({**common, "backend_name": "rule-based", "model_name": "rule-based", "interaction_type": "focused_attention", "confidence": 0.84})
-                rows_deberta.append({**common, "backend_name": "zero-shot", "model_name": "deberta", "interaction_type": "focused_attention", "confidence": 0.61})
-                rows_distil.append({**common, "backend_name": "zero-shot", "model_name": "distil", "interaction_type": "exploratory_attention", "confidence": 0.52})
-            rule.write_text("".join(json.dumps(item) + "\n" for item in rows_rule), encoding="utf-8")
-            deberta.write_text("".join(json.dumps(item) + "\n" for item in rows_deberta), encoding="utf-8")
-            distil.write_text("".join(json.dumps(item) + "\n" for item in rows_distil), encoding="utf-8")
+                rows_rule.append(
+                    {
+                        **common,
+                        "backend_name": "rule-based",
+                        "model_name": "rule-based",
+                        "interaction_type": "focused_attention",
+                        "confidence": 0.84,
+                    }
+                )
+                rows_deberta.append(
+                    {
+                        **common,
+                        "backend_name": "zero-shot",
+                        "model_name": "deberta",
+                        "interaction_type": "focused_attention",
+                        "confidence": 0.61,
+                    }
+                )
+                rows_distil.append(
+                    {
+                        **common,
+                        "backend_name": "zero-shot",
+                        "model_name": "distil",
+                        "interaction_type": "exploratory_attention",
+                        "confidence": 0.52,
+                    }
+                )
+            rule.write_text(
+                "".join(json.dumps(item) + "\n" for item in rows_rule), encoding="utf-8"
+            )
+            deberta.write_text(
+                "".join(json.dumps(item) + "\n" for item in rows_deberta), encoding="utf-8"
+            )
+            distil.write_text(
+                "".join(json.dumps(item) + "\n" for item in rows_distil), encoding="utf-8"
+            )
             subset = build_silver_label_subset(sequences, rule, deberta)
             self.assertEqual(len(subset), 4)
             write_silver_label_subset(temp / "silver_eval", subset)

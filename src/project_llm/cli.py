@@ -15,7 +15,10 @@ import argparse
 from pathlib import Path
 
 from project_llm.benchmark import run_benchmark
-from project_llm.manual_eval import prepare_manual_eval_workflow, validate_saved_manual_eval_consistency
+from project_llm.manual_eval import (
+    prepare_manual_eval_workflow,
+    validate_saved_manual_eval_consistency,
+)
 from project_llm.manual_labeling_package import build_manual_labeling_package
 from project_llm.pipeline import run_pipeline, save_artifacts
 from project_llm.pipeline_v2 import run_extended_experiments
@@ -34,7 +37,9 @@ def build_parser() -> argparse.ArgumentParser:
     )
     run_parser.add_argument("--output-dir", type=Path, default=Path("output/results"))
     run_parser.add_argument("--split", choices=["train", "val", "test"], default=None)
-    run_parser.add_argument("--backend", choices=["rule-based", "openai", "zero-shot", "hf-llm"], default="rule-based")
+    run_parser.add_argument(
+        "--backend", choices=["rule-based", "openai", "zero-shot", "hf-llm"], default="rule-based"
+    )
     run_parser.add_argument("--model", default="gpt-4.1-mini")
     run_parser.add_argument("--max-sequences", type=int, default=None)
 
@@ -61,7 +66,9 @@ def build_parser() -> argparse.ArgumentParser:
         default=Path("data set/ChildPlay-gaze/ChildPlay-gaze"),
     )
     paper_eval_parser.add_argument("--split", choices=["train", "val", "test"], default="test")
-    paper_eval_parser.add_argument("--run-output-dir", type=Path, default=Path("output/restart_run"))
+    paper_eval_parser.add_argument(
+        "--run-output-dir", type=Path, default=Path("output/restart_run")
+    )
     paper_eval_parser.add_argument("--paper-eval-dir", type=Path, default=Path("output/paper_eval"))
     paper_eval_parser.add_argument(
         "--max-examples",
@@ -78,17 +85,23 @@ def build_parser() -> argparse.ArgumentParser:
     paper_eval_parser.add_argument(
         "--deberta-path",
         type=Path,
-        default=Path("output/benchmark_deberta_zeroshot/zero-shot__MoritzLaurer_deberta-v3-large-zeroshot-v2.0/interpretations.jsonl"),
+        default=Path(
+            "output/benchmark_deberta_zeroshot/zero-shot__MoritzLaurer_deberta-v3-large-zeroshot-v2.0/interpretations.jsonl"
+        ),
     )
     paper_eval_parser.add_argument(
         "--distilbert-path",
         type=Path,
-        default=Path("output/benchmark_zero_shot/zero-shot__typeform_distilbert-base-uncased-mnli/interpretations.jsonl"),
+        default=Path(
+            "output/benchmark_zero_shot/zero-shot__typeform_distilbert-base-uncased-mnli/interpretations.jsonl"
+        ),
     )
     paper_eval_parser.add_argument(
         "--bart-path",
         type=Path,
-        default=Path("output/benchmark_bart_large_mnli/zero-shot__facebook_bart-large-mnli/interpretations.jsonl"),
+        default=Path(
+            "output/benchmark_bart_large_mnli/zero-shot__facebook_bart-large-mnli/interpretations.jsonl"
+        ),
     )
 
     validate_parser = subparsers.add_parser("validate-paper-eval")
@@ -126,7 +139,9 @@ def build_parser() -> argparse.ArgumentParser:
         type=Path,
         default=Path("data set/ChildPlay-gaze/ChildPlay-gaze"),
     )
-    extended_parser.add_argument("--output-dir", type=Path, default=Path("output_experiments_v2/run_default"))
+    extended_parser.add_argument(
+        "--output-dir", type=Path, default=Path("output_experiments_v2/run_default")
+    )
     extended_parser.add_argument(
         "--execution-mode",
         choices=["test-only", "full-analysis"],

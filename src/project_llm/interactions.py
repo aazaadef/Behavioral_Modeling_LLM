@@ -18,6 +18,7 @@ from project_llm.temporal import TemporalSegment
 @dataclass(frozen=True)
 class InteractionEvent:
     """A higher-level behavioral event inferred from one or more segments."""
+
     child_id: str
     clip_id: str
     split: str
@@ -82,7 +83,9 @@ def infer_interactions(segments: list[TemporalSegment]) -> list[InteractionEvent
                 start_time=first.start_time,
                 end_time=last.end_time,
                 duration_seconds=round(last.end_time - first.start_time, 4),
-                supporting_segments=[segment.segment_index for segment in segments if segment.segment_type == "shift"],
+                supporting_segments=[
+                    segment.segment_index for segment in segments if segment.segment_type == "shift"
+                ],
             )
         )
 

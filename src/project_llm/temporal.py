@@ -17,6 +17,7 @@ from project_llm.dataset import ChildClipSequence, FrameRecord
 @dataclass(frozen=True)
 class TemporalSegment:
     """One contiguous block of same-type gaze behavior within a clip."""
+
     child_id: str
     clip_id: str
     split: str

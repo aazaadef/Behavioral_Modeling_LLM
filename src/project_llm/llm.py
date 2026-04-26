@@ -60,13 +60,13 @@ class InterpretationResult:
 
 class LLMBackend(Protocol):
     """Protocol that all v1 backends must implement."""
+
     def interpret(
         self,
         features: BehavioralFeatures,
         segments: list[TemporalSegment],
         interactions: list[InteractionEvent],
-    ) -> InterpretationResult:
-        ...
+    ) -> InterpretationResult: ...
 
 
 class RuleBasedBackend:
@@ -119,7 +119,9 @@ class RuleBasedBackend:
             confidence = 0.84
         elif features.gaze_shift_ratio >= 0.2 or features.mean_gaze_motion >= 180:
             interaction_type = "exploratory_attention"
-            interpretation = "Rapid gaze changes indicate active scanning or exploration of multiple targets."
+            interpretation = (
+                "Rapid gaze changes indicate active scanning or exploration of multiple targets."
+            )
             confidence = 0.8
         else:
             interaction_type = "mixed_attention"
@@ -127,11 +129,15 @@ class RuleBasedBackend:
             confidence = 0.68
 
         if features.occlusion_ratio > 0.2:
-            limitations.append("Interpretation is partially limited by occluded or uncertain gaze frames.")
+            limitations.append(
+                "Interpretation is partially limited by occluded or uncertain gaze frames."
+            )
         if features.observed_frames < 60:
             limitations.append("Short clips provide less temporal evidence than longer sequences.")
         if not limitations:
-            limitations.append("Interpretation is limited to annotation-derived behavior and not video context.")
+            limitations.append(
+                "Interpretation is limited to annotation-derived behavior and not video context."
+            )
 
         return InterpretationResult(
             child_id=features.child_id,
@@ -276,7 +282,7 @@ class HuggingFaceLLMBackend:
     ) -> InterpretationResult:
         prompt = build_behavior_prompt(features, segments, interactions)
         messages = [{"role": "user", "content": prompt}]
-        
+
         response = self._generator(
             messages,
             max_new_tokens=400,
@@ -299,7 +305,7 @@ class HuggingFaceLLMBackend:
                 "interpretation": f"Error parsing LLM response: {text[:100]}...",
                 "confidence": 0.0,
                 "evidence": ["Failed to extract valid JSON format."],
-                "limitations": [f"Raw text generated: {text[:200]}"]
+                "limitations": [f"Raw text generated: {text[:200]}"],
             }
 
         return InterpretationResult(

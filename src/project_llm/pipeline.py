@@ -46,6 +46,7 @@ def build_backend(name: str, model: str) -> LLMBackend:
         return ZeroShotTransformerBackend(model=model)
     if name == "hf-llm":
         from project_llm.llm import HuggingFaceLLMBackend
+
         return HuggingFaceLLMBackend(model=model)
     raise ValueError(f"Unsupported backend: {name}")
 
@@ -68,7 +69,9 @@ def run_pipeline(
     interactions = [infer_interactions(segments) for segments in temporal_sequences]
     interpretations = [
         backend.interpret(feature, sequence_segments, sequence_interactions)
-        for feature, sequence_segments, sequence_interactions in zip(features, temporal_sequences, interactions)
+        for feature, sequence_segments, sequence_interactions in zip(
+            features, temporal_sequences, interactions
+        )
     ]
     return PipelineArtifacts(
         sequences=sequences,
@@ -111,5 +114,7 @@ def save_artifacts(artifacts: PipelineArtifacts, output_dir: Path) -> None:
         for result in artifacts.interpretations:
             handle.write(json.dumps(result.to_dict(), ensure_ascii=True) + "\n")
 
-    flat_interactions = [event for sequence_interactions in artifacts.interactions for event in sequence_interactions]
+    flat_interactions = [
+        event for sequence_interactions in artifacts.interactions for event in sequence_interactions
+    ]
     write_reports(output_dir, artifacts.features, flat_interactions, artifacts.interpretations)

@@ -18,6 +18,7 @@ from project_llm.dataset import ChildClipSequence
 @dataclass(frozen=True)
 class BehavioralFeatures:
     """Numeric behavioral metrics derived from one child's gaze sequence."""
+
     child_id: str
     clip_id: str
     split: str
@@ -59,10 +60,14 @@ def extract_behavioral_features(sequence: ChildClipSequence) -> BehavioralFeatur
         (frame.bbox_x + frame.bbox_width / 2.0, frame.bbox_y + frame.bbox_height / 2.0)
         for frame in frames
     ]
-    gaze_points = [(frame.gaze_x, frame.gaze_y) for frame in frames if frame.gaze_class == "inside_visible"]
+    gaze_points = [
+        (frame.gaze_x, frame.gaze_y) for frame in frames if frame.gaze_class == "inside_visible"
+    ]
 
     visibility_mask = [frame.gaze_class == "inside_visible" for frame in frames]
-    occlusion_mask = [frame.gaze_class in {"inside_occluded", "inside_uncertain"} for frame in frames]
+    occlusion_mask = [
+        frame.gaze_class in {"inside_occluded", "inside_uncertain"} for frame in frames
+    ]
 
     def average_motion(points: list[tuple[float, float]]) -> float:
         if len(points) < 2:

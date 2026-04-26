@@ -70,6 +70,7 @@ LABEL_NAMES: list[str] = [
 
 # ── Data structures ──────────────────────────────────────────────────
 
+
 @dataclass
 class ClassifierResult:
     """Aggregate result for one classifier across all CV folds."""
@@ -106,6 +107,7 @@ class ClassifierResult:
 
 
 # ── Feature extraction helpers ───────────────────────────────────────
+
 
 def _load_features_and_labels(
     features_path: Path,
@@ -156,6 +158,7 @@ def _load_features_and_labels(
 
 # ── Classifier definitions ───────────────────────────────────────────
 
+
 def _build_classifiers() -> list[tuple[str, Pipeline]]:
     """Return a list of (name, sklearn_pipeline) pairs for evaluation.
 
@@ -165,42 +168,58 @@ def _build_classifiers() -> list[tuple[str, Pipeline]]:
     return [
         (
             "LogisticRegression",
-            Pipeline([
-                ("scaler", StandardScaler()),
-                ("clf", LogisticRegression(
-                    max_iter=2000,
-                    solver="lbfgs",
-                    random_state=42,
-                )),
-            ]),
+            Pipeline(
+                [
+                    ("scaler", StandardScaler()),
+                    (
+                        "clf",
+                        LogisticRegression(
+                            max_iter=2000,
+                            solver="lbfgs",
+                            random_state=42,
+                        ),
+                    ),
+                ]
+            ),
         ),
         (
             "LinearSVM",
-            Pipeline([
-                ("scaler", StandardScaler()),
-                ("clf", LinearSVC(
-                    max_iter=5000,
-                    dual="auto",
-                    random_state=42,
-                )),
-            ]),
+            Pipeline(
+                [
+                    ("scaler", StandardScaler()),
+                    (
+                        "clf",
+                        LinearSVC(
+                            max_iter=5000,
+                            dual="auto",
+                            random_state=42,
+                        ),
+                    ),
+                ]
+            ),
         ),
         (
             "RandomForest",
-            Pipeline([
-                ("scaler", StandardScaler()),
-                ("clf", RandomForestClassifier(
-                    n_estimators=200,
-                    max_depth=None,
-                    random_state=42,
-                    class_weight="balanced",
-                )),
-            ]),
+            Pipeline(
+                [
+                    ("scaler", StandardScaler()),
+                    (
+                        "clf",
+                        RandomForestClassifier(
+                            n_estimators=200,
+                            max_depth=None,
+                            random_state=42,
+                            class_weight="balanced",
+                        ),
+                    ),
+                ]
+            ),
         ),
     ]
 
 
 # ── Cross-validation runner ──────────────────────────────────────────
+
 
 def run_supervised_cv(
     X: np.ndarray,
@@ -222,7 +241,9 @@ def run_supervised_cv(
     if effective_folds != n_folds:
         logger.info(
             "Reduced CV folds from %d to %d (smallest class has %d samples)",
-            n_folds, effective_folds, min_class_count,
+            n_folds,
+            effective_folds,
+            min_class_count,
         )
 
     skf = StratifiedKFold(n_splits=effective_folds, shuffle=True, random_state=42)
@@ -252,21 +273,23 @@ def run_supervised_cv(
             all_pred.extend(y_pred.tolist())
             all_cids.extend([child_ids[i] for i in test_idx])
 
-        results.append(ClassifierResult(
-            classifier_name=clf_name,
-            num_folds=effective_folds,
-            num_samples=len(y),
-            per_fold_accuracy=fold_acc,
-            per_fold_macro_f1=fold_f1,
-            mean_accuracy=float(np.mean(fold_acc)),
-            std_accuracy=float(np.std(fold_acc)),
-            mean_macro_f1=float(np.mean(fold_f1)),
-            std_macro_f1=float(np.std(fold_f1)),
-            mean_kappa=float(np.mean(fold_kappa)),
-            all_true=all_true,
-            all_pred=all_pred,
-            all_child_ids=all_cids,
-        ))
+        results.append(
+            ClassifierResult(
+                classifier_name=clf_name,
+                num_folds=effective_folds,
+                num_samples=len(y),
+                per_fold_accuracy=fold_acc,
+                per_fold_macro_f1=fold_f1,
+                mean_accuracy=float(np.mean(fold_acc)),
+                std_accuracy=float(np.std(fold_acc)),
+                mean_macro_f1=float(np.mean(fold_f1)),
+                std_macro_f1=float(np.std(fold_f1)),
+                mean_kappa=float(np.mean(fold_kappa)),
+                all_true=all_true,
+                all_pred=all_pred,
+                all_child_ids=all_cids,
+            )
+        )
         logger.info(
             "%s — acc=%.4f±%.4f  macro-F1=%.4f±%.4f  kappa=%.4f",
             clf_name,
@@ -281,6 +304,7 @@ def run_supervised_cv(
 
 
 # ── Output writers ───────────────────────────────────────────────────
+
 
 def save_supervised_results(
     output_dir: Path,
@@ -311,19 +335,28 @@ def save_supervised_results(
 
     # 2. Per-sample predictions CSV.
     with (output_dir / "supervised_predictions.csv").open("w", encoding="utf-8", newline="") as fh:
-        writer = csv.DictWriter(fh, fieldnames=[
-            "child_id", "true_label", "classifier", "predicted_label", "correct",
-        ])
+        writer = csv.DictWriter(
+            fh,
+            fieldnames=[
+                "child_id",
+                "true_label",
+                "classifier",
+                "predicted_label",
+                "correct",
+            ],
+        )
         writer.writeheader()
         for result in results:
             for cid, true, pred in zip(result.all_child_ids, result.all_true, result.all_pred):
-                writer.writerow({
-                    "child_id": cid,
-                    "true_label": true,
-                    "classifier": result.classifier_name,
-                    "predicted_label": pred,
-                    "correct": "yes" if true == pred else "no",
-                })
+                writer.writerow(
+                    {
+                        "child_id": cid,
+                        "true_label": true,
+                        "classifier": result.classifier_name,
+                        "predicted_label": pred,
+                        "correct": "yes" if true == pred else "no",
+                    }
+                )
 
     # 3. Confusion matrices.
     cm_data: dict[str, Any] = {}
@@ -342,7 +375,10 @@ def save_supervised_results(
     report_data: dict[str, Any] = {}
     for result in results:
         report_data[result.classifier_name] = classification_report(
-            result.all_true, result.all_pred, zero_division=0, output_dict=True,
+            result.all_true,
+            result.all_pred,
+            zero_division=0,
+            output_dict=True,
         )
     (output_dir / "supervised_classification_reports.json").write_text(
         json.dumps(report_data, indent=2, ensure_ascii=False), encoding="utf-8"
@@ -350,6 +386,7 @@ def save_supervised_results(
 
 
 # ── Public entry point ───────────────────────────────────────────────
+
 
 def run_supervised_baselines(
     features_path: Path,

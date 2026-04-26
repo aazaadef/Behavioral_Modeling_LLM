@@ -13,7 +13,9 @@ from typing import Any
 from project_llm.io_utils_v2 import write_csv, write_json, write_text
 
 
-def _confusion_matrix(labels: list[str], y_true: list[str], y_pred: list[str]) -> dict[str, dict[str, int]]:
+def _confusion_matrix(
+    labels: list[str], y_true: list[str], y_pred: list[str]
+) -> dict[str, dict[str, int]]:
     # JSON-friendly confusion matrix keyed by gold then predicted label.
     matrix = {gold: {pred: 0 for pred in labels} for gold in labels}
     for gold, pred in zip(y_true, y_pred):
@@ -40,11 +42,7 @@ def generate_paper_artifacts(
 ) -> None:
     # Emit the comparison tables and qualitative exports that are most useful in paper drafting.
     labels = sorted(
-        {
-            row["final_label"]
-            for row in merged_rows
-            if row.get("final_label")
-        }
+        {row["final_label"] for row in merged_rows if row.get("final_label")}
         | {
             row[key]
             for row in merged_rows
@@ -100,11 +98,25 @@ def generate_paper_artifacts(
     write_csv(
         output_dir / "model_comparison_table.csv",
         comparison_rows,
-        ["model_name", "backend_family", "num_samples", "overall_accuracy", "average_confidence", "notable_failure_modes"],
+        [
+            "model_name",
+            "backend_family",
+            "num_samples",
+            "overall_accuracy",
+            "average_confidence",
+            "notable_failure_modes",
+        ],
     )
     _write_markdown_table(
         output_dir / "model_comparison_table.md",
-        ["model_name", "backend_family", "num_samples", "overall_accuracy", "average_confidence", "notable_failure_modes"],
+        [
+            "model_name",
+            "backend_family",
+            "num_samples",
+            "overall_accuracy",
+            "average_confidence",
+            "notable_failure_modes",
+        ],
         [
             [
                 row["model_name"],
@@ -117,14 +129,22 @@ def generate_paper_artifacts(
             for row in comparison_rows
         ],
     )
-    write_csv(output_dir / "per_class_accuracy_table.csv", per_class_rows, ["model_name", "label", "per_class_accuracy"])
+    write_csv(
+        output_dir / "per_class_accuracy_table.csv",
+        per_class_rows,
+        ["model_name", "label", "per_class_accuracy"],
+    )
     write_csv(
         output_dir / "agreement_table.csv",
         agreement_rows,
         ["left_model", "right_model", "agreement", "matches", "denominator"],
     )
     write_json(output_dir / "confusion_matrices.json", confusion_payload)
-    write_csv(output_dir / "confusion_matrices.csv", confusion_csv_rows, ["model_name", "gold_label", "predicted_label", "count"])
+    write_csv(
+        output_dir / "confusion_matrices.csv",
+        confusion_csv_rows,
+        ["model_name", "gold_label", "predicted_label", "count"],
+    )
 
     # Keep prompt examples compact so they are easy to inspect first.
     prompt_examples_rows = []
@@ -162,7 +182,9 @@ def generate_paper_artifacts(
             if row.get("disagreement_flag") == "yes":
                 case_rows.append({**row, "case_bucket": "unlabeled_disagreement_case"})
 
-    for model_column in [key for key in merged_rows[0].keys() if key.endswith("__label")] if merged_rows else []:
+    for model_column in (
+        [key for key in merged_rows[0].keys() if key.endswith("__label")] if merged_rows else []
+    ):
         model_name = model_column[: -len("__label")]
         for row in merged_rows:
             if not row.get("final_label"):

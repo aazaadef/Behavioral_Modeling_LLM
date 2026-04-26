@@ -183,10 +183,21 @@ def run_extended_experiments(
     issues: list[dict[str, str]] = []
     successful_runs: list[ModelRunArtifactsV2] = []
 
-    write_jsonl(output_dir / "child_sequences.jsonl", [sequence.to_dict() for sequence in sequences])
-    write_jsonl(output_dir / "temporal_sequences.jsonl", [segment.to_dict() for segment in _flatten(temporal_sequences)])
-    write_jsonl(output_dir / "interaction_events.jsonl", [event.to_dict() for event in _flatten(interaction_events)])
-    write_jsonl(output_dir / "behavioral_features.jsonl", [feature.to_dict() for feature in behavioral_features])
+    write_jsonl(
+        output_dir / "child_sequences.jsonl", [sequence.to_dict() for sequence in sequences]
+    )
+    write_jsonl(
+        output_dir / "temporal_sequences.jsonl",
+        [segment.to_dict() for segment in _flatten(temporal_sequences)],
+    )
+    write_jsonl(
+        output_dir / "interaction_events.jsonl",
+        [event.to_dict() for event in _flatten(interaction_events)],
+    )
+    write_jsonl(
+        output_dir / "behavioral_features.jsonl",
+        [feature.to_dict() for feature in behavioral_features],
+    )
 
     for spec in model_specs:
         backend_name, model_name = parse_model_spec(spec)
@@ -197,15 +208,28 @@ def run_extended_experiments(
             backend = build_backend_v2(backend_name, model_name)
             backend_responses: list[BackendResponse] = [
                 backend.interpret_with_logging(feature, segments, events)
-                for feature, segments, events in zip(behavioral_features, temporal_sequences, interaction_events)
+                for feature, segments, events in zip(
+                    behavioral_features, temporal_sequences, interaction_events
+                )
             ]
             interpretations = [response.interpretation.to_dict() for response in backend_responses]
             prompt_logs = [response.prompt_log for response in backend_responses]
 
-            write_jsonl(run_dir / "child_sequences.jsonl", [sequence.to_dict() for sequence in sequences])
-            write_jsonl(run_dir / "temporal_sequences.jsonl", [segment.to_dict() for segment in _flatten(temporal_sequences)])
-            write_jsonl(run_dir / "interaction_events.jsonl", [event.to_dict() for event in _flatten(interaction_events)])
-            write_jsonl(run_dir / "behavioral_features.jsonl", [feature.to_dict() for feature in behavioral_features])
+            write_jsonl(
+                run_dir / "child_sequences.jsonl", [sequence.to_dict() for sequence in sequences]
+            )
+            write_jsonl(
+                run_dir / "temporal_sequences.jsonl",
+                [segment.to_dict() for segment in _flatten(temporal_sequences)],
+            )
+            write_jsonl(
+                run_dir / "interaction_events.jsonl",
+                [event.to_dict() for event in _flatten(interaction_events)],
+            )
+            write_jsonl(
+                run_dir / "behavioral_features.jsonl",
+                [feature.to_dict() for feature in behavioral_features],
+            )
             write_jsonl(run_dir / "interpretations.jsonl", interpretations)
             write_jsonl(run_dir / "logged_prompts.jsonl", [log.to_dict() for log in prompt_logs])
             write_csv(
@@ -273,19 +297,11 @@ def run_extended_experiments(
                 prompt_log_index[(run.spec, log.child_id, log.clip_id)] = log
 
         prediction_maps = {
-            run.spec: {
-                (row["child_id"], row["clip_id"]): row
-                for row in run.interpretations
-            }
+            run.spec: {(row["child_id"], row["clip_id"]): row for row in run.interpretations}
             for run in successful_runs
         }
 
-        keys = sorted(
-            {
-                (feature.child_id, feature.clip_id)
-                for feature in behavioral_features
-            }
-        )
+        keys = sorted({(feature.child_id, feature.clip_id) for feature in behavioral_features})
 
         for child_id, clip_id in keys:
             feature = base_features[child_id]
@@ -317,11 +333,19 @@ def run_extended_experiments(
 
             row["models_agree"] = "yes" if len(set(labels)) == 1 else "no"
             row["disagreement_flag"] = "yes" if row["models_agree"] == "no" else "no"
-            row["predictions_json"] = json.dumps(predictions_json, ensure_ascii=True, sort_keys=True)
-            row["confidences_json"] = json.dumps(confidences_json, ensure_ascii=True, sort_keys=True)
-            row["prompt_texts_json"] = json.dumps(prompt_texts_json, ensure_ascii=True, sort_keys=True)
+            row["predictions_json"] = json.dumps(
+                predictions_json, ensure_ascii=True, sort_keys=True
+            )
+            row["confidences_json"] = json.dumps(
+                confidences_json, ensure_ascii=True, sort_keys=True
+            )
+            row["prompt_texts_json"] = json.dumps(
+                prompt_texts_json, ensure_ascii=True, sort_keys=True
+            )
             if row["final_label"]:
-                num_correct = sum(1 for value in predictions_json.values() if value == row["final_label"])
+                num_correct = sum(
+                    1 for value in predictions_json.values() if value == row["final_label"]
+                )
                 row["num_correct_models"] = num_correct
                 row["all_models_correct"] = "yes" if num_correct == len(successful_runs) else "no"
             else:
@@ -354,7 +378,9 @@ def run_extended_experiments(
                 "prediction_column": prediction_column,
                 "num_samples": len(run.interpretations),
                 "label_distribution": dict(label_counts),
-                "average_confidence": round(sum(confidences) / len(confidences), 4) if confidences else 0.0,
+                "average_confidence": (
+                    round(sum(confidences) / len(confidences), 4) if confidences else 0.0
+                ),
                 "per_class_accuracy": {},
                 "overall_accuracy": None,
                 "notable_failure_modes": [],
@@ -365,19 +391,30 @@ def run_extended_experiments(
                 y_pred = [row[prediction_column] for row in labeled_rows]
                 if y_true:
                     summary["overall_accuracy"] = round(
-                        sum(1 for gold, pred in zip(y_true, y_pred) if gold == pred) / len(y_true), 4
+                        sum(1 for gold, pred in zip(y_true, y_pred) if gold == pred) / len(y_true),
+                        4,
                     )
                     for label in sorted(set(y_true)):
                         indices = [index for index, gold in enumerate(y_true) if gold == label]
                         summary["per_class_accuracy"][label] = round(
-                            sum(1 for index in indices if y_pred[index] == y_true[index]) / len(indices), 4
+                            sum(1 for index in indices if y_pred[index] == y_true[index])
+                            / len(indices),
+                            4,
                         )
-                    wrong_labels = [row[prediction_column] for row in labeled_rows if row[prediction_column] != row["final_label"]]
-                    summary["notable_failure_modes"] = [
-                        f"most_common_errors={dict(Counter(wrong_labels).most_common(3))}"
-                    ] if wrong_labels else ["no_observed_errors_on_labeled_subset"]
+                    wrong_labels = [
+                        row[prediction_column]
+                        for row in labeled_rows
+                        if row[prediction_column] != row["final_label"]
+                    ]
+                    summary["notable_failure_modes"] = (
+                        [f"most_common_errors={dict(Counter(wrong_labels).most_common(3))}"]
+                        if wrong_labels
+                        else ["no_observed_errors_on_labeled_subset"]
+                    )
             if not summary["notable_failure_modes"]:
-                summary["notable_failure_modes"] = ["manual labels unavailable for failure-mode estimation"]
+                summary["notable_failure_modes"] = [
+                    "manual labels unavailable for failure-mode estimation"
+                ]
 
             confidence_rows.append(
                 {
@@ -509,7 +546,15 @@ def run_extended_experiments(
         write_csv(
             output_dir / "disagreement_report.csv",
             disagreement_rows,
-            ["child_id", "clip_id", "split", "feature_summary", "final_label", "predictions_json", "confidences_json"],
+            [
+                "child_id",
+                "clip_id",
+                "split",
+                "feature_summary",
+                "final_label",
+                "predictions_json",
+                "confidences_json",
+            ],
         )
         write_csv(
             output_dir / "confidence_summary.csv",
@@ -587,7 +632,15 @@ def run_extended_experiments(
         write_csv(
             output_dir / "disagreement_report.csv",
             [],
-            ["child_id", "clip_id", "split", "feature_summary", "final_label", "predictions_json", "confidences_json"],
+            [
+                "child_id",
+                "clip_id",
+                "split",
+                "feature_summary",
+                "final_label",
+                "predictions_json",
+                "confidences_json",
+            ],
         )
         write_csv(
             output_dir / "confidence_summary.csv",

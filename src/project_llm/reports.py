@@ -31,9 +31,11 @@ def build_summary(
     mean_confidence_by_split = {
         split: round(sum(values) / len(values), 4) for split, values in split_confidences.items()
     }
-    mean_attention_stability = round(
-        sum(item.attention_stability_score for item in features) / len(features), 4
-    ) if features else 0.0
+    mean_attention_stability = (
+        round(sum(item.attention_stability_score for item in features) / len(features), 4)
+        if features
+        else 0.0
+    )
 
     return {
         "num_child_sequences": len(features),
@@ -43,8 +45,14 @@ def build_summary(
         "mean_confidence_by_split": mean_confidence_by_split,
         "mean_attention_stability_score": mean_attention_stability,
         "average_attention_event_duration": round(
-            sum(item.duration_seconds for item in interactions if item.interaction_type == "focused_attention")
-            / max(1, sum(1 for item in interactions if item.interaction_type == "focused_attention")),
+            sum(
+                item.duration_seconds
+                for item in interactions
+                if item.interaction_type == "focused_attention"
+            )
+            / max(
+                1, sum(1 for item in interactions if item.interaction_type == "focused_attention")
+            ),
             4,
         ),
     }
@@ -87,7 +95,9 @@ def write_reports(
         lines.append(f"- {split}: {value}")
 
     lines.extend(["", "## Aggregate Statistics"])
-    lines.append(f"- average_attention_event_duration: {summary['average_attention_event_duration']}")
+    lines.append(
+        f"- average_attention_event_duration: {summary['average_attention_event_duration']}"
+    )
 
     with markdown_path.open("w", encoding="utf-8") as handle:
         handle.write("\n".join(lines) + "\n")
@@ -124,7 +134,9 @@ def write_comparison_reports(output_dir: Path, summary: dict[str, Any]) -> None:
 
     lines.extend(["", "## Recommendation"])
     lines.append(f"- best_current_model: {summary['recommendation']['best_current_model']}")
-    lines.append(f"- best_zero_shot_baseline: {summary['recommendation']['best_zero_shot_baseline']}")
+    lines.append(
+        f"- best_zero_shot_baseline: {summary['recommendation']['best_zero_shot_baseline']}"
+    )
     lines.append(f"- note: {summary['recommendation']['note']}")
 
     if summary.get("pairwise_agreement"):

@@ -8,9 +8,7 @@ downloaded via yt-dlp when not available on disk.
 
 from __future__ import annotations
 
-import csv
 import logging
-import math
 import subprocess
 from dataclasses import dataclass
 from pathlib import Path
@@ -52,10 +50,7 @@ class ResolvedRow:
 
 
 def _normalize_columns(columns: list[str]) -> dict[str, str]:
-    return {
-        column.strip().lower().replace(" ", "_"): column
-        for column in columns
-    }
+    return {column.strip().lower().replace(" ", "_"): column for column in columns}
 
 
 def _find_column(columns: list[str], aliases: list[str], required: bool = True) -> str | None:
@@ -76,7 +71,9 @@ def _parse_person_id(value: str) -> tuple[str, int]:
     return f"person_{int(token)}", int(token)
 
 
-def _parse_person_from_row(row: dict[str, Any], child_id_col: str, person_col: str | None) -> tuple[str, int]:
+def _parse_person_from_row(
+    row: dict[str, Any], child_id_col: str, person_col: str | None
+) -> tuple[str, int]:
     if person_col and row.get(person_col):
         return _parse_person_id(str(row[person_col]))
 
@@ -129,7 +126,9 @@ def _choose_representative_frame(
         frame_number = int(float(row[frame_col]))
         if frame_number in available:
             return frame_number, f"Used explicit frame column `{frame_col}`."
-        raise ValueError(f"Explicit frame number {frame_number} is not present for {sequence.child_id}")
+        raise ValueError(
+            f"Explicit frame number {frame_number} is not present for {sequence.child_id}"
+        )
 
     if time_col and row.get(time_col) not in ("", None):
         timestamp_seconds = float(row[time_col])
@@ -142,7 +141,9 @@ def _choose_representative_frame(
     return sequence_frames[middle_index].frame, "Fell back to the middle annotated clip frame."
 
 
-def _map_clip_frame_to_source_frame(clip_id: str, clip_frame_number: int, clip_frame_count: int) -> int:
+def _map_clip_frame_to_source_frame(
+    clip_id: str, clip_frame_number: int, clip_frame_count: int
+) -> int:
     source_start_frame, source_end_frame = _parse_clip_range(clip_id)
     source_frame_count = source_end_frame - source_start_frame + 1
     if clip_frame_count <= 1:
@@ -200,11 +201,17 @@ def _download_video_with_ytdlp(video_url: str, video_path: Path, logger: logging
         raise RuntimeError(message)
     if not video_path.exists():
         matches = sorted(video_path.parent.glob(f"{video_path.stem}*"))
-        media_matches = [path for path in matches if path.is_file() and path.suffix.lower() in {".mp4", ".mkv", ".webm"}]
+        media_matches = [
+            path
+            for path in matches
+            if path.is_file() and path.suffix.lower() in {".mp4", ".mkv", ".webm"}
+        ]
         if len(media_matches) == 1:
             media_matches[0].rename(video_path)
         elif not video_path.exists():
-            raise RuntimeError(f"yt-dlp completed but expected video file was not found for {video_url}")
+            raise RuntimeError(
+                f"yt-dlp completed but expected video file was not found for {video_url}"
+            )
     return video_path
 
 
@@ -233,7 +240,9 @@ def _draw_target_box(
     box_start = (text_x, max(0, text_y - text_height - baseline - 6))
     box_end = (min(width - 1, text_x + text_width + 10), min(height - 1, text_y + baseline + 4))
     cv2.rectangle(image, box_start, box_end, color, thickness=-1)
-    cv2.putText(image, text, (text_x + 5, text_y), font, font_scale, (0, 0, 0), 2, lineType=cv2.LINE_AA)
+    cv2.putText(
+        image, text, (text_x + 5, text_y), font, font_scale, (0, 0, 0), 2, lineType=cv2.LINE_AA
+    )
     return image
 
 
@@ -244,7 +253,9 @@ def _open_video_capture(video_path: Path) -> cv2.VideoCapture:
     return capture
 
 
-def _extract_frame(video_path: Path, source_frame_number: int, timestamp_seconds: float) -> tuple[Any, int, int]:
+def _extract_frame(
+    video_path: Path, source_frame_number: int, timestamp_seconds: float
+) -> tuple[Any, int, int]:
     capture = _open_video_capture(video_path)
     zero_based_index = max(0, source_frame_number - 1)
     capture.set(cv2.CAP_PROP_POS_FRAMES, zero_based_index)
@@ -334,13 +345,23 @@ def _infer_schema(df: pd.DataFrame) -> dict[str, str | None]:
         "child_id": _find_column(columns, ["child_id", "sample_child_id"]),
         "clip_id": _find_column(columns, ["clip_id", "source_clip_id"]),
         "source_video_url": _find_column(columns, ["source_video_url", "video_url", "youtube_url"]),
-        "target_person": _find_column(columns, ["target_person_id", "person_id", "target_person"], required=False),
-        "frame_number": _find_column(columns, ["frame_number", "source_frame", "frame"], required=False),
-        "timestamp_seconds": _find_column(columns, ["timestamp_seconds", "source_timestamp_seconds", "time_seconds"], required=False),
+        "target_person": _find_column(
+            columns, ["target_person_id", "person_id", "target_person"], required=False
+        ),
+        "frame_number": _find_column(
+            columns, ["frame_number", "source_frame", "frame"], required=False
+        ),
+        "timestamp_seconds": _find_column(
+            columns,
+            ["timestamp_seconds", "source_timestamp_seconds", "time_seconds"],
+            required=False,
+        ),
     }
 
 
-def _index_sequences(sequences: list[ChildClipSequence]) -> dict[tuple[str, str], ChildClipSequence]:
+def _index_sequences(
+    sequences: list[ChildClipSequence],
+) -> dict[tuple[str, str], ChildClipSequence]:
     return {(sequence.child_id, sequence.clip_id): sequence for sequence in sequences}
 
 
@@ -355,7 +376,9 @@ def _resolve_row(
 ) -> ResolvedRow:
     child_id = str(row[schema["child_id"]]).strip()
     clip_id = str(row[schema["clip_id"]]).strip()
-    target_person_id, target_person_number = _parse_person_from_row(row, schema["child_id"], schema["target_person"])
+    target_person_id, target_person_number = _parse_person_from_row(
+        row, schema["child_id"], schema["target_person"]
+    )
     sequence_key = (child_id, clip_id)
     if sequence_key not in sequence_index:
         raise ValueError(f"Missing child sequence for {child_id}")
@@ -364,9 +387,13 @@ def _resolve_row(
     video_id = _parse_video_id_from_url(video_url)
     if video_id not in videos_meta:
         raise ValueError(f"Video metadata missing for {video_id}")
-    clip_frame_number, frame_note = _choose_representative_frame(row, sequence, schema["frame_number"], schema["timestamp_seconds"])
+    clip_frame_number, frame_note = _choose_representative_frame(
+        row, sequence, schema["frame_number"], schema["timestamp_seconds"]
+    )
     clip_frame_count = len(sequence.frames)
-    source_frame_number = _map_clip_frame_to_source_frame(clip_id, clip_frame_number, clip_frame_count)
+    source_frame_number = _map_clip_frame_to_source_frame(
+        clip_id, clip_frame_number, clip_frame_count
+    )
     fps = float(sequence.fps)
     timestamp_seconds = round((source_frame_number - 1) / fps, 3)
     timestamp_mmss = _format_mmss(timestamp_seconds)
@@ -443,7 +470,9 @@ def build_manual_labeling_package(
             )
             source_video_path = resolved.source_video_path
             if not source_video_path.exists():
-                source_video_path = _download_video_with_ytdlp(resolved.source_video_url, source_video_path, logger)
+                source_video_path = _download_video_with_ytdlp(
+                    resolved.source_video_url, source_video_path, logger
+                )
 
             frame, actual_width, actual_height = _extract_frame(
                 source_video_path,
@@ -562,7 +591,9 @@ def build_manual_labeling_package(
 
     index_df = pd.read_csv(index_path)
     if len(index_df) != len(rows):
-        raise RuntimeError(f"index.csv row count mismatch: expected {len(rows)}, found {len(index_df)}")
+        raise RuntimeError(
+            f"index.csv row count mismatch: expected {len(rows)}, found {len(index_df)}"
+        )
 
     success_df = index_df[index_df["status"] == "success"]
     for image_path in success_df["output_image_path"]:

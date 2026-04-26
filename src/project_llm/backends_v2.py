@@ -16,8 +16,17 @@ from typing import Any, Protocol
 from project_llm.features import BehavioralFeatures
 from project_llm.interactions import InteractionEvent
 from project_llm.io_utils_v2 import iso_timestamp
-from project_llm.llm import INTERACTION_TYPES, INTERPRETATION_MAP, InterpretationResult, RuleBasedBackend
-from project_llm.prompt_logging import PromptLogEntry, build_feature_summary, build_zero_shot_premise
+from project_llm.llm import (
+    INTERACTION_TYPES,
+    INTERPRETATION_MAP,
+    InterpretationResult,
+    RuleBasedBackend,
+)
+from project_llm.prompt_logging import (
+    PromptLogEntry,
+    build_feature_summary,
+    build_zero_shot_premise,
+)
 from project_llm.prompts import PROMPT_VERSION, build_behavior_prompt
 from project_llm.temporal import TemporalSegment
 
@@ -42,8 +51,7 @@ class ExperimentBackend(Protocol):
         features: BehavioralFeatures,
         segments: list[TemporalSegment],
         interactions: list[InteractionEvent],
-    ) -> BackendResponse:
-        ...
+    ) -> BackendResponse: ...
 
 
 def _build_prompt_log(
@@ -118,7 +126,9 @@ class HuggingFaceZeroShotBackendV2:
         try:
             from transformers import pipeline
         except ImportError as exc:
-            raise RuntimeError("transformers package is not installed in the active environment") from exc
+            raise RuntimeError(
+                "transformers package is not installed in the active environment"
+            ) from exc
 
         self.model_name = model
         self._classifier = pipeline("zero-shot-classification", model=model)
@@ -236,7 +246,9 @@ class DeepSeekBackendV2:
         try:
             from openai import OpenAI
         except ImportError as exc:
-            raise RuntimeError("openai package is required for the DeepSeek-compatible client") from exc
+            raise RuntimeError(
+                "openai package is required for the DeepSeek-compatible client"
+            ) from exc
 
         api_key = os.getenv("DEEPSEEK_API_KEY")
         if not api_key:
@@ -312,7 +324,9 @@ class HuggingFaceLLMBackendV2:
         try:
             from transformers import pipeline
         except ImportError as exc:
-            raise RuntimeError("transformers package is not installed in the active environment") from exc
+            raise RuntimeError(
+                "transformers package is not installed in the active environment"
+            ) from exc
 
         self.model_name = model
         self._generator = pipeline("text-generation", model=model, device_map="auto")
@@ -325,7 +339,7 @@ class HuggingFaceLLMBackendV2:
     ) -> BackendResponse:
         prompt = build_behavior_prompt(features, segments, interactions)
         messages = [{"role": "user", "content": prompt}]
-        
+
         response = self._generator(
             messages,
             max_new_tokens=400,
@@ -348,7 +362,7 @@ class HuggingFaceLLMBackendV2:
                 "interpretation": f"Error parsing LLM response: {text[:100]}...",
                 "confidence": 0.0,
                 "evidence": ["Failed to extract valid JSON format."],
-                "limitations": [f"Raw text generated: {text[:200]}"]
+                "limitations": [f"Raw text generated: {text[:200]}"],
             }
 
         interpretation = InterpretationResult(
@@ -375,4 +389,3 @@ class HuggingFaceLLMBackendV2:
                 interpretation=interpretation,
             ),
         )
-

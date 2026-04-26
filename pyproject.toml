@@ -1,0 +1,57 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "project_llm"
+version = "0.1.0"
+description = "ChildPlay LLM-Based Behavioral Analysis — hybrid framework for gaze-based attention classification."
+requires-python = ">=3.10"
+readme = "README.md"
+authors = [{ name = "aazaadef" }]
+dependencies = [
+    "openai>=1.30.0",
+    "pandas>=2.0.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+minversion = "7.4"
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-ra --strict-markers"
+markers = [
+    "slow: tests that require the ChildPlay-gaze dataset on disk (skipped by default in CI)",
+]
+
+[tool.coverage.run]
+source = ["src/project_llm"]
+branch = true
+
+[tool.coverage.report]
+show_missing = true
+skip_covered = false
+exclude_lines = [
+    "pragma: no cover",
+    "raise NotImplementedError",
+    "if __name__ == .__main__.:",
+]
+
+[tool.black]
+line-length = 100
+target-version = ["py310", "py311", "py312"]
+include = '\.pyi?$'
+extend-exclude = '''
+/(
+    \.venv
+  | \.git
+  | build
+  | dist
+  | models
+  | backup
+  | output
+  | output_experiments_v2
+)/
+'''

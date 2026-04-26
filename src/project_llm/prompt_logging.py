@@ -61,6 +61,7 @@ def build_feature_summary(features: BehavioralFeatures) -> str:
 @dataclass(frozen=True)
 class PromptLogEntry:
     """Full audit record for one sample-model evaluation."""
+
     # One row per evaluated sample-model pair for reproducible prompt auditing.
     child_id: str
     clip_id: str

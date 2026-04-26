@@ -4,6 +4,10 @@ Verifies that ``run_extended_experiments()`` produces the full set of
 required output artifacts (merged predictions, agreement tables, paper
 artifacts, etc.) and that it correctly refuses to overwrite an existing
 output directory.
+
+These tests require the ChildPlay-gaze dataset on disk and are marked
+``slow`` so the GitHub Actions CI run skips them. Run them locally
+with ``pytest -m slow``.
 """
 
 from __future__ import annotations
@@ -13,6 +17,8 @@ import sys
 import tempfile
 import unittest
 from pathlib import Path
+
+import pytest
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -24,6 +30,9 @@ from project_llm.pipeline_v2 import run_extended_experiments
 
 
 DATASET_ROOT = ROOT / "data set" / "ChildPlay-gaze" / "ChildPlay-gaze"
+
+
+pytestmark = pytest.mark.slow
 
 
 class ExtendedPipelineTests(unittest.TestCase):

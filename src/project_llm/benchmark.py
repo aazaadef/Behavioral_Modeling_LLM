@@ -21,6 +21,7 @@ from project_llm.reports import write_comparison_reports
 @dataclass(frozen=True)
 class BenchmarkRun:
     """Results of running one model spec through the pipeline."""
+
     spec: str
     features: list[BehavioralFeatures]
     interpretations: list[InterpretationResult]
@@ -38,9 +39,14 @@ def parse_model_spec(spec: str) -> tuple[str, str]:
 def pairwise_agreement(runs: list[BenchmarkRun]) -> dict[str, float]:
     agreements: dict[str, float] = {}
     for i, left in enumerate(runs):
-        left_map = {(item.child_id, item.clip_id): item.interaction_type for item in left.interpretations}
+        left_map = {
+            (item.child_id, item.clip_id): item.interaction_type for item in left.interpretations
+        }
         for right in runs[i + 1 :]:
-            right_map = {(item.child_id, item.clip_id): item.interaction_type for item in right.interpretations}
+            right_map = {
+                (item.child_id, item.clip_id): item.interaction_type
+                for item in right.interpretations
+            }
             shared_keys = sorted(set(left_map) & set(right_map))
             if not shared_keys:
                 agreements[f"{left.spec}__vs__{right.spec}"] = 0.0
@@ -74,7 +80,9 @@ def summarize_saved_agreement(spec_to_path: dict[str, Path]) -> dict[str, object
             {
                 "spec": run.spec,
                 "num_sequences": len(run.interpretations),
-                "interaction_type_counts": dict(Counter(item.interaction_type for item in run.interpretations)),
+                "interaction_type_counts": dict(
+                    Counter(item.interaction_type for item in run.interpretations)
+                ),
             }
             for run in runs
         ],
@@ -91,13 +99,23 @@ def build_combined_summary(
     failed_models = failed_models or []
     ranking = [
         item["spec"]
-        for item in sorted(completed_model_summaries, key=lambda row: float(row["avg_confidence"]), reverse=True)
+        for item in sorted(
+            completed_model_summaries, key=lambda row: float(row["avg_confidence"]), reverse=True
+        )
     ]
-    zero_shot_models = [item for item in completed_model_summaries if str(item["spec"]).startswith("zero-shot:")]
-    best_zero_shot = max(zero_shot_models, key=lambda row: float(row["avg_confidence"]))["spec"] if zero_shot_models else None
+    zero_shot_models = [
+        item for item in completed_model_summaries if str(item["spec"]).startswith("zero-shot:")
+    ]
+    best_zero_shot = (
+        max(zero_shot_models, key=lambda row: float(row["avg_confidence"]))["spec"]
+        if zero_shot_models
+        else None
+    )
     return {
         "evaluated_split": evaluated_split,
-        "num_sequences": int(completed_model_summaries[0]["num_sequences"]) if completed_model_summaries else 0,
+        "num_sequences": (
+            int(completed_model_summaries[0]["num_sequences"]) if completed_model_summaries else 0
+        ),
         "completed_models": completed_model_summaries,
         "failed_models": failed_models,
         "ranking_by_avg_confidence": ranking,
@@ -114,7 +132,9 @@ def write_combined_benchmark_report(output_dir: Path, summary: dict[str, object]
     write_comparison_reports(output_dir, summary)
 
 
-def _keyed_results(results: list[InterpretationResult]) -> dict[tuple[str, str], InterpretationResult]:
+def _keyed_results(
+    results: list[InterpretationResult],
+) -> dict[tuple[str, str], InterpretationResult]:
     return {(item.child_id, item.clip_id): item for item in results}
 
 
@@ -181,7 +201,11 @@ def build_ensemble_from_saved_runs(
     runs = [
         BenchmarkRun(spec=primary_spec, features=[], interpretations=primary),
         BenchmarkRun(spec=secondary_spec, features=[], interpretations=secondary),
-        BenchmarkRun(spec=f"ensemble:{primary_spec}+{secondary_spec}", features=[], interpretations=ensemble_results),
+        BenchmarkRun(
+            spec=f"ensemble:{primary_spec}+{secondary_spec}",
+            features=[],
+            interpretations=ensemble_results,
+        ),
     ]
     summary = {
         "primary_spec": primary_spec,
@@ -189,10 +213,14 @@ def build_ensemble_from_saved_runs(
         "ensemble_spec": f"ensemble:{primary_spec}+{secondary_spec}",
         "num_sequences": len(ensemble_results),
         "pairwise_agreement": pairwise_agreement(runs),
-        "interaction_type_counts": dict(Counter(item.interaction_type for item in ensemble_results)),
-        "avg_confidence": round(
-            sum(item.confidence for item in ensemble_results) / len(ensemble_results), 4
-        ) if ensemble_results else 0.0,
+        "interaction_type_counts": dict(
+            Counter(item.interaction_type for item in ensemble_results)
+        ),
+        "avg_confidence": (
+            round(sum(item.confidence for item in ensemble_results) / len(ensemble_results), 4)
+            if ensemble_results
+            else 0.0
+        ),
     }
     write_comparison_reports(
         output_dir,
@@ -222,9 +250,11 @@ def build_ensemble_from_saved_runs(
 
 def summarize_run(run: BenchmarkRun) -> dict[str, object]:
     label_counts = Counter(item.interaction_type for item in run.interpretations)
-    avg_confidence = round(
-        sum(item.confidence for item in run.interpretations) / len(run.interpretations), 4
-    ) if run.interpretations else 0.0
+    avg_confidence = (
+        round(sum(item.confidence for item in run.interpretations) / len(run.interpretations), 4)
+        if run.interpretations
+        else 0.0
+    )
     by_split: dict[str, list[float]] = defaultdict(list)
     for feature, interpretation in zip(run.features, run.interpretations):
         by_split[feature.split].append(interpretation.confidence)
@@ -260,7 +290,11 @@ def run_benchmark(
             max_sequences=max_sequences,
         )
         save_artifacts(artifacts, run_dir)
-        runs.append(BenchmarkRun(spec=spec, features=artifacts.features, interpretations=artifacts.interpretations))
+        runs.append(
+            BenchmarkRun(
+                spec=spec, features=artifacts.features, interpretations=artifacts.interpretations
+            )
+        )
 
     summary = {
         "models": [summarize_run(run) for run in runs],

@@ -1,5 +1,10 @@
 # ChildPlay LLM-Based Behavioral Analysis
 
+[![tests](https://github.com/aazaadef/Behaioral_Modeling_LLM/actions/workflows/test.yml/badge.svg)](https://github.com/aazaadef/Behaioral_Modeling_LLM/actions/workflows/test.yml)
+[![lint](https://github.com/aazaadef/Behaioral_Modeling_LLM/actions/workflows/lint.yml/badge.svg)](https://github.com/aazaadef/Behaioral_Modeling_LLM/actions/workflows/lint.yml)
+[![python](https://img.shields.io/badge/python-3.10%20%7C%203.11%20%7C%203.12-blue.svg)](https://www.python.org/)
+[![code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+
 A reproducible benchmark of **18 attention-classification systems** on the
 ChildPlay-gaze dataset, evaluating whether Large Language Models (LLMs) can
 serve as semantic reasoners over structured behavioral features — and where
@@ -275,6 +280,40 @@ python scripts/run_local_hf_llm_inference.py \
 python scripts/run_supervised_baselines.py
 python scripts/predict_supervised_all_69.py
 ```
+
+---
+
+## Development
+
+Install development dependencies (pytest, flake8, black):
+
+```bash
+pip install -r requirements-dev.txt
+```
+
+Run the dataset-free unit suite (this is what CI runs on every push):
+
+```bash
+pytest -m "not slow"
+```
+
+Run the heavier dataset-dependent tests (requires
+`data set/ChildPlay-gaze/` on disk):
+
+```bash
+pytest -m slow
+```
+
+Lint and format:
+
+```bash
+flake8 src tests          # static checks
+black --check src tests   # format check (no rewrites)
+black src tests           # auto-format
+```
+
+CI runs `pytest -m "not slow"` on Python 3.10 / 3.11 / 3.12, plus
+`flake8` and `black --check`. See [`.github/workflows/`](.github/workflows/).
 
 ---
 

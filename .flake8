@@ -1,0 +1,29 @@
+[flake8]
+max-line-length = 120
+extend-ignore =
+    # Whitespace before ':' — conflicts with black's slice formatting
+    E203,
+    # Line break before binary operator — black-friendly style
+    W503,
+    # Module level import not at top of file (main.py / conftest.py manipulate sys.path)
+    E402,
+    # Line too long — black is the source of truth for formatting; if black
+    # left a line above 120 chars it is intentionally unbreakable.
+    E501
+exclude =
+    .git,
+    .venv,
+    venv,
+    env,
+    __pycache__,
+    build,
+    dist,
+    models,
+    backup,
+    output,
+    output_experiments_v2,
+    .pytest_cache,
+    .mypy_cache
+per-file-ignores =
+    # Tests can have long literal strings and unused imports for fixtures
+    tests/*:E501,F401

@@ -1,6 +1,8 @@
 -r requirements.txt
 
-pytest>=7.4
-pytest-cov>=4.1
-flake8>=6.1
-black>=24.0
+# Pinned exactly so CI matches local runs and version drift in black /
+# flake8 cannot silently break the lint checks between commits.
+pytest==8.4.2
+pytest-cov==7.1.0
+flake8==7.3.0
+black==25.11.0

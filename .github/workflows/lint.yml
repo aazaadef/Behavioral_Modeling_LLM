@@ -19,9 +19,11 @@ jobs:
           cache: pip
           cache-dependency-path: requirements-dev.txt
       - name: Install flake8
+        # Pinned to the exact version used locally so a flake8 release
+        # cannot silently change the lint result between commits.
         run: |
           python -m pip install --upgrade pip
-          pip install "flake8>=6.1"
+          pip install "flake8==7.3.0"
       - name: Run flake8
         run: flake8 src tests
 
@@ -36,8 +38,10 @@ jobs:
           cache: pip
           cache-dependency-path: requirements-dev.txt
       - name: Install black
+        # Pinned to the exact version used locally so a black release
+        # cannot silently change formatting rules between commits.
         run: |
           python -m pip install --upgrade pip
-          pip install "black>=24.0"
+          pip install "black==25.11.0"
       - name: Run black --check
         run: black --check src tests

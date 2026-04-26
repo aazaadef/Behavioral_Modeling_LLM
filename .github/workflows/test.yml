@@ -35,8 +35,15 @@ jobs:
           pip install -r requirements-dev.txt
 
       - name: Run pytest with coverage
+        # ``--ignore`` skips collection (and therefore import) of the
+        # dataset-dependent test modules so a missing optional dep can
+        # never fail the run. The ``-m "not slow"`` filter is kept as a
+        # second line of defence.
         run: |
-          python -m pytest tests/ -m "not slow" \
+          python -m pytest tests/ \
+            --ignore=tests/test_pipeline.py \
+            --ignore=tests/test_pipeline_v2.py \
+            -m "not slow" \
             --cov=src/project_llm \
             --cov-branch \
             --cov-report=term-missing \

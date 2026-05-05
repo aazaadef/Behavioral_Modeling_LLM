@@ -342,7 +342,9 @@ python scripts/generate_paper_results.py
 | [`output/3class_eval/phase_a/mcnemar_pairwise_3class.csv`](output/3class_eval/phase_a/mcnemar_pairwise_3class.csv) | All 153 pairwise McNemar tests |
 | [`output/3class_eval/phase_a/per_class_metrics_3class.csv`](output/3class_eval/phase_a/per_class_metrics_3class.csv) | Per-class precision / recall / F1 |
 | [`output/all_predictions_3class.csv`](output/all_predictions_3class.csv) | 69 × 18 model prediction matrix + ground truth |
-| [`output/PAPER_NOTES.md`](output/PAPER_NOTES.md) | 14-section paper-writing talking points |
+| [`output/3class_eval/phase_a/PER_RATER_REPORT.md`](output/3class_eval/phase_a/PER_RATER_REPORT.md) | Per-rater κ matrix, alignment fault-line, disagreement zone |
+| [`output/3class_eval/phase_a/figures/`](output/3class_eval/phase_a/figures/) | Five publication-ready PNG figures (300 DPI) |
+| [`output/PAPER_NOTES.md`](output/PAPER_NOTES.md) | 17-section paper-writing talking points + figure inventory |
 | [`output/final_project_report.md`](output/final_project_report.md) | Consolidated project report |
 
 ---

@@ -69,3 +69,7 @@ secrets.json
 # --- Local logs ---
 *.log
 logs/
+
+# --- Build artifacts (paper packages, archives) ---
+dist/
+*.zip

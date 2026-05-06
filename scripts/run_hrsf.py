@@ -1,4 +1,4 @@
-"""APRH — Aazaadef Per-Class Reliability Hybrid.
+"""HRSF — Hybrid Reliability-Semantic Framework.
 
 A three-stage hybrid classifier that combines a rule-based reliability
 detector with an LLM ensemble through a single annotation-style
@@ -29,10 +29,10 @@ per-rater fault line found in this paper:
 This script sweeps α ∈ {0.0, 0.1, …, 1.0}, computes accuracy /
 κ / macro-F1 / per-class F1 on the 69-sample test set, and writes:
 
-  output/3class_eval/phase_a/aprh/aprh_alpha_sweep.csv
-  output/3class_eval/phase_a/aprh/aprh_per_class_at_best_alpha.csv
-  output/3class_eval/phase_a/aprh/aprh_predictions_at_best_alpha.csv
-  output/3class_eval/phase_a/aprh/APRH_REPORT.md
+  output/3class_eval/phase_a/hrsf/hrsf_alpha_sweep.csv
+  output/3class_eval/phase_a/hrsf/hrsf_per_class_at_best_alpha.csv
+  output/3class_eval/phase_a/hrsf/hrsf_predictions_at_best_alpha.csv
+  output/3class_eval/phase_a/hrsf/HRSF_REPORT.md
 
 Thresholds τ_v, τ_s, τ_e are domain-driven and never tuned on the
 ChildPlay test split:
@@ -60,7 +60,7 @@ from sklearn.metrics import (
 ROOT = Path(__file__).resolve().parent.parent
 EVAL_DIR = ROOT / "output" / "3class_eval"
 PHASE_A = EVAL_DIR / "phase_a"
-OUT_DIR = PHASE_A / "aprh"
+OUT_DIR = PHASE_A / "hrsf"
 OUT_DIR.mkdir(parents=True, exist_ok=True)
 
 # Domain-driven reliability thresholds (Section 7.2 / Appendix C of the paper).
@@ -127,13 +127,13 @@ def reliability_fires(features: pd.Series) -> bool:
     )
 
 
-def aprh_predict_one(
+def hrsf_predict_one(
     features: pd.Series,
     rule_pred: str,
     llm_preds: list[str],
     alpha: float,
 ) -> str:
-    """Apply the three-stage APRH formula to a single sample."""
+    """Apply the three-stage HRSF formula to a single sample."""
     if reliability_fires(features):
         return "others"
     scores = {}
@@ -144,20 +144,20 @@ def aprh_predict_one(
     return max(scores, key=lambda k: scores[k])
 
 
-def aprh_predict_all(
+def hrsf_predict_all(
     features_df: pd.DataFrame,
     rule_series: pd.Series,
     llm_df: pd.DataFrame,
     alpha: float,
 ) -> pd.Series:
-    """Vectorise APRH across the whole test set."""
+    """Vectorise HRSF across the whole test set."""
     out = {}
     for child_id in features_df.index:
         feats = features_df.loc[child_id]
         rule_pred = rule_series.loc[child_id]
         llm_preds = llm_df.loc[child_id].tolist()
-        out[child_id] = aprh_predict_one(feats, rule_pred, llm_preds, alpha)
-    return pd.Series(out, name=f"aprh_alpha_{alpha:.2f}")
+        out[child_id] = hrsf_predict_one(feats, rule_pred, llm_preds, alpha)
+    return pd.Series(out, name=f"hrsf_alpha_{alpha:.2f}")
 
 
 def metrics(y_true: list[str], y_pred: list[str]) -> dict[str, float]:
@@ -203,7 +203,7 @@ def main() -> None:
     rows = []
     per_alpha_predictions: dict[float, pd.Series] = {}
     for alpha in ALPHA_GRID:
-        preds = aprh_predict_all(features_df, rule_series, llm_df, alpha)
+        preds = hrsf_predict_all(features_df, rule_series, llm_df, alpha)
         per_alpha_predictions[alpha] = preds
         m_consensus = metrics(y_true, preds.tolist())
         m_r1 = metrics(y_true_r1, preds.tolist())
@@ -223,7 +223,7 @@ def main() -> None:
         )
 
     sweep_df = pd.DataFrame(rows)
-    sweep_path = OUT_DIR / "aprh_alpha_sweep.csv"
+    sweep_path = OUT_DIR / "hrsf_alpha_sweep.csv"
     sweep_df.to_csv(sweep_path, index=False)
     print(f"Wrote {sweep_path.relative_to(ROOT)}")
 
@@ -244,7 +244,7 @@ def main() -> None:
     per_class_df = pd.DataFrame(
         {"label": LABELS, "precision": prec, "recall": rec, "f1": f1, "support": sup}
     )
-    per_class_path = OUT_DIR / "aprh_per_class_at_best_alpha.csv"
+    per_class_path = OUT_DIR / "hrsf_per_class_at_best_alpha.csv"
     per_class_df.to_csv(per_class_path, index=False)
     print(f"Wrote {per_class_path.relative_to(ROOT)}")
 
@@ -257,10 +257,10 @@ def main() -> None:
             "consensus": y_true,
             "rule": rule_series.tolist(),
             "llm_majority": [pd.Series(llm_df.loc[c]).mode().iloc[0] for c in common_ids],
-            f"aprh_alpha_{best_alpha:.2f}": best_preds,
+            f"hrsf_alpha_{best_alpha:.2f}": best_preds,
         }
     )
-    side_path = OUT_DIR / "aprh_predictions_at_best_alpha.csv"
+    side_path = OUT_DIR / "hrsf_predictions_at_best_alpha.csv"
     side_df.to_csv(side_path, index=False)
     print(f"Wrote {side_path.relative_to(ROOT)}")
 

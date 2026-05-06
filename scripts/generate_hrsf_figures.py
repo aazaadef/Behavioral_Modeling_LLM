@@ -1,25 +1,25 @@
-"""APRH-specific figures.
+"""HRSF-specific figures.
 
 Reads:
-  output/3class_eval/phase_a/aprh/aprh_alpha_sweep.csv
-  output/3class_eval/phase_a/aprh/aprh_predictions_at_best_alpha.csv
+  output/3class_eval/phase_a/hrsf/hrsf_alpha_sweep.csv
+  output/3class_eval/phase_a/hrsf/hrsf_predictions_at_best_alpha.csv
 
 Produces three figures, all 300 DPI:
 
-  fig6_aprh_alpha_sensitivity.png
+  fig6_hrsf_alpha_sensitivity.png
       Two-panel sensitivity plot — left: accuracy/κ/macro-F1 vs α;
       right: per-class F1 vs α with the inter-rater κ ceiling shown
       as a dashed reference.
 
-  fig7_aprh_per_class.png
+  fig7_hrsf_per_class.png
       Grouped bar chart comparing rule_based, LLM ensemble (majority
-      vote), best single LLM (Qwen2.5-72B), and APRH at the best α
+      vote), best single LLM (Qwen2.5-72B), and HRSF at the best α
       across the three classes (focused / mix / others).
 
-  fig8_aprh_disagreement_heatmap.png
+  fig8_hrsf_disagreement_heatmap.png
       Per-sample agreement heatmap on the 12 inter-rater
       disagreement samples — columns: rater 1, rater 2, rule_based,
-      LLM majority, APRH; rows: child IDs; cells coloured by class.
+      LLM majority, HRSF; rows: child IDs; cells coloured by class.
 """
 
 from __future__ import annotations
@@ -35,7 +35,7 @@ from sklearn.metrics import precision_recall_fscore_support
 ROOT = Path(__file__).resolve().parent.parent
 EVAL_DIR = ROOT / "output" / "3class_eval"
 PHASE_A = EVAL_DIR / "phase_a"
-APRH_DIR = PHASE_A / "aprh"
+HRSF_DIR = PHASE_A / "hrsf"
 FIG_DIR = PHASE_A / "figures"
 FIG_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -45,7 +45,7 @@ LABEL_COLOURS = {"focused": "#2E86AB", "mix": "#F4A261", "others": "#E63946"}
 
 
 def fig6_alpha_sensitivity() -> None:
-    sweep = pd.read_csv(APRH_DIR / "aprh_alpha_sweep.csv")
+    sweep = pd.read_csv(HRSF_DIR / "hrsf_alpha_sweep.csv")
 
     fig, axes = plt.subplots(1, 2, figsize=(13, 5.5))
 
@@ -79,7 +79,7 @@ def fig6_alpha_sensitivity() -> None:
     )
     ax.set_xlabel("α  (annotation-style coefficient)", fontsize=11)
     ax.set_ylabel("Score", fontsize=11)
-    ax.set_title("APRH headline metrics vs α", fontsize=12)
+    ax.set_title("HRSF headline metrics vs α", fontsize=12)
     ax.set_xlim(-0.02, 1.02)
     ax.set_ylim(0.4, 0.95)
     ax.grid(True, linestyle=":", alpha=0.4)
@@ -136,7 +136,7 @@ def fig6_alpha_sensitivity() -> None:
     )
     ax.set_xlabel("α  (annotation-style coefficient)", fontsize=11)
     ax.set_ylabel("F1", fontsize=11)
-    ax.set_title("APRH per-class F1 vs α", fontsize=12)
+    ax.set_title("HRSF per-class F1 vs α", fontsize=12)
     ax.set_xlim(-0.02, 1.02)
     ax.set_ylim(-0.05, 1.0)
     ax.grid(True, linestyle=":", alpha=0.4)
@@ -147,12 +147,12 @@ def fig6_alpha_sensitivity() -> None:
         ax.spines["right"].set_visible(False)
 
     fig.suptitle(
-        "Aazaadef Per-Class Reliability Hybrid (APRH) — sensitivity to α",
+        "Hybrid Reliability-Semantic Framework (HRSF) — sensitivity to α",
         fontsize=13,
         y=1.00,
     )
     plt.tight_layout()
-    out = FIG_DIR / "fig6_aprh_alpha_sensitivity.png"
+    out = FIG_DIR / "fig6_hrsf_alpha_sensitivity.png"
     plt.savefig(out, dpi=300, bbox_inches="tight")
     plt.close()
     print(f"Wrote {out.relative_to(ROOT)}")
@@ -193,9 +193,9 @@ def _load_baseline_predictions() -> dict[str, list[str]]:
 def fig7_per_class_comparison() -> None:
     gt = pd.read_csv(EVAL_DIR / "ground_truth_3class.csv").set_index("child_id")
     baselines = _load_baseline_predictions()
-    aprh_pred = pd.read_csv(APRH_DIR / "aprh_predictions_at_best_alpha.csv").set_index("child_id")
-    best_alpha_col = [c for c in aprh_pred.columns if c.startswith("aprh_alpha_")][0]
-    best_alpha = float(best_alpha_col.replace("aprh_alpha_", ""))
+    hrsf_pred = pd.read_csv(HRSF_DIR / "hrsf_predictions_at_best_alpha.csv").set_index("child_id")
+    best_alpha_col = [c for c in hrsf_pred.columns if c.startswith("hrsf_alpha_")][0]
+    best_alpha = float(best_alpha_col.replace("hrsf_alpha_", ""))
 
     ids = baselines["ids"]
     y_true = gt.loc[ids, "final_3class"].tolist()
@@ -204,7 +204,7 @@ def fig7_per_class_comparison() -> None:
         "Rule-based": baselines["rule_based"],
         "LLM majority\nvote (7 LLMs)": baselines["llm_majority"],
         "Qwen2.5-72B\n(best single LLM)": baselines["qwen2.5-72b"],
-        f"APRH (α={best_alpha:.2f})\n[ours]": aprh_pred.loc[ids, best_alpha_col].tolist(),
+        f"HRSF (α={best_alpha:.2f})\n[ours]": hrsf_pred.loc[ids, best_alpha_col].tolist(),
     }
 
     rows = []
@@ -238,7 +238,7 @@ def fig7_per_class_comparison() -> None:
     ax.set_xticklabels(list(systems.keys()), fontsize=10)
     ax.set_ylabel("F1", fontsize=11)
     ax.set_title(
-        "Per-class F1 — APRH is the first system to detect the `others` class (F1 > 0)",
+        "Per-class F1 — HRSF is the first system to detect the `others` class (F1 > 0)",
         fontsize=12,
     )
     ax.set_ylim(0, 1.05)
@@ -248,7 +248,7 @@ def fig7_per_class_comparison() -> None:
     ax.spines["right"].set_visible(False)
 
     plt.tight_layout()
-    out = FIG_DIR / "fig7_aprh_per_class.png"
+    out = FIG_DIR / "fig7_hrsf_per_class.png"
     plt.savefig(out, dpi=300, bbox_inches="tight")
     plt.close()
     print(f"Wrote {out.relative_to(ROOT)}")
@@ -256,11 +256,11 @@ def fig7_per_class_comparison() -> None:
 
 def fig8_disagreement_heatmap() -> None:
     """Heatmap on the 12 inter-rater disagreement samples."""
-    aprh_pred = pd.read_csv(APRH_DIR / "aprh_predictions_at_best_alpha.csv")
-    best_alpha_col = [c for c in aprh_pred.columns if c.startswith("aprh_alpha_")][0]
+    hrsf_pred = pd.read_csv(HRSF_DIR / "hrsf_predictions_at_best_alpha.csv")
+    best_alpha_col = [c for c in hrsf_pred.columns if c.startswith("hrsf_alpha_")][0]
 
     # Restrict to the 12 disagreement samples.
-    dz = aprh_pred[aprh_pred["rater1"] != aprh_pred["rater2"]].copy()
+    dz = hrsf_pred[hrsf_pred["rater1"] != hrsf_pred["rater2"]].copy()
 
     cols = ["rater1", "rater2", "rule", "llm_majority", best_alpha_col]
     col_labels = [
@@ -268,7 +268,7 @@ def fig8_disagreement_heatmap() -> None:
         "Rater 2",
         "Rule-based",
         "LLM majority",
-        f"APRH (α={best_alpha_col.replace('aprh_alpha_', '')})",
+        f"HRSF (α={best_alpha_col.replace('hrsf_alpha_', '')})",
     ]
     label_to_int = {lbl: i for i, lbl in enumerate(LABELS)}
 
@@ -309,7 +309,7 @@ def fig8_disagreement_heatmap() -> None:
     ax.legend(handles=handles, loc="upper left", bbox_to_anchor=(1.02, 1.0), fontsize=10)
 
     plt.tight_layout()
-    out = FIG_DIR / "fig8_aprh_disagreement_heatmap.png"
+    out = FIG_DIR / "fig8_hrsf_disagreement_heatmap.png"
     plt.savefig(out, dpi=300, bbox_inches="tight")
     plt.close()
     print(f"Wrote {out.relative_to(ROOT)}")
@@ -319,7 +319,7 @@ def main() -> None:
     fig6_alpha_sensitivity()
     fig7_per_class_comparison()
     fig8_disagreement_heatmap()
-    print(f"\nAPRH figures written to {FIG_DIR.relative_to(ROOT)}/")
+    print(f"\nHRSF figures written to {FIG_DIR.relative_to(ROOT)}/")
 
 
 if __name__ == "__main__":

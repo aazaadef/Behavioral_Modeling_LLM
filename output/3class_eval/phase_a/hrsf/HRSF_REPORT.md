@@ -1,14 +1,14 @@
-# APRH — Aazaadef Per-Class Reliability Hybrid
+# HRSF — Hybrid Reliability-Semantic Framework
 
 Companion report to [`THREECLASS_REPORT.md`](../THREECLASS_REPORT.md)
-and [`PER_RATER_REPORT.md`](../PER_RATER_REPORT.md). The APRH formula
+and [`PER_RATER_REPORT.md`](../PER_RATER_REPORT.md). The HRSF formula
 (Section 7 of [`PAPER_DRAFT.md`](../../../PAPER_DRAFT.md)) is the
 paper's main architectural contribution. This report records the
 empirical evaluation of the formula on the same 69-sample test set
 used throughout the paper.
 
-Source code: [`scripts/run_aprh.py`](../../../../scripts/run_aprh.py).
-Sweep CSV: [`aprh_alpha_sweep.csv`](aprh_alpha_sweep.csv).
+Source code: [`scripts/run_hrsf.py`](../../../../scripts/run_hrsf.py).
+Sweep CSV: [`hrsf_alpha_sweep.csv`](hrsf_alpha_sweep.csv).
 
 ---
 
@@ -81,23 +81,23 @@ parameter.
 | rule_based (standalone) | 0.870 | 0.706 | 0.93 | 0.80 | 0.00 |
 | Qwen2.5-72B-Instruct (best LLM) | 0.812 | 0.581 | 0.91 | 0.68 | 0.00 |
 | LLM majority vote (7 LLMs) | 0.797 | 0.522 | 0.89 | 0.59 | 0.00 |
-| **APRH @ α = 0.60 (ours)** | **0.826** | **0.631** | **0.91** | **0.76** | **0.20** |
+| **HRSF @ α = 0.60 (ours)** | **0.826** | **0.631** | **0.91** | **0.76** | **0.20** |
 | Inter-rater ceiling | — | 0.613 | — | — | — |
 
-APRH is the **only system** with non-zero F1 on the `others` class,
+HRSF is the **only system** with non-zero F1 on the `others` class,
 and one of two systems (with rule_based) whose κ exceeds the
-inter-rater ceiling. The trade-off between APRH and rule_based is
+inter-rater ceiling. The trade-off between HRSF and rule_based is
 explicit:
 
   * rule_based: higher overall κ (0.706) but completely blind to
     the reliability-sensitive class (F1(others) = 0).
-  * APRH: slightly lower κ (0.631, still above ceiling) but the
+  * HRSF: slightly lower κ (0.631, still above ceiling) but the
     first system in the benchmark to detect any `others`
     instances (F1(others) = 0.200 vs 0.000 for every baseline).
 
 For applications where reliability detection is required (clinical
 decision support, automated triage, child-attention monitoring),
-APRH dominates rule_based on the relevant metric; for pure
+HRSF dominates rule_based on the relevant metric; for pure
 {focused, mix} discrimination on reliable clips, rule_based remains
 strongest.
 
@@ -124,7 +124,7 @@ hybrid-framework's continued evolution.
 
 ## 5. Why the formula is interpretable
 
-Every quantity in APRH has a human-readable meaning:
+Every quantity in HRSF has a human-readable meaning:
 
 | Component | Meaning |
 |---|---|
@@ -145,10 +145,10 @@ to the gate that fired and the α that was set.
 ## 6. Reproduction
 
 ```bash
-python scripts/run_aprh.py
-python scripts/generate_aprh_figures.py
+python scripts/run_hrsf.py
+python scripts/generate_hrsf_figures.py
 ```
 
 Random seed (`RNG_SEED = 42`) is fixed. The α grid is
 {0.0, 0.1, …, 1.0}. Outputs land in
-`output/3class_eval/phase_a/aprh/`.
+`output/3class_eval/phase_a/hrsf/`.

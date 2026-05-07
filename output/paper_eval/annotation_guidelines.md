@@ -1,17 +1,31 @@
 # Manual Evaluation Guidelines
 
-Use one label per child-sequence.
-Base decisions only on the structured gaze evidence and clip-level summaries.
-Do not infer diagnosis, emotion, or social intent beyond the visible evidence.
+Use one label per child-sequence (per child × clip).
+Base decisions only on the structured gaze evidence and clip-level
+summaries.
+Do not infer diagnosis, emotion, or social intent beyond the visible
+evidence.
 
-## Labels
-- `focused_attention`: Predominantly stable, sustained visual attention on a target within the clip.
-- `exploratory_attention`: Frequent shifts or scanning across multiple targets without one stable focus.
-- `occluded_attention`: Attention cannot be characterized confidently because visible gaze is often unavailable or uncertain.
-- `reduced_visual_availability`: Interpretation is limited by eyes closed, outside-frame gaze, or similar loss of visual evidence.
-- `mixed_attention`: The clip contains both stable attention and notable shifts without one dominant pattern.
+## Labels (3-class schema)
+
+- **`focused`** — The child shows stable, sustained visual attention
+  on a target with minimal gaze shifts.
+- **`mix`** — The child actively switches gaze or scans across
+  multiple targets, including mixed stable-plus-shifting and purely
+  exploratory patterns.
+- **`others`** — Gaze is not reliably usable because of occlusion,
+  extended eye closure, or the child being off-frame.
 
 ## Annotation Notes
-- Prefer `occluded_attention` when visual evidence is frequently unavailable.
-- Prefer `reduced_visual_availability` when eyes are closed or gaze is persistently outside the frame.
-- Use `mixed_attention` only when no single pattern clearly dominates.
+
+- Use `others` when more than ~half the frames have unusable gaze
+  signal (occluded, eyes closed, or outside-frame), regardless of
+  what the visible portion suggests.
+- Use `focused` when the dominant pattern across the clip is a
+  single stable target with very few shifts.
+- Use `mix` for everything in between — clips that contain
+  meaningful visible gaze but with active switching, scanning, or
+  no single dominant target.
+- When in doubt between `focused` and `mix`, lean `mix`.
+- When in doubt between `mix` and `others`, lean toward whichever
+  the *majority of the clip* exhibits.

@@ -149,30 +149,18 @@ argument for the hybrid framework.
 
 ```
 project.LLM/
-├── main.py                      # CLI entry point → src/project_llm/cli.py
+├── pyproject.toml               # Build / lint / test config
 ├── requirements.txt             # Runtime dependencies
-├── requirements.md              # Original project specification
+├── requirements-dev.txt         # Pinned dev deps (pytest, flake8, black)
 │
-├── src/project_llm/             # Importable package
-│   ├── cli.py                   # `run`, `prepare-paper-eval`, …
+├── src/project_llm/             # Importable feature pipeline package
 │   ├── dataset.py               # ChildPlay annotation loader
-│   ├── features.py              # Per-child × clip feature aggregation
-│   ├── temporal.py              # Temporal sequence builder
-│   ├── interactions.py          # Rule-based interaction approximation
-│   ├── labels_3class.py         # 3-class rule-based classifier
-│   ├── llm.py                   # LLM backend wrapper
-│   ├── backends_v2.py           # NLI / supervised backend registry
-│   ├── supervised_baselines.py  # OOF-CV supervised classifiers
-│   ├── prompts.py               # LLM prompt templates
-│   ├── prompt_logging.py        # Reproducible prompt audit trail
-│   ├── benchmark.py             # Benchmark harness
-│   ├── pipeline.py              # End-to-end pipeline (legacy)
-│   ├── pipeline_v2.py           # End-to-end pipeline (current)
-│   ├── reports.py               # Report generation
-│   ├── manual_eval.py           # 69-sample manual evaluation utilities
-│   ├── manual_labeling_package.py
-│   ├── paper_artifacts_v2.py    # Paper figure/table generation
-│   └── io_utils_v2.py
+│   ├── features.py              # Per-(child × clip) 16-feature aggregation
+│   ├── temporal.py              # Temporal segmentation
+│   ├── interactions.py          # Interaction inference layer
+│   ├── labels_3class.py         # 3-class schema + rule-based classifier
+│   ├── supervised_baselines.py  # OOF-CV supervised feature definitions
+│   └── io_utils_v2.py           # Safe write / read helpers
 │
 ├── scripts/                     # Standalone analysis scripts
 │   ├── run_3class_pipeline.py
@@ -249,21 +237,17 @@ export HUGGINGFACE_HUB_TOKEN=hf_...
 
 ## Usage
 
-### End-to-end pipeline
-
-```bash
-python main.py run
-```
-
-### 3-class evaluation
-
 Run every backend natively at 3-class and regenerate the Phase A
 report:
 
 ```bash
-python scripts/run_3class_pipeline.py        # all 18 backends
-python scripts/phase_a_3class.py             # bootstrap CI + McNemar
-python scripts/build_3class_aggregate.py     # → all_predictions_3class.csv
+PYTHONPATH=src python scripts/run_3class_pipeline.py     # all 18 backends
+PYTHONPATH=src python scripts/phase_a_3class.py          # bootstrap CI + McNemar
+PYTHONPATH=src python scripts/build_3class_aggregate.py  # → all_predictions_3class.csv
+PYTHONPATH=src python scripts/per_rater_analysis.py      # per-rater κ + disagreement zone
+PYTHONPATH=src python scripts/run_hrsf.py                # HRSF formula + α sweep
+PYTHONPATH=src python scripts/generate_paper_figures.py  # figs 1–4
+PYTHONPATH=src python scripts/generate_hrsf_figures.py   # figs 6–8
 ```
 
 ### LLM inference (HuggingFace, local)

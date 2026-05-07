@@ -73,3 +73,6 @@ logs/
 # --- Build artifacts (paper packages, archives) ---
 dist/
 *.zip
+
+# --- Internal / pre-publication notes (never push) ---
+_private/

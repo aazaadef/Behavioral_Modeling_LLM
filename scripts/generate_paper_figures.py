@@ -1,6 +1,6 @@
 """Generate publication-quality figures for the paper.
 
-Produces five figures from existing CSVs (no model re-runs needed):
+Produces four figures from existing CSVs (no model re-runs needed):
 
   Figure 1 — system_ranking_kappa.png
       Horizontal bar chart of all 18 systems' Cohen's kappa with
@@ -18,10 +18,6 @@ Produces five figures from existing CSVs (no model re-runs needed):
   Figure 4 — confusion_matrices_top4.png
       2x2 grid of confusion matrices for rule_based, Qwen2.5-72B,
       Yi-1.5-9B, and RandomForest.
-
-  Figure 5 — schema_5_vs_3_class.png
-      Paired bar chart of accuracy and kappa for the 10 systems that
-      have both 5-class and 3-class runs.
 
 All figures are rendered at 300 DPI and saved to
 output/3class_eval/phase_a/figures/.
@@ -316,106 +312,6 @@ def figure_4_confusion_matrices() -> None:
     print(f"Wrote {out.relative_to(ROOT)}")
 
 
-# ----------------------------------------------------------------------
-# Figure 5 — 5-class vs 3-class paired comparison
-# ----------------------------------------------------------------------
-def figure_5_schema_comparison() -> None:
-    # Static table (the same numbers reported in THREECLASS_REPORT §3).
-    rows = [
-        # name, acc_5, acc_3, kappa_5, kappa_3
-        ("rule_based", 0.854, 0.870, 0.679, 0.706),
-        ("Qwen2.5-72B (LLM)", 0.783, 0.812, 0.515, 0.581),
-        ("RandomForest", 0.768, 0.797, 0.444, 0.491),
-        ("qwen-7b (LLM)", 0.725, 0.768, 0.441, 0.453),
-        ("Qwen2.5-7B (LLM)", 0.709, 0.754, 0.151, 0.392),
-        ("LogisticRegression", 0.696, 0.725, 0.268, 0.331),
-        ("LinearSVM", 0.710, 0.667, 0.314, 0.190),
-        ("distilbert (NLI)", 0.014, 0.696, 0.000, 0.000),
-        ("deberta (NLI)", 0.696, 0.681, 0.000, -0.026),
-        ("bart (NLI)", 0.144, 0.261, -0.021, 0.000),
-    ]
-    df = pd.DataFrame(rows, columns=["system", "acc_5", "acc_3", "kappa_5", "kappa_3"])
-
-    fig, axes = plt.subplots(1, 2, figsize=(13, 7), sharey=True)
-    y = np.arange(len(df))
-    width = 0.4
-
-    # Left panel: Accuracy.
-    axes[0].barh(
-        y - width / 2,
-        df["acc_5"],
-        width,
-        label="5-class",
-        color="#7BB3D6",
-        edgecolor="black",
-        linewidth=0.4,
-    )
-    axes[0].barh(
-        y + width / 2,
-        df["acc_3"],
-        width,
-        label="3-class",
-        color="#2E86AB",
-        edgecolor="black",
-        linewidth=0.4,
-    )
-    axes[0].set_xlabel("Accuracy", fontsize=11)
-    axes[0].set_yticks(y)
-    axes[0].set_yticklabels(df["system"], fontsize=10)
-    axes[0].set_title("Accuracy: 5-class vs 3-class", fontsize=12)
-    axes[0].legend(loc="lower right", fontsize=10)
-    axes[0].grid(axis="x", linestyle=":", alpha=0.4)
-    axes[0].set_xlim(0, 1)
-
-    # Right panel: Cohen's κ.
-    axes[1].barh(
-        y - width / 2,
-        df["kappa_5"],
-        width,
-        label="5-class",
-        color="#F4A261",
-        edgecolor="black",
-        linewidth=0.4,
-    )
-    axes[1].barh(
-        y + width / 2,
-        df["kappa_3"],
-        width,
-        label="3-class",
-        color="#E76F51",
-        edgecolor="black",
-        linewidth=0.4,
-    )
-    axes[1].axvline(0, color="grey", linewidth=0.6)
-    axes[1].axvline(
-        INTER_RATER_KAPPA,
-        color="black",
-        linestyle="--",
-        linewidth=1,
-        label=f"Inter-rater (3-class) κ = {INTER_RATER_KAPPA:.3f}",
-    )
-    axes[1].set_xlabel("Cohen's κ", fontsize=11)
-    axes[1].set_title("Cohen's κ: 5-class vs 3-class", fontsize=12)
-    axes[1].legend(loc="lower right", fontsize=9)
-    axes[1].grid(axis="x", linestyle=":", alpha=0.4)
-    axes[1].set_xlim(-0.2, 0.85)
-
-    for ax in axes:
-        ax.spines["top"].set_visible(False)
-        ax.spines["right"].set_visible(False)
-
-    fig.suptitle(
-        "Schema refinement effect — same 10 systems, both schemas",
-        fontsize=13,
-        y=1.00,
-    )
-    plt.tight_layout()
-    out = FIG_DIR / "fig5_schema_5_vs_3_class.png"
-    plt.savefig(out, dpi=300, bbox_inches="tight")
-    plt.close()
-    print(f"Wrote {out.relative_to(ROOT)}")
-
-
 def main() -> None:
     sns.set_style("whitegrid")
     plt.rcParams["font.family"] = "DejaVu Sans"
@@ -424,7 +320,6 @@ def main() -> None:
     figure_2_per_rater_heatmap()
     figure_3_alignment_fault_line()
     figure_4_confusion_matrices()
-    figure_5_schema_comparison()
     print(f"\nAll figures written to {FIG_DIR.relative_to(ROOT)}/")
 
 

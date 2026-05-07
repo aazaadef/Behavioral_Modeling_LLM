@@ -1,6 +1,0 @@
-model_name,backend_family,num_samples,average_confidence
-rule-based,rule-based,69,0.7959
-typeform/distilbert-base-uncased-mnli,zero-shot,69,0.5259
-facebook/bart-large-mnli,zero-shot,69,0.2843
-MoritzLaurer/deberta-v3-large-zeroshot-v2.0,zero-shot,69,0.5889
-./models/qwen-7b,hf-llm,69,0.9324

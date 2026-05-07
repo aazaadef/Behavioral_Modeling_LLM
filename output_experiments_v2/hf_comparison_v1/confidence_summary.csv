@@ -1,4 +1,0 @@
-model_name,backend_family,num_samples,average_confidence
-rule-based,rule-based,69,0.7959
-typeform/distilbert-base-uncased-mnli,zero-shot,69,0.3739
-facebook/bart-large-mnli,zero-shot,69,0.3462

@@ -1,6 +1,0 @@
-Model                     Accuracy   LabeledDenominator
-------------------------------------------------------
-rule_based               0.6667     24
-deberta                  0.5000     24
-distilbert               0.5000     24
-bart                     0.0000     24

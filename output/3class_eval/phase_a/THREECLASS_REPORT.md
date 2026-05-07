@@ -12,13 +12,6 @@ supervised retrained on 3-class targets (OOF CV), LLMs with a new
 - Raw agreement = 57/69 (82.61%)
 - **Cohen's κ = 0.6129** (Landis–Koch: **substantial** if ≥ 0.61)
 
-Comparison with the 5-class view:
-
-| Schema | Raw agreement | Cohen's κ | Landis–Koch |
-|---|---|---|---|
-| 5-class | 54/69 (78.3 %) | 0.531 | moderate |
-| **3-class** | **57/69 (82.61 %)** | **0.613** | **substantial** |
-
 Consensus counts: {'focused': 48, 'mix': 18, 'others': 3}
 
 ## 2. Headline accuracy with bootstrap 95 % CI (1000 iter.)
@@ -46,30 +39,7 @@ Consensus counts: {'focused': 48, 'mix': 18, 'others': 3}
 
 Source: [`bootstrap_ci_3class.csv`](bootstrap_ci_3class.csv).
 
-## 3. 5-class vs 3-class — same models, side by side
-
-| Model | Acc (5-class) | Acc (3-class) | Δ | κ (5-class) | κ (3-class) | Δ | F1 (5c) | F1 (3c) |
-|---|---:|---:|---:|---:|---:|---:|---:|---:|
-| rule_based | 0.854 | 0.870 | 0.016 | 0.679 | 0.706 | 0.026 | 0.521 | 0.575 |
-| llm_models_Qwen--Qwen2_5-72B-Instruct_3class | 0.783 | 0.812 | 0.028 | 0.515 | 0.581 | 0.066 | 0.330 | 0.530 |
-| llm_models_01-ai--Yi-1_5-9B-Chat_3class | — | 0.812 | — | — | 0.549 | — | — | 0.518 |
-| llm_models_meta-llama--Llama-3_1-8B-Instruct_3class | — | 0.797 | — | — | 0.521 | — | — | 0.509 |
-| supervised_RandomForest | 0.768 | 0.797 | 0.030 | 0.444 | 0.491 | 0.047 | 0.414 | 0.496 |
-| llm_models_microsoft--Phi-4-mini-instruct_3class | — | 0.797 | — | — | 0.529 | — | — | 0.509 |
-| llm_models_mistralai--Mistral-7B-Instruct-v0_3_3class | — | 0.797 | — | — | 0.542 | — | — | 0.515 |
-| llm_models_qwen-7b_3class | 0.725 | 0.768 | 0.044 | 0.441 | 0.453 | 0.013 | 0.381 | 0.484 |
-| llm_models_Qwen--Qwen2_5-7B-Instruct_3class | 0.709 | 0.754 | 0.044 | 0.151 | 0.392 | 0.241 | 0.311 | 0.460 |
-| supervised_XGBoost | — | 0.739 | — | — | 0.366 | — | — | 0.451 |
-| supervised_LogisticRegression | 0.696 | 0.725 | 0.029 | 0.268 | 0.331 | 0.063 | 0.353 | 0.444 |
-| supervised_LightGBM | — | 0.725 | — | — | 0.360 | — | — | 0.450 |
-| supervised_Dummy_majority | — | 0.696 | — | — | 0.000 | — | — | 0.274 |
-| distilbert | 0.014 | 0.696 | 0.682 | 0.000 | 0.000 | 0.000 | 0.007 | 0.274 |
-| deberta | 0.696 | 0.681 | -0.014 | 0.000 | -0.026 | -0.026 | 0.237 | 0.270 |
-| supervised_LinearSVM | 0.710 | 0.667 | -0.043 | 0.314 | 0.190 | -0.124 | 0.446 | 0.389 |
-| supervised_Dummy_stratified | — | 0.536 | — | — | -0.163 | — | — | 0.269 |
-| bart | 0.144 | 0.261 | 0.117 | -0.021 | 0.000 | 0.021 | 0.112 | 0.138 |
-
-## 4. Pairwise McNemar significance (α = 0.05)
+## 3. Pairwise McNemar significance (α = 0.05)
 
 Rows where `model_a` = **rule_based** (best system):
 
@@ -95,7 +65,7 @@ Rows where `model_a` = **rule_based** (best system):
 
 Full 153-pair matrix: [`mcnemar_pairwise_3class.csv`](mcnemar_pairwise_3class.csv).
 
-## 5. Per-class F1 (focused / mix / others)
+## 4. Per-class F1 (focused / mix / others)
 
 | Model | focused F1 (n=48) | mix F1 (n=18) | others F1 (n=3) |
 |---|---:|---:|---:|
@@ -120,7 +90,7 @@ Full 153-pair matrix: [`mcnemar_pairwise_3class.csv`](mcnemar_pairwise_3class.cs
 
 Source: [`per_class_metrics_3class.csv`](per_class_metrics_3class.csv).
 
-## 6. Feature importance (3-class RandomForest)
+## 5. Feature importance (3-class RandomForest)
 
 | Feature | Impurity | Permutation (mean ± std) |
 |---|---:|---:|
@@ -135,15 +105,14 @@ Source: [`per_class_metrics_3class.csv`](per_class_metrics_3class.csv).
 | gaze_shift_ratio | 0.0695 | 0.0063 ± 0.0072 |
 | visible_gaze_fraction | 0.0716 | 0.0043 ± 0.0066 |
 
-## 7. Take-aways
+## 6. Take-aways
 
 1. **Best model: rule_based** — accuracy = 0.870, κ = 0.706, macro-F1 = 0.575.
-2. **Inter-rater κ jumps from 0.531 → 0.613** under the 3-class schema — many mixed/exploratory disagreements in 5-class resolve in 3-class.
-3. **Rule-based κ ≈ 0.706 exceeds inter-rater κ = 0.613** — the automated system reaches the human-agreement ceiling.
-4. **Supervised models benefit from the schema change** — retraining on 3 labels (vs post-hoc mapping of 5-class predictions) lets linear and tree models separate the (much richer) `mix` class cleanly.
-5. **NLI models remain below majority floor** (0.696) even with a simpler label space — they should be reported as negative controls.
+2. **Rule-based κ ≈ 0.706 exceeds inter-rater κ = 0.613** — the automated system reaches the human-agreement ceiling.
+3. **Supervised models** — linear and tree-based classifiers separate the `mix` and `focused` classes reliably, with RandomForest leading the supervised tier at κ = 0.491.
+4. **NLI models remain below the majority floor** (0.696) — they should be reported as negative controls / noise floor.
 
-## 8. Files produced
+## 7. Files produced
 
 All under [`output/3class_eval/phase_a/`](.):
 

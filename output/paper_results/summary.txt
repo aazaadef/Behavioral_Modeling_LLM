@@ -1,6 +1,0 @@
-Samples merged: 69
-Labeled samples: 24
-Unlabeled samples: 45
-Disagreement cases: 22/69 (31.88%)
-Best model on labeled subset: rule_based (0.6667, denominator=24)
-Ranking: rule_based (0.6667) > deberta (0.5000) > distilbert (0.5000) > bart (0.0000)

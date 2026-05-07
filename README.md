@@ -87,7 +87,6 @@ quantitative features.
   │  • Bootstrap 95% CI (1000 iterations)      │
   │  • McNemar pairwise testing (153 pairs)    │
   │  • Per-class metrics + confusion matrices  │
-  │  • 5-class vs 3-class side-by-side         │
   └────────────────────────────────────────────┘
             │
             ▼
@@ -109,9 +108,8 @@ Eighteen systems are evaluated under the same 3-class consensus
 | **Supervised (OOF CV)** | LogisticRegression · LinearSVM · RandomForest · XGBoost · LightGBM · Dummy(majority) · Dummy(stratified) |
 | **LLMs (open-weight, zero-shot)** | Qwen2.5-72B-Instruct · Qwen2.5-7B-Instruct · qwen-7b · Yi-1.5-9B-Chat · Llama-3.1-8B-Instruct · Mistral-7B-Instruct-v0.3 · Phi-4-mini-instruct |
 
-Every backend is run **natively at 3-class** — never via post-hoc remapping
-of 5-class predictions. Verification: LinearSVM accuracy *drops* 0.710 →
-0.667 between schemas, which is impossible under simple label collapsing.
+Every backend is run **natively at 3-class** under the same input
+features and the same 69-clip consensus test set.
 
 ---
 
@@ -179,35 +177,37 @@ project.LLM/
 ├── scripts/                     # Standalone analysis scripts
 │   ├── run_3class_pipeline.py
 │   ├── phase_a_3class.py        # Bootstrap CI + McNemar runner
-│   ├── write_3class_report.py   # Generates THREECLASS_REPORT.md
 │   ├── build_3class_aggregate.py
 │   ├── run_llm_3class.py        # Zero-shot LLM inference (3-class)
-│   ├── run_supervised_baselines.py
-│   ├── run_local_hf_llm_inference.py
 │   ├── predict_supervised_all_69.py
-│   ├── inter_rater_and_update.py
-│   └── …                        # ~20 reproducibility scripts
+│   ├── per_rater_analysis.py    # Per-rater κ + disagreement zone
+│   ├── run_hrsf.py              # HRSF formula + α sweep
+│   ├── generate_paper_figures.py    # Figures 1–4
+│   ├── generate_hrsf_figures.py     # Figures 6–8
+│   ├── run_local_hf_llm_inference.py
+│   └── download_models.py
 │
 ├── tests/                       # Pytest suite
 │
-├── data set/                    # ChildPlay-gaze annotations (small)
+├── data set/                    # ChildPlay-gaze annotations
 │
-├── output/                      # Tracked: reports & CSVs
-│   ├── 3class_eval/             # Native 3-class predictions
-│   │   └── phase_a/
-│   │       ├── THREECLASS_REPORT.md       ← main results report
-│   │       ├── bootstrap_ci_3class.csv
-│   │       ├── mcnemar_pairwise_3class.csv
-│   │       ├── per_class_metrics_3class.csv
-│   │       └── confusion_matrices/
-│   ├── PAPER_NOTES.md           # 14-section paper talking points
-│   ├── final_project_report.md  # Consolidated project report
-│   ├── project_report.md        # Detailed methodology report
-│   ├── all_predictions_3class.csv
-│   ├── paper_eval/              # 69-sample manual annotation pack
-│   └── llm_runs/                # Raw LLM responses + prompts
-│
-└── output_experiments_v2/       # Earlier experimental sweeps
+└── output/                      # Tracked: reports, figures, CSVs
+    ├── PAPER_DRAFT.md           ← complete first-pass paper draft
+    ├── PAPER_NOTES.md           # 17-section talking-point outline
+    ├── all_predictions_3class.csv
+    ├── 3class_eval/             # Native 3-class predictions
+    │   └── phase_a/
+    │       ├── THREECLASS_REPORT.md      ← main results report
+    │       ├── PER_RATER_REPORT.md
+    │       ├── hrsf/HRSF_REPORT.md       ← HRSF formula evaluation
+    │       ├── bootstrap_ci_3class.csv
+    │       ├── mcnemar_pairwise_3class.csv
+    │       ├── per_class_metrics_3class.csv
+    │       ├── per_rater_kappa.csv
+    │       ├── disagreement_zone_analysis.csv
+    │       ├── confusion_matrices/
+    │       └── figures/                  # 7 publication-ready PNGs
+    └── paper_eval/              # 69-sample manual annotation pack
 ```
 
 Excluded from the repo (see [`.gitignore`](.gitignore)): the local
@@ -257,12 +257,12 @@ python main.py run
 
 ### 3-class evaluation
 
-Run every backend natively at 3-class and regenerate the Phase A report:
+Run every backend natively at 3-class and regenerate the Phase A
+report:
 
 ```bash
 python scripts/run_3class_pipeline.py        # all 18 backends
 python scripts/phase_a_3class.py             # bootstrap CI + McNemar
-python scripts/write_3class_report.py        # → THREECLASS_REPORT.md
 python scripts/build_3class_aggregate.py     # → all_predictions_3class.csv
 ```
 
@@ -277,7 +277,6 @@ python scripts/run_local_hf_llm_inference.py \
 ### Supervised baselines (OOF CV)
 
 ```bash
-python scripts/run_supervised_baselines.py
 python scripts/predict_supervised_all_69.py
 ```
 
@@ -320,15 +319,18 @@ CI runs `pytest -m "not slow"` on Python 3.10 / 3.11 / 3.12, plus
 ## Reproducing Paper Artifacts
 
 ```bash
-# Build the manual-evaluation annotation package (videos + spreadsheet)
-python main.py prepare-paper-eval
+# Phase A statistics (bootstrap CI + McNemar)
+python scripts/phase_a_3class.py
 
-# Validate every manual-eval sample exists in saved features
-python main.py validate-paper-eval
+# Per-rater analysis (κ vs r1, r2, consensus + disagreement zone)
+python scripts/per_rater_analysis.py
 
-# Regenerate paper figures and tables
-python scripts/generate_extended_paper_artifacts.py
-python scripts/generate_paper_results.py
+# HRSF formula α-sweep
+python scripts/run_hrsf.py
+
+# Regenerate paper figures
+python scripts/generate_paper_figures.py
+python scripts/generate_hrsf_figures.py
 ```
 
 ---
@@ -344,9 +346,9 @@ python scripts/generate_paper_results.py
 | [`output/all_predictions_3class.csv`](output/all_predictions_3class.csv) | 69 × 18 model prediction matrix + ground truth |
 | [`output/3class_eval/phase_a/PER_RATER_REPORT.md`](output/3class_eval/phase_a/PER_RATER_REPORT.md) | Per-rater κ matrix, alignment fault-line, disagreement zone |
 | [`output/3class_eval/phase_a/hrsf/HRSF_REPORT.md`](output/3class_eval/phase_a/hrsf/HRSF_REPORT.md) | HRSF formula, α-sweep, and per-class evaluation |
-| [`output/3class_eval/phase_a/figures/`](output/3class_eval/phase_a/figures/) | Five publication-ready PNG figures (300 DPI) |
+| [`output/3class_eval/phase_a/figures/`](output/3class_eval/phase_a/figures/) | Seven publication-ready PNG figures (300 DPI) |
 | [`output/PAPER_NOTES.md`](output/PAPER_NOTES.md) | 17-section paper-writing talking points + figure inventory |
-| [`output/final_project_report.md`](output/final_project_report.md) | Consolidated project report |
+| [`output/PAPER_DRAFT.md`](output/PAPER_DRAFT.md) | Complete first-pass paper draft |
 
 ---
 
@@ -366,12 +368,6 @@ sections: see [`output/PAPER_NOTES.md`](output/PAPER_NOTES.md). Highlights:
    reasoning with symbolic rules for reliability constraints.
 6. **§14 — Final framing**: this work bridges perception and
    interpretation rather than competing with video-based gaze models.
-
-A schema-transition section (5-class → 3-class) is documented in
-[`output/project_report.md` §20](output/project_report.md) and
-[`output/final_project_report.md` §11](output/final_project_report.md),
-including the empirical degeneracy and inter-rater κ improvement
-(0.531 → 0.613) that motivate the consolidation.
 
 ---
 

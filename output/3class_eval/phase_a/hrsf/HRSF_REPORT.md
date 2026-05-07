@@ -136,7 +136,7 @@ Every quantity in HRSF has a human-readable meaning:
 The formula is therefore not a black-box ensemble — it is an
 explicit composition of a reliability check and a rater-style
 weighted vote. This matches the "decision-support layer" framing of
-Section 11 of [`final_project_report.md`](../../../final_project_report.md):
+the decision-support layer described in Section 1 of the paper:
 the system's decisions can be audited and explained by reference
 to the gate that fired and the α that was set.
 

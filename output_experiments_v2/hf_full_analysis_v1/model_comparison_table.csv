@@ -1,4 +1,0 @@
-model_name,backend_family,num_samples,overall_accuracy,average_confidence,notable_failure_modes
-rule-based,rule-based,565,0.6667,0.7979,most_common_errors={'mixed_attention': 8}
-typeform/distilbert-base-uncased-mnli,zero-shot,565,0.5,0.3789,"most_common_errors={'exploratory_attention': 10, 'reduced_visual_availability': 2}"
-facebook/bart-large-mnli,zero-shot,565,0.0833,0.3809,"most_common_errors={'reduced_visual_availability': 9, 'mixed_attention': 6, 'focused_attention': 4}"

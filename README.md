@@ -1,7 +1,7 @@
 # ChildPlay LLM-Based Behavioral Analysis
 
-[![tests](https://github.com/aazaadef/Behaioral_Modeling_LLM/actions/workflows/test.yml/badge.svg)](https://github.com/aazaadef/Behaioral_Modeling_LLM/actions/workflows/test.yml)
-[![lint](https://github.com/aazaadef/Behaioral_Modeling_LLM/actions/workflows/lint.yml/badge.svg)](https://github.com/aazaadef/Behaioral_Modeling_LLM/actions/workflows/lint.yml)
+[![tests](https://github.com/aazaadef/Behavioral_Modeling_LLM/actions/workflows/test.yml/badge.svg)](https://github.com/aazaadef/Behavioral_Modeling_LLM/actions/workflows/test.yml)
+[![lint](https://github.com/aazaadef/Behavioral_Modeling_LLM/actions/workflows/lint.yml/badge.svg)](https://github.com/aazaadef/Behavioral_Modeling_LLM/actions/workflows/lint.yml)
 [![python](https://img.shields.io/badge/python-3.10%20%7C%203.11%20%7C%203.12-blue.svg)](https://www.python.org/)
 [![code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
@@ -210,8 +210,8 @@ virtualenv (`.venv/`), and the source-video files under
 Requires **Python 3.10+**.
 
 ```bash
-git clone git@github.com:aazaadef/Behaioral_Modeling_LLM.git
-cd Behaioral_Modeling_LLM
+git clone git@github.com:aazaadef/Behavioral_Modeling_LLM.git
+cd Behavioral_Modeling_LLM
 
 python -m venv .venv
 source .venv/bin/activate
@@ -366,7 +366,7 @@ For interim reference, please cite this repository:
   title  = {ChildPlay LLM-Based Behavioral Analysis: A Hybrid
             Framework for Gaze-Based Attention Classification},
   year   = {2026},
-  url    = {https://github.com/aazaadef/Behaioral_Modeling_LLM}
+  url    = {https://github.com/aazaadef/Behavioral_Modeling_LLM}
 }
 ```
 

@@ -377,3 +377,11 @@ For interim reference, please cite this repository:
 Built on the [ChildPlay-gaze](https://github.com/idiap/childplay) dataset.
 LLM inference uses open-weight models hosted on the HuggingFace Hub:
 Qwen, Yi, Llama, Mistral, and Phi families.
+
+---
+
+## License
+
+- **Code** in this repository is licensed under the [MIT License](LICENSE).
+- **Data** under `data set/` (ChildPlay-gaze annotations) is third-party and licensed
+  under **CC BY-NC 4.0** (non-commercial) — see [`data set/ATTRIBUTION.md`](data%20set/ATTRIBUTION.md).

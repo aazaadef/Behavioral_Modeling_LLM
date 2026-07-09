@@ -76,3 +76,10 @@ dist/
 
 # --- Internal / pre-publication notes (never push) ---
 _private/
+
+# --- Manuscript source (kept off GitHub on purpose; only the artifacts in the
+#     Data availability statement are published, not the paper itself) ---
+output/Main.tex
+output/highlights.tex
+output/Highlights.docx
+output/project_LLM_refs.bib

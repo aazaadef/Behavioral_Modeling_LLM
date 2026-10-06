@@ -1,0 +1,70 @@
+sequence_id,clip_id,video_id,channel_id,person_id,split,fps,frame_count,observed_frames,rater1,rater2,raters_agree,consensus,consensus_matches,resolution
+1Ab4vLMMAbY_2354-2439:person_1,1Ab4vLMMAbY_2354-2439,1Ab4vLMMAbY,UCXe3gqCj-uoC-zmAa7If_VQ,1,test,24.0,86,86,focused,focused,True,focused,both,initial agreement
+1Ab4vLMMAbY_412-554:person_1,1Ab4vLMMAbY_412-554,1Ab4vLMMAbY,UCXe3gqCj-uoC-zmAa7If_VQ,1,test,24.0,143,143,focused,focused,True,focused,both,initial agreement
+1Ab4vLMMAbY_557-690:person_1,1Ab4vLMMAbY_557-690,1Ab4vLMMAbY,UCXe3gqCj-uoC-zmAa7If_VQ,1,test,24.0,134,134,focused,focused,True,focused,both,initial agreement
+31lG75MDwSA_2857-2928:person_1,31lG75MDwSA_2857-2928,31lG75MDwSA,UCH2C2GXT11f8Zs7NK9Utl6A,1,test,30.0,72,72,focused,focused,True,focused,both,initial agreement
+31lG75MDwSA_3180-3306:person_1,31lG75MDwSA_3180-3306,31lG75MDwSA,UCH2C2GXT11f8Zs7NK9Utl6A,1,test,30.0,127,127,focused,focused,True,focused,both,initial agreement
+31lG75MDwSA_4686-4764:person_2,31lG75MDwSA_4686-4764,31lG75MDwSA,UCH2C2GXT11f8Zs7NK9Utl6A,2,test,30.0,79,79,mix,focused,False,mix,rater1,joint discussion between the two raters
+6mA6UAoT3M0_6165-6361:person_1,6mA6UAoT3M0_6165-6361,6mA6UAoT3M0,UCB3eI3ENiFXGuchginHZP_Q,1,test,30.0,197,197,mix,others,False,others,rater2,joint discussion between the two raters
+6mA6UAoT3M0_6165-6361:person_3,6mA6UAoT3M0_6165-6361,6mA6UAoT3M0,UCB3eI3ENiFXGuchginHZP_Q,3,test,30.0,197,197,focused,focused,True,focused,both,initial agreement
+9DNwRwt5kI4_10666-10822:person_2,9DNwRwt5kI4_10666-10822,9DNwRwt5kI4,UCEjCyBoWP57QRkmFRz-aOGw,2,test,25.0,157,157,mix,focused,False,focused,rater2,joint discussion between the two raters
+9DNwRwt5kI4_10666-10822:person_3,9DNwRwt5kI4_10666-10822,9DNwRwt5kI4,UCEjCyBoWP57QRkmFRz-aOGw,3,test,25.0,157,157,mix,mix,True,mix,both,initial agreement
+9DNwRwt5kI4_14988-15270:person_2,9DNwRwt5kI4_14988-15270,9DNwRwt5kI4,UCEjCyBoWP57QRkmFRz-aOGw,2,test,25.0,283,283,others,mix,False,others,rater1,joint discussion between the two raters
+9DNwRwt5kI4_14988-15270:person_3,9DNwRwt5kI4_14988-15270,9DNwRwt5kI4,UCEjCyBoWP57QRkmFRz-aOGw,3,test,25.0,283,283,focused,mix,False,mix,rater2,joint discussion between the two raters
+9DNwRwt5kI4_2442-3179:person_1,9DNwRwt5kI4_2442-3179,9DNwRwt5kI4,UCEjCyBoWP57QRkmFRz-aOGw,1,test,25.0,738,487,mix,others,False,focused,neither,joint discussion between the two raters
+9DNwRwt5kI4_2442-3179:person_3,9DNwRwt5kI4_2442-3179,9DNwRwt5kI4,UCEjCyBoWP57QRkmFRz-aOGw,3,test,25.0,738,738,mix,mix,True,mix,both,initial agreement
+LHT2zVYvObg_1790-1917:person_1,LHT2zVYvObg_1790-1917,LHT2zVYvObg,UCUyE-L2iWWV_tMoT20KF6xQ,1,test,24.0,128,128,focused,focused,True,focused,both,initial agreement
+LHT2zVYvObg_1790-1917:person_2,LHT2zVYvObg_1790-1917,LHT2zVYvObg,UCUyE-L2iWWV_tMoT20KF6xQ,2,test,24.0,128,128,focused,mix,False,focused,rater1,joint discussion between the two raters
+LHT2zVYvObg_1921-2099:person_1,LHT2zVYvObg_1921-2099,LHT2zVYvObg,UCUyE-L2iWWV_tMoT20KF6xQ,1,test,24.0,179,179,focused,focused,True,focused,both,initial agreement
+LS9Hztyrmmw_1768-1839:person_2,LS9Hztyrmmw_1768-1839,LS9Hztyrmmw,UCEjCyBoWP57QRkmFRz-aOGw,2,test,30.0,72,72,focused,focused,True,focused,both,initial agreement
+LS9Hztyrmmw_1768-1839:person_3,LS9Hztyrmmw_1768-1839,LS9Hztyrmmw,UCEjCyBoWP57QRkmFRz-aOGw,3,test,30.0,72,72,mix,focused,False,focused,rater2,joint discussion between the two raters
+LS9Hztyrmmw_2667-2845:person_2,LS9Hztyrmmw_2667-2845,LS9Hztyrmmw,UCEjCyBoWP57QRkmFRz-aOGw,2,test,30.0,179,179,focused,focused,True,focused,both,initial agreement
+LS9Hztyrmmw_2667-2845:person_3,LS9Hztyrmmw_2667-2845,LS9Hztyrmmw,UCEjCyBoWP57QRkmFRz-aOGw,3,test,30.0,179,179,focused,focused,True,focused,both,initial agreement
+Lva4fn4_q88_1270-1473:person_2,Lva4fn4_q88_1270-1473,Lva4fn4_q88,UCEjCyBoWP57QRkmFRz-aOGw,2,test,30.0,204,204,focused,focused,True,focused,both,initial agreement
+Lva4fn4_q88_1270-1473:person_3,Lva4fn4_q88_1270-1473,Lva4fn4_q88,UCEjCyBoWP57QRkmFRz-aOGw,3,test,30.0,204,204,mix,focused,False,focused,rater2,joint discussion between the two raters
+Lva4fn4_q88_4391-4523:person_2,Lva4fn4_q88_4391-4523,Lva4fn4_q88,UCEjCyBoWP57QRkmFRz-aOGw,2,test,30.0,133,124,focused,focused,True,focused,both,initial agreement
+Lva4fn4_q88_4391-4523:person_3,Lva4fn4_q88_4391-4523,Lva4fn4_q88,UCEjCyBoWP57QRkmFRz-aOGw,3,test,30.0,133,133,mix,focused,False,mix,rater1,joint discussion between the two raters
+Lva4fn4_q88_4691-4775:person_2,Lva4fn4_q88_4691-4775,Lva4fn4_q88,UCEjCyBoWP57QRkmFRz-aOGw,2,test,30.0,85,85,focused,focused,True,focused,both,initial agreement
+Lva4fn4_q88_4691-4775:person_3,Lva4fn4_q88_4691-4775,Lva4fn4_q88,UCEjCyBoWP57QRkmFRz-aOGw,3,test,30.0,85,85,focused,focused,True,focused,both,initial agreement
+Lva4fn4_q88_5291-5420:person_2,Lva4fn4_q88_5291-5420,Lva4fn4_q88,UCEjCyBoWP57QRkmFRz-aOGw,2,test,30.0,130,130,focused,focused,True,focused,both,initial agreement
+Lva4fn4_q88_5291-5420:person_3,Lva4fn4_q88_5291-5420,Lva4fn4_q88,UCEjCyBoWP57QRkmFRz-aOGw,3,test,30.0,130,130,focused,focused,True,focused,both,initial agreement
+ND7pXuhs3VM_1800-1925:person_2,ND7pXuhs3VM_1800-1925,ND7pXuhs3VM,UCYYUNvhURfuC7zFli3TyPig,2,test,30.0,126,126,focused,mix,False,mix,rater2,joint discussion between the two raters
+ND7pXuhs3VM_3066-3159:person_1,ND7pXuhs3VM_3066-3159,ND7pXuhs3VM,UCYYUNvhURfuC7zFli3TyPig,1,test,30.0,94,94,mix,mix,True,mix,both,initial agreement
+NIk1-ck4c6Q_13651-13719:person_2,NIk1-ck4c6Q_13651-13719,NIk1-ck4c6Q,UCEjCyBoWP57QRkmFRz-aOGw,2,test,25.0,69,69,mix,mix,True,mix,both,initial agreement
+NIk1-ck4c6Q_13651-13719:person_3,NIk1-ck4c6Q_13651-13719,NIk1-ck4c6Q,UCEjCyBoWP57QRkmFRz-aOGw,3,test,25.0,69,69,mix,mix,True,mix,both,initial agreement
+NIk1-ck4c6Q_22766-22806:person_2,NIk1-ck4c6Q_22766-22806,NIk1-ck4c6Q,UCEjCyBoWP57QRkmFRz-aOGw,2,test,25.0,41,41,focused,focused,True,focused,both,initial agreement
+NIk1-ck4c6Q_22766-22806:person_3,NIk1-ck4c6Q_22766-22806,NIk1-ck4c6Q,UCEjCyBoWP57QRkmFRz-aOGw,3,test,25.0,41,41,focused,focused,True,focused,both,initial agreement
+N_9vfhsDz8w_5785-5911:person_2,N_9vfhsDz8w_5785-5911,N_9vfhsDz8w,UCuQFciSjwHz-KmKbINyPpOw,2,test,30.0,127,127,focused,focused,True,focused,both,initial agreement
+N_9vfhsDz8w_5785-5911:person_3,N_9vfhsDz8w_5785-5911,N_9vfhsDz8w,UCuQFciSjwHz-KmKbINyPpOw,3,test,30.0,127,127,focused,focused,True,focused,both,initial agreement
+N_9vfhsDz8w_6085-6298:person_2,N_9vfhsDz8w_6085-6298,N_9vfhsDz8w,UCuQFciSjwHz-KmKbINyPpOw,2,test,30.0,214,214,focused,focused,True,focused,both,initial agreement
+N_9vfhsDz8w_6085-6298:person_3,N_9vfhsDz8w_6085-6298,N_9vfhsDz8w,UCuQFciSjwHz-KmKbINyPpOw,3,test,30.0,214,214,focused,focused,True,focused,both,initial agreement
+Pyb0z_YQjjI_7332-7429:person_2,Pyb0z_YQjjI_7332-7429,Pyb0z_YQjjI,UCEjCyBoWP57QRkmFRz-aOGw,2,test,25.0,98,98,mix,mix,True,mix,both,initial agreement
+Pyb0z_YQjjI_7332-7429:person_3,Pyb0z_YQjjI_7332-7429,Pyb0z_YQjjI,UCEjCyBoWP57QRkmFRz-aOGw,3,test,25.0,98,98,focused,focused,True,focused,both,initial agreement
+Pyb0z_YQjjI_7632-7685:person_2,Pyb0z_YQjjI_7632-7685,Pyb0z_YQjjI,UCEjCyBoWP57QRkmFRz-aOGw,2,test,25.0,54,54,focused,focused,True,focused,both,initial agreement
+Pyb0z_YQjjI_7632-7685:person_3,Pyb0z_YQjjI_7632-7685,Pyb0z_YQjjI,UCEjCyBoWP57QRkmFRz-aOGw,3,test,25.0,54,54,focused,focused,True,focused,both,initial agreement
+UUwGLDeYN8c_266-474:person_1,UUwGLDeYN8c_266-474,UUwGLDeYN8c,UCXe3gqCj-uoC-zmAa7If_VQ,1,test,24.0,209,209,focused,focused,True,focused,both,initial agreement
+WpbXt04qWEk_1166-1611:person_1,WpbXt04qWEk_1166-1611,WpbXt04qWEk,UCH2C2GXT11f8Zs7NK9Utl6A,1,test,30.0,446,446,focused,focused,True,focused,both,initial agreement
+WpbXt04qWEk_924-1135:person_1,WpbXt04qWEk_924-1135,WpbXt04qWEk,UCH2C2GXT11f8Zs7NK9Utl6A,1,test,30.0,212,212,focused,focused,True,focused,both,initial agreement
+aWV7UUMddCU_5934-6205:person_2,aWV7UUMddCU_5934-6205,aWV7UUMddCU,UCUunHJtnux8FZ7HIV3S0e4g,2,test,30.0,272,272,focused,mix,False,mix,rater2,joint discussion between the two raters
+aWV7UUMddCU_6517-7514:person_1,aWV7UUMddCU_6517-7514,aWV7UUMddCU,UCUunHJtnux8FZ7HIV3S0e4g,1,test,30.0,998,923,mix,mix,True,mix,both,initial agreement
+dUYIh1U2z-8_3300-3427:person_1,dUYIh1U2z-8_3300-3427,dUYIh1U2z-8,UCUyE-L2iWWV_tMoT20KF6xQ,1,test,30.0,128,128,others,others,True,others,both,initial agreement
+dUYIh1U2z-8_3300-3427:person_2,dUYIh1U2z-8_3300-3427,dUYIh1U2z-8,UCUyE-L2iWWV_tMoT20KF6xQ,2,test,30.0,128,128,focused,focused,True,focused,both,initial agreement
+dUYIh1U2z-8_4007-4220:person_1,dUYIh1U2z-8_4007-4220,dUYIh1U2z-8,UCUyE-L2iWWV_tMoT20KF6xQ,1,test,30.0,214,214,focused,focused,True,focused,both,initial agreement
+dUYIh1U2z-8_4007-4220:person_2,dUYIh1U2z-8_4007-4220,dUYIh1U2z-8,UCUyE-L2iWWV_tMoT20KF6xQ,2,test,30.0,214,214,focused,focused,True,focused,both,initial agreement
+dUYIh1U2z-8_4007-4220:person_3,dUYIh1U2z-8_4007-4220,dUYIh1U2z-8,UCUyE-L2iWWV_tMoT20KF6xQ,3,test,30.0,214,214,focused,focused,True,focused,both,initial agreement
+f6wqlpG9rd0_1402-1688:person_1,f6wqlpG9rd0_1402-1688,f6wqlpG9rd0,UCcdj0no4KBJMfPVq0QohFRw,1,test,30.0,287,287,focused,focused,True,focused,both,initial agreement
+f6wqlpG9rd0_203-262:person_1,f6wqlpG9rd0_203-262,f6wqlpG9rd0,UCcdj0no4KBJMfPVq0QohFRw,1,test,30.0,60,60,focused,focused,True,focused,both,initial agreement
+f6wqlpG9rd0_9404-9541:person_1,f6wqlpG9rd0_9404-9541,f6wqlpG9rd0,UCcdj0no4KBJMfPVq0QohFRw,1,test,30.0,138,138,mix,mix,True,mix,both,initial agreement
+f6wqlpG9rd0_9704-9949:person_1,f6wqlpG9rd0_9704-9949,f6wqlpG9rd0,UCcdj0no4KBJMfPVq0QohFRw,1,test,30.0,246,246,mix,mix,True,mix,both,initial agreement
+fvJbRuIu4-0_1308-1370:person_1,fvJbRuIu4-0_1308-1370,fvJbRuIu4-0,UCsPsIG_jQAlGW0MfPmY-WGw,1,test,30.0,63,63,focused,focused,True,focused,both,initial agreement
+fvJbRuIu4-0_1308-1370:person_2,fvJbRuIu4-0_1308-1370,fvJbRuIu4-0,UCsPsIG_jQAlGW0MfPmY-WGw,2,test,30.0,63,63,focused,focused,True,focused,both,initial agreement
+fvJbRuIu4-0_1907-2018:person_1,fvJbRuIu4-0_1907-2018,fvJbRuIu4-0,UCsPsIG_jQAlGW0MfPmY-WGw,1,test,30.0,112,112,mix,mix,True,mix,both,initial agreement
+fvJbRuIu4-0_1907-2018:person_2,fvJbRuIu4-0_1907-2018,fvJbRuIu4-0,UCsPsIG_jQAlGW0MfPmY-WGw,2,test,30.0,112,112,focused,focused,True,focused,both,initial agreement
+ivX3JXIV1W4_1-1920:person_1,ivX3JXIV1W4_1-1920,ivX3JXIV1W4,UCsPsIG_jQAlGW0MfPmY-WGw,1,test,30.0,1920,1920,focused,focused,True,focused,both,initial agreement
+ivX3JXIV1W4_1-1920:person_2,ivX3JXIV1W4_1-1920,ivX3JXIV1W4,UCsPsIG_jQAlGW0MfPmY-WGw,2,test,30.0,1920,1920,focused,focused,True,focused,both,initial agreement
+odFKscFdEas_14127-14292:person_2,odFKscFdEas_14127-14292,odFKscFdEas,UCuQFciSjwHz-KmKbINyPpOw,2,test,30.0,166,166,mix,mix,True,mix,both,initial agreement
+odFKscFdEas_15822-16030:person_2,odFKscFdEas_15822-16030,odFKscFdEas,UCuQFciSjwHz-KmKbINyPpOw,2,test,30.0,209,209,mix,mix,True,mix,both,initial agreement
+whHPATlDw8M_33039-33248-downsampled:person_1,whHPATlDw8M_33039-33248-downsampled,whHPATlDw8M,UCUunHJtnux8FZ7HIV3S0e4g,1,test,60.0,105,105,focused,focused,True,focused,both,initial agreement
+whHPATlDw8M_5014-5313-downsampled:person_2,whHPATlDw8M_5014-5313-downsampled,whHPATlDw8M,UCUunHJtnux8FZ7HIV3S0e4g,2,test,60.0,150,150,focused,focused,True,focused,both,initial agreement
+zmZpa1p5zaE_1028-1129:person_1,zmZpa1p5zaE_1028-1129,zmZpa1p5zaE,UCsPsIG_jQAlGW0MfPmY-WGw,1,test,30.0,102,102,focused,focused,True,focused,both,initial agreement
+zmZpa1p5zaE_1028-1129:person_2,zmZpa1p5zaE_1028-1129,zmZpa1p5zaE,UCsPsIG_jQAlGW0MfPmY-WGw,2,test,30.0,102,102,mix,mix,True,mix,both,initial agreement

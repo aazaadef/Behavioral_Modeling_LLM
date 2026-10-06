@@ -1,0 +1,11 @@
+{
+ "python": "3.9.25",
+ "torch": "2.8.0+cu128",
+ "transformers": "4.57.6",
+ "gpus": [
+  "NVIDIA RTX A6000",
+  "NVIDIA RTX A6000"
+ ],
+ "precision": "7-9B models: bf16 (torch_dtype=auto); Qwen2.5-72B: 4-bit nf4, fp16 compute",
+ "decoding": "greedy, max_new_tokens=256, min_new_tokens=8, stop at model eos tokens"
+}

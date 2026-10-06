@@ -1,0 +1,187 @@
+{
+ "6mA6UAoT3M0_6165-6361:person_1": {
+  "Qwen2.5-72B": {
+   "label": "mix",
+   "confidence": 0.75,
+   "explanation": "The child has a moderate attention stability score and a significant number of gaze shift events, indicating active switching or scanning across multiple targets."
+  },
+  "Yi-1.5-9B": {
+   "label": "mix",
+   "confidence": 0.9,
+   "explanation": "The child shows a mix of stable and shifting gaze, with a moderate number of gaze shifts and a relatively high attention stability score."
+  },
+  "Mistral-7B": {
+   "label": "mix",
+   "confidence": 0.9,
+   "explanation": "The child's gaze shift ratio is relatively high (0.1269), indicating frequent gaze shifts. The attention stability score is also not exceptionally high (0.7188), suggesting some instability in visual attention. The child's gaze is not consistently on a single target, and there are multiple targets of interest (as indicated by the 'num_interactions' feature)."
+  },
+  "Phi-4-mini": {
+   "label": "mix",
+   "confidence": 0.85,
+   "explanation": "The child has a mix of stable and shifting gaze patterns, with a significant number of gaze shifts and a moderate occlusion ratio."
+  },
+  "Llama-3.1-8B": {
+   "label": "mix",
+   "confidence": 0.8,
+   "explanation": "The child's high gaze shift ratio (0.1269) and moderate mean gaze motion (18.16) suggest active scanning across multiple targets, while the stable attention stability score (0.7188) indicates some sustained attention."
+  },
+  "qwen-7b": {
+   "label": "mix",
+   "confidence": 0.9,
+   "explanation": "The child has a moderate attention stability score (0.718) and a high gaze shift ratio (0.127), indicating active switching between targets. The mix of stable and shifting gaze, along with a moderate number of interactions and a balance between on-screen and visible time, suggests a mix of focused and exploratory attention."
+  },
+  "Qwen2.5-7B": {
+   "label": "focused",
+   "confidence": 0.9,
+   "explanation": "The high attention stability score and low occlusion ratio indicate that the child's gaze was stable and focused on a target for most of the time. The low number of gaze shift events and the presence of long visible streaks further support this classification."
+  }
+ },
+ "9DNwRwt5kI4_14988-15270:person_2": {
+  "Qwen2.5-72B": {
+   "label": "mix",
+   "confidence": 0.75,
+   "explanation": "The child exhibits a moderate level of attention stability with frequent gaze shifts, indicating an active scanning pattern."
+  },
+  "Yi-1.5-9B": {
+   "label": "mix",
+   "confidence": 0.9,
+   "explanation": "The child exhibits a moderate level of attention stability, moderate gaze shift events, and a mix of visible and occluded gaze, indicating a mix of focused and exploratory attention."
+  },
+  "Mistral-7B": {
+   "label": "mix",
+   "confidence": 0.9,
+   "explanation": "The child's gaze shift ratio is relatively high (0.17667844522968199), indicating frequent gaze shifts. The attention stability score is also moderate (0.5846165763921342), suggesting some level of sustained attention. However, the gaze shift events (50) and the number of segments (16) are both high, indicating a mix of stable and shifting visual attention patterns."
+  },
+  "Phi-4-mini": {
+   "label": "mix",
+   "confidence": 0.85,
+   "explanation": "The child has a moderate number of gaze shifts and a significant occlusion ratio, indicating active scanning and mixed attention patterns."
+  },
+  "Llama-3.1-8B": {
+   "label": "mix",
+   "confidence": 0.8,
+   "explanation": "The child's high gaze shift ratio (0.1767) and moderate mean gaze motion (14.16) suggest active scanning across multiple targets, while the stable attention stability score (0.5846) indicates some sustained attention."
+  },
+  "qwen-7b": {
+   "label": "mix",
+   "confidence": 0.85,
+   "explanation": "The child has a moderate attention stability score (0.58) and a high gaze shift ratio (0.18), indicating active switching between targets. The mix of stable and shifting gaze, along with a moderate number of interactions and occlusions, suggests a combination of focused and exploratory behavior."
+  },
+  "Qwen2.5-7B": {
+   "label": "mix",
+   "confidence": 0.85,
+   "explanation": "The child has a moderate number of gaze shift events and a high occlusion ratio, indicating active switching and some occlusions, which aligns with a 'mix' behavior."
+  }
+ },
+ "dUYIh1U2z-8_3300-3427:person_1": {
+  "Qwen2.5-72B": {
+   "label": "focused",
+   "confidence": 0.98,
+   "explanation": "The high attention stability score and lack of gaze shift events indicate that the child maintained a stable focus on a target throughout the observation period."
+  },
+  "Yi-1.5-9B": {
+   "label": "focused",
+   "confidence": 0.9877,
+   "explanation": "The child exhibits stable, sustained visual attention with minimal gaze shifts, high visibility, and no eye closure, indicating focused attention."
+  },
+  "Mistral-7B": {
+   "label": "focused",
+   "confidence": 0.99,
+   "explanation": "The child's attention stability score is very high (0.9877), indicating stable, sustained visual attention on a target. The gaze shift events and ratio are both zero, meaning the child did not shift gaze. The eyes_closed_ratio is also zero, suggesting the child was not closing their eyes. The child was on-screen for all observed frames (on_screen_ratio = 1.0) and the visible_gaze_fraction and visible_ratio are both 1.0, indicating no occlusion or loss of gaze data."
+  },
+  "Phi-4-mini": {
+   "label": "focused",
+   "confidence": 0.987,
+   "explanation": "The child shows stable, sustained visual attention on a target with minimal gaze shifts, as indicated by the high attention stability score and zero gaze shift events."
+  },
+  "Llama-3.1-8B": {
+   "label": "focused",
+   "confidence": 0.9,
+   "explanation": "The child's high attention stability score (0.9877) and low gaze shift ratio (0.0) indicate sustained visual attention on a target."
+  },
+  "qwen-7b": {
+   "label": "focused",
+   "confidence": 0.99,
+   "explanation": "High attention stability score (0.987) and no gaze shifts indicate a stable, sustained focus on the target. Additionally, the child was mostly on-screen and had a visible gaze fraction of 1.0."
+  },
+  "Qwen2.5-7B": {
+   "label": "focused",
+   "confidence": 0.98,
+   "explanation": "The high attention stability score and low gaze shift events indicate that the child's gaze was stable and focused on a single target for most of the observed time."
+  }
+ },
+ "9DNwRwt5kI4_10666-10822:person_3": {
+  "Qwen2.5-72B": {
+   "label": "others",
+   "confidence": 0.85,
+   "explanation": "The child's gaze is predominantly outside the frame, with a low on-screen ratio, indicating that the gaze data is not reliably usable for analysis."
+  },
+  "Yi-1.5-9B": {
+   "label": "mix",
+   "confidence": 0.8,
+   "explanation": "The child exhibits a moderate level of gaze shifts (27 events) and a moderate on-screen ratio (0.3885), indicating a mix of focused and exploratory attention."
+  },
+  "Mistral-7B": {
+   "label": "others",
+   "confidence": 1.0,
+   "explanation": "The child's gaze is not reliably usable because the dominant gaze class is 'outside_frame', indicating that the child is not on-screen for a significant portion of the video clip."
+  },
+  "Phi-4-mini": {
+   "label": "others",
+   "confidence": 1.0,
+   "explanation": "The child is mostly off-frame, as indicated by the dominant_gaze_class 'outside_frame'."
+  },
+  "Llama-3.1-8B": {
+   "label": "mix",
+   "confidence": 0.8,
+   "explanation": "The child has a moderate attention stability score and a relatively high number of gaze shifts, indicating a mix of stable and shifting attention patterns."
+  },
+  "qwen-7b": {
+   "label": "mix",
+   "confidence": 0.9,
+   "explanation": "The child has a moderate gaze shift ratio (0.172) and switches between multiple targets, indicating a mix of stable and shifting attention. The presence of 'on_screen_ratio' suggests some active exploration."
+  },
+  "Qwen2.5-7B": {
+   "label": "others",
+   "confidence": 0.95,
+   "explanation": "The child's gaze is predominantly outside the frame, and there are numerous gaze shift events, making it difficult to classify their attention as focused or mixed."
+  }
+ },
+ "ND7pXuhs3VM_3066-3159:person_1": {
+  "Qwen2.5-72B": {
+   "label": "others",
+   "confidence": 0.85,
+   "explanation": "The child's gaze is predominantly outside the frame, with a low on-screen ratio, indicating that the gaze data is not reliably usable for analysis."
+  },
+  "Yi-1.5-9B": {
+   "label": "mix",
+   "confidence": 0.8,
+   "explanation": "The child shows a mix of stable and shifting gaze patterns due to the presence of gaze shift events and varying attention stability score."
+  },
+  "Mistral-7B": {
+   "label": "others",
+   "confidence": 1.0,
+   "explanation": "The child's gaze is not reliably usable because the dominant gaze class is 'outside_frame', meaning the child is not looking at any target within the frame."
+  },
+  "Phi-4-mini": {
+   "label": "others",
+   "confidence": 1.0,
+   "explanation": "The child is mostly off-frame, as indicated by the dominant_gaze_class 'outside_frame'."
+  },
+  "Llama-3.1-8B": {
+   "label": "mix",
+   "confidence": 0.8,
+   "explanation": "The child has a moderate level of gaze stability (0.5047978446986492) and a relatively high number of gaze shifts (5), indicating a mix of stable and shifting attention patterns."
+  },
+  "qwen-7b": {
+   "label": "mix",
+   "confidence": 0.9,
+   "explanation": "The child has a moderate attention stability score (0.50) and a high gaze shift ratio (0.053), indicating active switching between targets. The presence of both stable and shifting gaze patterns, along with a moderate on-screen ratio (30.85%), suggests a mix of focused and exploratory attention."
+  },
+  "Qwen2.5-7B": {
+   "label": "others",
+   "confidence": 0.9,
+   "explanation": "The child's gaze is predominantly outside the frame, and there are multiple gaze shift events, making it unreliable for classification as focused or mix."
+  }
+ }
+}

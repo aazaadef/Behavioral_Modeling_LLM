@@ -63,9 +63,6 @@ Thumbs.db
 secrets.json
 .codex
 
-# --- AI coding assistant local state ---
-.claude/
-
 # --- Local logs ---
 *.log
 logs/
@@ -84,3 +81,16 @@ output/highlights.tex
 output/Highlights.docx
 output/project_LLM_refs.bib
 output/PAPER_DRAFT.md
+output/PAPER_NOTES.md
+output/*.tex
+output/TitlePage.*
+/*.tex
+HANDOFF_*.md
+
+# --- Revision: generated table rows and supplementary files (rebuild with
+#     revision/manuscript/build_tables.py); manuscript files stay private ---
+revision/overleaf/
+revision/overleaf_supplementary/
+
+# --- Video frames of children: never publish ---
+output/paper_eval/manual_labeling_package/images/

@@ -1,0 +1,6 @@
+sequence,visible_ratio,occlusion_ratio,eyes_closed_ratio,max_occlusion_streak,observed_frames,dominant_gaze_class,rater1,rater2,consensus,rule,gate_fires,llm_votes,supervised_votes
+6mA6UAoT3M0_6165-6361:person_1,0.7563451776649747,0.116751269035533,0.0,23,197,inside_visible,mix,others,others,mix,False,"mix 6, focused 1","mix 3, focused 2"
+9DNwRwt5kI4_14988-15270:person_2,0.5971731448763251,0.22614840989399293,0.0,34,283,inside_visible,others,mix,others,mix,True,mix 7,mix 5
+dUYIh1U2z-8_3300-3427:person_1,1.0,0.0,0.0,0,128,inside_visible,others,others,others,focused,False,focused 7,focused 5
+9DNwRwt5kI4_10666-10822:person_3,0.3885350318471338,0.0,0.0,0,157,outside_frame,mix,mix,mix,mix,True,"others 4, mix 3","mix 4, focused 1"
+ND7pXuhs3VM_3066-3159:person_1,0.30851063829787234,0.0,0.0,0,94,outside_frame,mix,mix,mix,mix,True,"others 4, mix 3","focused 3, mix 2"

@@ -1,35 +1,23 @@
 # Paper Evaluation Assets
 
-This folder contains the manual-evaluation assets used to build the
-3-class consensus reference labels for the 69-clip test subset.
+This folder contains the assets behind the human reference labels for the 69 child–clip sequences of the ChildPlay-gaze test split.
 
 ## Files
 
 | File | Purpose |
 |---|---|
-| `label_schema.json` | Canonical 3-class label schema (`focused` / `mix` / `others`) with definitions. |
-| `annotation_guidelines.md` | Rater guidelines used during the manual labeling pass. |
-| `manual_eval_annotations_3class.csv` | Two-rater 3-class annotations for the 69-clip subset, plus consensus column. |
-| `target_items_69.csv` / `.json` | Metadata for the 69 evaluation clips (clip ID, fps, frame count, etc.). |
+| `annotation_guidelines.md` | The guideline the raters used (original five-category protocol), with the merge into three classes. |
+| `label_schema.json` | Definitions of the three merged classes (`focused` / `mix` / `others`), as used in the model prompts. |
+| `manual_eval_annotations_3class.csv` | Analysis sheet: both raters' labels and the consensus (merged to three classes), with the rule and model predictions added after labelling. |
+| `target_items_69.csv` / `.json` | Metadata for the 69 evaluation sequences (clip ID, fps, frame count, etc.). |
 | `target_person_tracks.json` | Per-clip target person ID / time-window metadata. |
 
 ## Workflow
 
-The labels were collected as follows:
+1. Two authors (A.F. and N.P.) labelled every sequence independently from the video clip, with the target child marked by a bounding box on a reference frame. They used `annotation_guidelines.md` (five categories) and had no feature values, summaries or model outputs.
+2. The raters disagreed on 15 sequences in the five categories. All disagreements were resolved by joint discussion between the two raters.
+3. While reviewing the clips together, the raters merged the five categories into three classes, because some categories had few or no members and could not be reliably distinguished: exploratory and mixed attention became `mix`, and occluded attention and reduced visual availability became `others`. No sequence was relabelled; after merging, 12 disagreements remain.
+4. All systems were then run from scratch under the three-class schema ("Phase A" in file names).
+5. The rule and model predictions were joined to the labels in `manual_eval_annotations_3class.csv` only for analysis, after labelling. The column `suggested_reference_label_3class` is a rule-derived column of that analysis sheet.
 
-1. Two raters read `annotation_guidelines.md` and the schema in
-   `label_schema.json`.
-2. Each rater independently assigned one label per clip in
-   `target_items_69.csv`.
-3. Cohen's κ was computed over the two label columns; consensus was
-   produced by tie-breaking with a third reviewer for the
-   inter-rater disagreement zone (12 of 69 samples).
-4. The final consensus labels live in
-   `manual_eval_annotations_3class.csv` (column
-   `final_label_3class`) and in
-   `output/3class_eval/ground_truth_3class.csv`.
-
-The downstream Phase A evaluation uses
-`output/3class_eval/ground_truth_3class.csv` as the reference;
-this folder is kept for reproducibility of the labeling protocol
-itself.
+The consensus labels used as the reference are in `output/3class_eval/ground_truth_3class.csv`.

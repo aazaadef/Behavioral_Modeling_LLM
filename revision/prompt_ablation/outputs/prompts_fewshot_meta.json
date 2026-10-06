@@ -1,0 +1,1046 @@
+{
+ "design": "Out-of-fold few-shot prompts (Reviewer 3, point 4; Reviewers 1 and 4 on few-shot).\n\nDesign, fixed before any run:\n  * 3-shot, one labelled example per class (focused, mix, others), consensus labels.\n  * Examples come only from YouTube channels other than the target sequence's\n    channel, the same rule as the leave-one-channel-out supervised baselines,\n    so no example shares a channel (the proxy for the same child or family)\n    with the sequence being classified.\n  * The examples are drawn at random and shown in random order; three\n    independent draws (seeds 1, 2, 3) show how much the result depends on\n    which examples are drawn.\n  * Each example is shown as its feature payload (same JSON as the target)\n    followed by its category. The rest of the prompt is the original C0\n    prompt, unchanged.\n\nWrites outputs/prompts_fewshot.json with conditions FS3_s1, FS3_s2, FS3_s3.",
+ "examples": {
+  "FS3_s1": {
+   "1Ab4vLMMAbY_2354-2439:person_1": [
+    "focused",
+    "others",
+    "mix"
+   ],
+   "1Ab4vLMMAbY_412-554:person_1": [
+    "focused",
+    "mix",
+    "others"
+   ],
+   "1Ab4vLMMAbY_557-690:person_1": [
+    "mix",
+    "focused",
+    "others"
+   ],
+   "31lG75MDwSA_2857-2928:person_1": [
+    "others",
+    "mix",
+    "focused"
+   ],
+   "31lG75MDwSA_3180-3306:person_1": [
+    "mix",
+    "focused",
+    "others"
+   ],
+   "31lG75MDwSA_4686-4764:person_2": [
+    "others",
+    "focused",
+    "mix"
+   ],
+   "6mA6UAoT3M0_6165-6361:person_1": [
+    "mix",
+    "others",
+    "focused"
+   ],
+   "6mA6UAoT3M0_6165-6361:person_3": [
+    "mix",
+    "focused",
+    "others"
+   ],
+   "9DNwRwt5kI4_10666-10822:person_2": [
+    "others",
+    "mix",
+    "focused"
+   ],
+   "9DNwRwt5kI4_10666-10822:person_3": [
+    "mix",
+    "others",
+    "focused"
+   ],
+   "9DNwRwt5kI4_14988-15270:person_2": [
+    "focused",
+    "mix",
+    "others"
+   ],
+   "9DNwRwt5kI4_14988-15270:person_3": [
+    "others",
+    "mix",
+    "focused"
+   ],
+   "9DNwRwt5kI4_2442-3179:person_1": [
+    "others",
+    "mix",
+    "focused"
+   ],
+   "9DNwRwt5kI4_2442-3179:person_3": [
+    "focused",
+    "mix",
+    "others"
+   ],
+   "LHT2zVYvObg_1790-1917:person_1": [
+    "focused",
+    "mix",
+    "others"
+   ],
+   "LHT2zVYvObg_1790-1917:person_2": [
+    "others",
+    "mix",
+    "focused"
+   ],
+   "LHT2zVYvObg_1921-2099:person_1": [
+    "focused",
+    "mix",
+    "others"
+   ],
+   "LS9Hztyrmmw_1768-1839:person_2": [
+    "mix",
+    "others",
+    "focused"
+   ],
+   "LS9Hztyrmmw_1768-1839:person_3": [
+    "mix",
+    "focused",
+    "others"
+   ],
+   "LS9Hztyrmmw_2667-2845:person_2": [
+    "mix",
+    "others",
+    "focused"
+   ],
+   "LS9Hztyrmmw_2667-2845:person_3": [
+    "mix",
+    "focused",
+    "others"
+   ],
+   "Lva4fn4_q88_1270-1473:person_2": [
+    "mix",
+    "others",
+    "focused"
+   ],
+   "Lva4fn4_q88_1270-1473:person_3": [
+    "mix",
+    "focused",
+    "others"
+   ],
+   "Lva4fn4_q88_4391-4523:person_2": [
+    "focused",
+    "others",
+    "mix"
+   ],
+   "Lva4fn4_q88_4391-4523:person_3": [
+    "focused",
+    "mix",
+    "others"
+   ],
+   "Lva4fn4_q88_4691-4775:person_2": [
+    "mix",
+    "focused",
+    "others"
+   ],
+   "Lva4fn4_q88_4691-4775:person_3": [
+    "mix",
+    "focused",
+    "others"
+   ],
+   "Lva4fn4_q88_5291-5420:person_2": [
+    "others",
+    "focused",
+    "mix"
+   ],
+   "Lva4fn4_q88_5291-5420:person_3": [
+    "focused",
+    "mix",
+    "others"
+   ],
+   "ND7pXuhs3VM_1800-1925:person_2": [
+    "others",
+    "focused",
+    "mix"
+   ],
+   "ND7pXuhs3VM_3066-3159:person_1": [
+    "mix",
+    "focused",
+    "others"
+   ],
+   "NIk1-ck4c6Q_13651-13719:person_2": [
+    "others",
+    "focused",
+    "mix"
+   ],
+   "NIk1-ck4c6Q_13651-13719:person_3": [
+    "focused",
+    "others",
+    "mix"
+   ],
+   "NIk1-ck4c6Q_22766-22806:person_2": [
+    "focused",
+    "others",
+    "mix"
+   ],
+   "NIk1-ck4c6Q_22766-22806:person_3": [
+    "mix",
+    "others",
+    "focused"
+   ],
+   "N_9vfhsDz8w_5785-5911:person_2": [
+    "focused",
+    "mix",
+    "others"
+   ],
+   "N_9vfhsDz8w_5785-5911:person_3": [
+    "mix",
+    "others",
+    "focused"
+   ],
+   "N_9vfhsDz8w_6085-6298:person_2": [
+    "mix",
+    "focused",
+    "others"
+   ],
+   "N_9vfhsDz8w_6085-6298:person_3": [
+    "others",
+    "focused",
+    "mix"
+   ],
+   "Pyb0z_YQjjI_7332-7429:person_2": [
+    "mix",
+    "focused",
+    "others"
+   ],
+   "Pyb0z_YQjjI_7332-7429:person_3": [
+    "focused",
+    "others",
+    "mix"
+   ],
+   "Pyb0z_YQjjI_7632-7685:person_2": [
+    "focused",
+    "mix",
+    "others"
+   ],
+   "Pyb0z_YQjjI_7632-7685:person_3": [
+    "focused",
+    "mix",
+    "others"
+   ],
+   "UUwGLDeYN8c_266-474:person_1": [
+    "mix",
+    "focused",
+    "others"
+   ],
+   "WpbXt04qWEk_1166-1611:person_1": [
+    "focused",
+    "others",
+    "mix"
+   ],
+   "WpbXt04qWEk_924-1135:person_1": [
+    "others",
+    "focused",
+    "mix"
+   ],
+   "aWV7UUMddCU_5934-6205:person_2": [
+    "others",
+    "focused",
+    "mix"
+   ],
+   "aWV7UUMddCU_6517-7514:person_1": [
+    "focused",
+    "mix",
+    "others"
+   ],
+   "dUYIh1U2z-8_3300-3427:person_1": [
+    "others",
+    "focused",
+    "mix"
+   ],
+   "dUYIh1U2z-8_3300-3427:person_2": [
+    "mix",
+    "focused",
+    "others"
+   ],
+   "dUYIh1U2z-8_4007-4220:person_1": [
+    "mix",
+    "focused",
+    "others"
+   ],
+   "dUYIh1U2z-8_4007-4220:person_2": [
+    "mix",
+    "others",
+    "focused"
+   ],
+   "dUYIh1U2z-8_4007-4220:person_3": [
+    "others",
+    "mix",
+    "focused"
+   ],
+   "f6wqlpG9rd0_1402-1688:person_1": [
+    "focused",
+    "mix",
+    "others"
+   ],
+   "f6wqlpG9rd0_203-262:person_1": [
+    "others",
+    "mix",
+    "focused"
+   ],
+   "f6wqlpG9rd0_9404-9541:person_1": [
+    "mix",
+    "focused",
+    "others"
+   ],
+   "f6wqlpG9rd0_9704-9949:person_1": [
+    "focused",
+    "others",
+    "mix"
+   ],
+   "fvJbRuIu4-0_1308-1370:person_1": [
+    "others",
+    "focused",
+    "mix"
+   ],
+   "fvJbRuIu4-0_1308-1370:person_2": [
+    "mix",
+    "focused",
+    "others"
+   ],
+   "fvJbRuIu4-0_1907-2018:person_1": [
+    "mix",
+    "focused",
+    "others"
+   ],
+   "fvJbRuIu4-0_1907-2018:person_2": [
+    "others",
+    "mix",
+    "focused"
+   ],
+   "ivX3JXIV1W4_1-1920:person_1": [
+    "mix",
+    "others",
+    "focused"
+   ],
+   "ivX3JXIV1W4_1-1920:person_2": [
+    "focused",
+    "mix",
+    "others"
+   ],
+   "odFKscFdEas_14127-14292:person_2": [
+    "focused",
+    "mix",
+    "others"
+   ],
+   "odFKscFdEas_15822-16030:person_2": [
+    "focused",
+    "mix",
+    "others"
+   ],
+   "whHPATlDw8M_33039-33248-downsampled:person_1": [
+    "mix",
+    "others",
+    "focused"
+   ],
+   "whHPATlDw8M_5014-5313-downsampled:person_2": [
+    "others",
+    "focused",
+    "mix"
+   ],
+   "zmZpa1p5zaE_1028-1129:person_1": [
+    "mix",
+    "focused",
+    "others"
+   ],
+   "zmZpa1p5zaE_1028-1129:person_2": [
+    "mix",
+    "others",
+    "focused"
+   ]
+  },
+  "FS3_s2": {
+   "1Ab4vLMMAbY_2354-2439:person_1": [
+    "focused",
+    "mix",
+    "others"
+   ],
+   "1Ab4vLMMAbY_412-554:person_1": [
+    "mix",
+    "others",
+    "focused"
+   ],
+   "1Ab4vLMMAbY_557-690:person_1": [
+    "focused",
+    "others",
+    "mix"
+   ],
+   "31lG75MDwSA_2857-2928:person_1": [
+    "focused",
+    "others",
+    "mix"
+   ],
+   "31lG75MDwSA_3180-3306:person_1": [
+    "focused",
+    "mix",
+    "others"
+   ],
+   "31lG75MDwSA_4686-4764:person_2": [
+    "focused",
+    "others",
+    "mix"
+   ],
+   "6mA6UAoT3M0_6165-6361:person_1": [
+    "mix",
+    "focused",
+    "others"
+   ],
+   "6mA6UAoT3M0_6165-6361:person_3": [
+    "focused",
+    "mix",
+    "others"
+   ],
+   "9DNwRwt5kI4_10666-10822:person_2": [
+    "mix",
+    "others",
+    "focused"
+   ],
+   "9DNwRwt5kI4_10666-10822:person_3": [
+    "mix",
+    "focused",
+    "others"
+   ],
+   "9DNwRwt5kI4_14988-15270:person_2": [
+    "others",
+    "mix",
+    "focused"
+   ],
+   "9DNwRwt5kI4_14988-15270:person_3": [
+    "others",
+    "mix",
+    "focused"
+   ],
+   "9DNwRwt5kI4_2442-3179:person_1": [
+    "focused",
+    "others",
+    "mix"
+   ],
+   "9DNwRwt5kI4_2442-3179:person_3": [
+    "focused",
+    "mix",
+    "others"
+   ],
+   "LHT2zVYvObg_1790-1917:person_1": [
+    "focused",
+    "others",
+    "mix"
+   ],
+   "LHT2zVYvObg_1790-1917:person_2": [
+    "others",
+    "mix",
+    "focused"
+   ],
+   "LHT2zVYvObg_1921-2099:person_1": [
+    "others",
+    "focused",
+    "mix"
+   ],
+   "LS9Hztyrmmw_1768-1839:person_2": [
+    "focused",
+    "mix",
+    "others"
+   ],
+   "LS9Hztyrmmw_1768-1839:person_3": [
+    "mix",
+    "focused",
+    "others"
+   ],
+   "LS9Hztyrmmw_2667-2845:person_2": [
+    "mix",
+    "others",
+    "focused"
+   ],
+   "LS9Hztyrmmw_2667-2845:person_3": [
+    "focused",
+    "mix",
+    "others"
+   ],
+   "Lva4fn4_q88_1270-1473:person_2": [
+    "mix",
+    "focused",
+    "others"
+   ],
+   "Lva4fn4_q88_1270-1473:person_3": [
+    "focused",
+    "others",
+    "mix"
+   ],
+   "Lva4fn4_q88_4391-4523:person_2": [
+    "focused",
+    "mix",
+    "others"
+   ],
+   "Lva4fn4_q88_4391-4523:person_3": [
+    "others",
+    "mix",
+    "focused"
+   ],
+   "Lva4fn4_q88_4691-4775:person_2": [
+    "others",
+    "mix",
+    "focused"
+   ],
+   "Lva4fn4_q88_4691-4775:person_3": [
+    "mix",
+    "others",
+    "focused"
+   ],
+   "Lva4fn4_q88_5291-5420:person_2": [
+    "mix",
+    "others",
+    "focused"
+   ],
+   "Lva4fn4_q88_5291-5420:person_3": [
+    "focused",
+    "others",
+    "mix"
+   ],
+   "ND7pXuhs3VM_1800-1925:person_2": [
+    "others",
+    "focused",
+    "mix"
+   ],
+   "ND7pXuhs3VM_3066-3159:person_1": [
+    "others",
+    "focused",
+    "mix"
+   ],
+   "NIk1-ck4c6Q_13651-13719:person_2": [
+    "others",
+    "focused",
+    "mix"
+   ],
+   "NIk1-ck4c6Q_13651-13719:person_3": [
+    "others",
+    "focused",
+    "mix"
+   ],
+   "NIk1-ck4c6Q_22766-22806:person_2": [
+    "focused",
+    "others",
+    "mix"
+   ],
+   "NIk1-ck4c6Q_22766-22806:person_3": [
+    "mix",
+    "others",
+    "focused"
+   ],
+   "N_9vfhsDz8w_5785-5911:person_2": [
+    "focused",
+    "mix",
+    "others"
+   ],
+   "N_9vfhsDz8w_5785-5911:person_3": [
+    "mix",
+    "focused",
+    "others"
+   ],
+   "N_9vfhsDz8w_6085-6298:person_2": [
+    "others",
+    "mix",
+    "focused"
+   ],
+   "N_9vfhsDz8w_6085-6298:person_3": [
+    "mix",
+    "others",
+    "focused"
+   ],
+   "Pyb0z_YQjjI_7332-7429:person_2": [
+    "others",
+    "mix",
+    "focused"
+   ],
+   "Pyb0z_YQjjI_7332-7429:person_3": [
+    "focused",
+    "others",
+    "mix"
+   ],
+   "Pyb0z_YQjjI_7632-7685:person_2": [
+    "others",
+    "focused",
+    "mix"
+   ],
+   "Pyb0z_YQjjI_7632-7685:person_3": [
+    "others",
+    "focused",
+    "mix"
+   ],
+   "UUwGLDeYN8c_266-474:person_1": [
+    "others",
+    "focused",
+    "mix"
+   ],
+   "WpbXt04qWEk_1166-1611:person_1": [
+    "focused",
+    "others",
+    "mix"
+   ],
+   "WpbXt04qWEk_924-1135:person_1": [
+    "others",
+    "focused",
+    "mix"
+   ],
+   "aWV7UUMddCU_5934-6205:person_2": [
+    "mix",
+    "focused",
+    "others"
+   ],
+   "aWV7UUMddCU_6517-7514:person_1": [
+    "focused",
+    "mix",
+    "others"
+   ],
+   "dUYIh1U2z-8_3300-3427:person_1": [
+    "others",
+    "mix",
+    "focused"
+   ],
+   "dUYIh1U2z-8_3300-3427:person_2": [
+    "focused",
+    "mix",
+    "others"
+   ],
+   "dUYIh1U2z-8_4007-4220:person_1": [
+    "focused",
+    "mix",
+    "others"
+   ],
+   "dUYIh1U2z-8_4007-4220:person_2": [
+    "mix",
+    "focused",
+    "others"
+   ],
+   "dUYIh1U2z-8_4007-4220:person_3": [
+    "focused",
+    "others",
+    "mix"
+   ],
+   "f6wqlpG9rd0_1402-1688:person_1": [
+    "others",
+    "focused",
+    "mix"
+   ],
+   "f6wqlpG9rd0_203-262:person_1": [
+    "focused",
+    "others",
+    "mix"
+   ],
+   "f6wqlpG9rd0_9404-9541:person_1": [
+    "focused",
+    "others",
+    "mix"
+   ],
+   "f6wqlpG9rd0_9704-9949:person_1": [
+    "mix",
+    "others",
+    "focused"
+   ],
+   "fvJbRuIu4-0_1308-1370:person_1": [
+    "focused",
+    "mix",
+    "others"
+   ],
+   "fvJbRuIu4-0_1308-1370:person_2": [
+    "mix",
+    "others",
+    "focused"
+   ],
+   "fvJbRuIu4-0_1907-2018:person_1": [
+    "mix",
+    "focused",
+    "others"
+   ],
+   "fvJbRuIu4-0_1907-2018:person_2": [
+    "mix",
+    "others",
+    "focused"
+   ],
+   "ivX3JXIV1W4_1-1920:person_1": [
+    "others",
+    "mix",
+    "focused"
+   ],
+   "ivX3JXIV1W4_1-1920:person_2": [
+    "others",
+    "focused",
+    "mix"
+   ],
+   "odFKscFdEas_14127-14292:person_2": [
+    "focused",
+    "mix",
+    "others"
+   ],
+   "odFKscFdEas_15822-16030:person_2": [
+    "mix",
+    "focused",
+    "others"
+   ],
+   "whHPATlDw8M_33039-33248-downsampled:person_1": [
+    "mix",
+    "focused",
+    "others"
+   ],
+   "whHPATlDw8M_5014-5313-downsampled:person_2": [
+    "focused",
+    "mix",
+    "others"
+   ],
+   "zmZpa1p5zaE_1028-1129:person_1": [
+    "focused",
+    "others",
+    "mix"
+   ],
+   "zmZpa1p5zaE_1028-1129:person_2": [
+    "focused",
+    "others",
+    "mix"
+   ]
+  },
+  "FS3_s3": {
+   "1Ab4vLMMAbY_2354-2439:person_1": [
+    "others",
+    "focused",
+    "mix"
+   ],
+   "1Ab4vLMMAbY_412-554:person_1": [
+    "others",
+    "focused",
+    "mix"
+   ],
+   "1Ab4vLMMAbY_557-690:person_1": [
+    "others",
+    "focused",
+    "mix"
+   ],
+   "31lG75MDwSA_2857-2928:person_1": [
+    "mix",
+    "others",
+    "focused"
+   ],
+   "31lG75MDwSA_3180-3306:person_1": [
+    "others",
+    "mix",
+    "focused"
+   ],
+   "31lG75MDwSA_4686-4764:person_2": [
+    "others",
+    "mix",
+    "focused"
+   ],
+   "6mA6UAoT3M0_6165-6361:person_1": [
+    "mix",
+    "focused",
+    "others"
+   ],
+   "6mA6UAoT3M0_6165-6361:person_3": [
+    "mix",
+    "others",
+    "focused"
+   ],
+   "9DNwRwt5kI4_10666-10822:person_2": [
+    "others",
+    "focused",
+    "mix"
+   ],
+   "9DNwRwt5kI4_10666-10822:person_3": [
+    "mix",
+    "focused",
+    "others"
+   ],
+   "9DNwRwt5kI4_14988-15270:person_2": [
+    "focused",
+    "others",
+    "mix"
+   ],
+   "9DNwRwt5kI4_14988-15270:person_3": [
+    "focused",
+    "others",
+    "mix"
+   ],
+   "9DNwRwt5kI4_2442-3179:person_1": [
+    "others",
+    "focused",
+    "mix"
+   ],
+   "9DNwRwt5kI4_2442-3179:person_3": [
+    "focused",
+    "mix",
+    "others"
+   ],
+   "LHT2zVYvObg_1790-1917:person_1": [
+    "mix",
+    "focused",
+    "others"
+   ],
+   "LHT2zVYvObg_1790-1917:person_2": [
+    "others",
+    "focused",
+    "mix"
+   ],
+   "LHT2zVYvObg_1921-2099:person_1": [
+    "mix",
+    "focused",
+    "others"
+   ],
+   "LS9Hztyrmmw_1768-1839:person_2": [
+    "others",
+    "mix",
+    "focused"
+   ],
+   "LS9Hztyrmmw_1768-1839:person_3": [
+    "mix",
+    "focused",
+    "others"
+   ],
+   "LS9Hztyrmmw_2667-2845:person_2": [
+    "mix",
+    "others",
+    "focused"
+   ],
+   "LS9Hztyrmmw_2667-2845:person_3": [
+    "others",
+    "focused",
+    "mix"
+   ],
+   "Lva4fn4_q88_1270-1473:person_2": [
+    "focused",
+    "others",
+    "mix"
+   ],
+   "Lva4fn4_q88_1270-1473:person_3": [
+    "mix",
+    "focused",
+    "others"
+   ],
+   "Lva4fn4_q88_4391-4523:person_2": [
+    "others",
+    "focused",
+    "mix"
+   ],
+   "Lva4fn4_q88_4391-4523:person_3": [
+    "focused",
+    "mix",
+    "others"
+   ],
+   "Lva4fn4_q88_4691-4775:person_2": [
+    "others",
+    "mix",
+    "focused"
+   ],
+   "Lva4fn4_q88_4691-4775:person_3": [
+    "others",
+    "focused",
+    "mix"
+   ],
+   "Lva4fn4_q88_5291-5420:person_2": [
+    "focused",
+    "others",
+    "mix"
+   ],
+   "Lva4fn4_q88_5291-5420:person_3": [
+    "focused",
+    "mix",
+    "others"
+   ],
+   "ND7pXuhs3VM_1800-1925:person_2": [
+    "mix",
+    "others",
+    "focused"
+   ],
+   "ND7pXuhs3VM_3066-3159:person_1": [
+    "mix",
+    "others",
+    "focused"
+   ],
+   "NIk1-ck4c6Q_13651-13719:person_2": [
+    "mix",
+    "others",
+    "focused"
+   ],
+   "NIk1-ck4c6Q_13651-13719:person_3": [
+    "mix",
+    "others",
+    "focused"
+   ],
+   "NIk1-ck4c6Q_22766-22806:person_2": [
+    "others",
+    "focused",
+    "mix"
+   ],
+   "NIk1-ck4c6Q_22766-22806:person_3": [
+    "others",
+    "mix",
+    "focused"
+   ],
+   "N_9vfhsDz8w_5785-5911:person_2": [
+    "others",
+    "mix",
+    "focused"
+   ],
+   "N_9vfhsDz8w_5785-5911:person_3": [
+    "focused",
+    "mix",
+    "others"
+   ],
+   "N_9vfhsDz8w_6085-6298:person_2": [
+    "mix",
+    "others",
+    "focused"
+   ],
+   "N_9vfhsDz8w_6085-6298:person_3": [
+    "focused",
+    "mix",
+    "others"
+   ],
+   "Pyb0z_YQjjI_7332-7429:person_2": [
+    "others",
+    "mix",
+    "focused"
+   ],
+   "Pyb0z_YQjjI_7332-7429:person_3": [
+    "mix",
+    "focused",
+    "others"
+   ],
+   "Pyb0z_YQjjI_7632-7685:person_2": [
+    "mix",
+    "focused",
+    "others"
+   ],
+   "Pyb0z_YQjjI_7632-7685:person_3": [
+    "mix",
+    "others",
+    "focused"
+   ],
+   "UUwGLDeYN8c_266-474:person_1": [
+    "others",
+    "mix",
+    "focused"
+   ],
+   "WpbXt04qWEk_1166-1611:person_1": [
+    "focused",
+    "mix",
+    "others"
+   ],
+   "WpbXt04qWEk_924-1135:person_1": [
+    "mix",
+    "others",
+    "focused"
+   ],
+   "aWV7UUMddCU_5934-6205:person_2": [
+    "others",
+    "focused",
+    "mix"
+   ],
+   "aWV7UUMddCU_6517-7514:person_1": [
+    "others",
+    "focused",
+    "mix"
+   ],
+   "dUYIh1U2z-8_3300-3427:person_1": [
+    "focused",
+    "mix",
+    "others"
+   ],
+   "dUYIh1U2z-8_3300-3427:person_2": [
+    "focused",
+    "others",
+    "mix"
+   ],
+   "dUYIh1U2z-8_4007-4220:person_1": [
+    "others",
+    "mix",
+    "focused"
+   ],
+   "dUYIh1U2z-8_4007-4220:person_2": [
+    "others",
+    "focused",
+    "mix"
+   ],
+   "dUYIh1U2z-8_4007-4220:person_3": [
+    "others",
+    "mix",
+    "focused"
+   ],
+   "f6wqlpG9rd0_1402-1688:person_1": [
+    "focused",
+    "mix",
+    "others"
+   ],
+   "f6wqlpG9rd0_203-262:person_1": [
+    "others",
+    "focused",
+    "mix"
+   ],
+   "f6wqlpG9rd0_9404-9541:person_1": [
+    "mix",
+    "others",
+    "focused"
+   ],
+   "f6wqlpG9rd0_9704-9949:person_1": [
+    "others",
+    "mix",
+    "focused"
+   ],
+   "fvJbRuIu4-0_1308-1370:person_1": [
+    "focused",
+    "others",
+    "mix"
+   ],
+   "fvJbRuIu4-0_1308-1370:person_2": [
+    "others",
+    "focused",
+    "mix"
+   ],
+   "fvJbRuIu4-0_1907-2018:person_1": [
+    "mix",
+    "focused",
+    "others"
+   ],
+   "fvJbRuIu4-0_1907-2018:person_2": [
+    "focused",
+    "others",
+    "mix"
+   ],
+   "ivX3JXIV1W4_1-1920:person_1": [
+    "mix",
+    "others",
+    "focused"
+   ],
+   "ivX3JXIV1W4_1-1920:person_2": [
+    "focused",
+    "mix",
+    "others"
+   ],
+   "odFKscFdEas_14127-14292:person_2": [
+    "focused",
+    "mix",
+    "others"
+   ],
+   "odFKscFdEas_15822-16030:person_2": [
+    "focused",
+    "mix",
+    "others"
+   ],
+   "whHPATlDw8M_33039-33248-downsampled:person_1": [
+    "others",
+    "mix",
+    "focused"
+   ],
+   "whHPATlDw8M_5014-5313-downsampled:person_2": [
+    "others",
+    "focused",
+    "mix"
+   ],
+   "zmZpa1p5zaE_1028-1129:person_1": [
+    "mix",
+    "others",
+    "focused"
+   ],
+   "zmZpa1p5zaE_1028-1129:person_2": [
+    "focused",
+    "others",
+    "mix"
+   ]
+  }
+ }
+}

@@ -1,64 +1,34 @@
-# ChildPlay LLM-Based Behavioral Analysis
+# Attention Inference from Child Gaze Features: An Exploratory Benchmark of Rules, Machine Learning, and LLMs
 
 [![tests](https://github.com/aazaadef/Behavioral_Modeling_LLM/actions/workflows/test.yml/badge.svg)](https://github.com/aazaadef/Behavioral_Modeling_LLM/actions/workflows/test.yml)
 [![lint](https://github.com/aazaadef/Behavioral_Modeling_LLM/actions/workflows/lint.yml/badge.svg)](https://github.com/aazaadef/Behavioral_Modeling_LLM/actions/workflows/lint.yml)
 [![python](https://img.shields.io/badge/python-3.10%20%7C%203.11%20%7C%203.12-blue.svg)](https://www.python.org/)
 [![code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
-A reproducible benchmark of **18 attention-classification systems** on the
-ChildPlay-gaze dataset, evaluating whether Large Language Models (LLMs) can
-serve as semantic reasoners over structured behavioral features — and where
-they systematically fail.
+Code, predictions and reports for an exploratory benchmark of **18 systems** that assign one of three attention categories (`focused`, `mix`, `others`) to the 69 child–clip sequences of the ChildPlay-gaze test split. The features are aggregated from ChildPlay's human gaze annotations. The systems are a rule-based threshold classifier, supervised tabular models, zero-shot NLI models and seven open-weight LLMs.
 
-> **Headline result.** A compact rule-based classifier reaches
-> Cohen's κ = **0.706** on the 3-class consensus (focused / mix / others),
-> exceeding the **inter-rater κ = 0.613**. Seven open-weight LLMs cluster
-> tightly between 0.797 and 0.812 accuracy, but every system — LLM,
-> NLI-zero-shot, and supervised — produces F1 = 0 on the `others` class,
-> motivating a **hybrid LLM + rule-based framework** as the central
-> contribution.
+> **Summary.** On this sample, the rule-based classifier has the highest point estimates of agreement with the two-rater consensus (Cohen's κ = 0.706, 95% CI 0.55–0.87; inter-rater κ = 0.613, 95% CI 0.47–0.84). Its advantage over the strongest LLMs and a random forest is not statistically significant after correction for multiple comparisons, and no system reliably identifies the three `others` sequences. All findings are exploratory and concern this one small sample.
 
 ---
 
 ## Table of Contents
 
-- [Motivation](#motivation)
 - [Pipeline](#pipeline)
 - [Evaluation Suite](#evaluation-suite)
-- [Headline Results](#headline-results)
+- [Results](#results)
+- [Human Reference Labels](#human-reference-labels)
 - [Repository Structure](#repository-structure)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Reproducing Paper Artifacts](#reproducing-paper-artifacts)
-- [Key Outputs](#key-outputs)
-- [Paper Documentation](#paper-documentation)
+- [Reproducing the Paper](#reproducing-the-paper)
 - [Citation](#citation)
-
----
-
-## Motivation
-
-Modern gaze-estimation systems solve the **perception** problem — extracting
-gaze points from raw video. They do **not** solve the **interpretation**
-problem: turning gaze trajectories into reliable, human-meaningful
-attention categories at the clip level.
-
-This repository operates entirely at the interpretation layer. Given a set
-of pre-computed per-child behavioral features (occlusion, gaze stability,
-on-screen ratio, etc.), it asks **whether modern LLMs can replace, augment,
-or be replaced by classical rule-based or supervised classifiers** for
-labeling attention as `focused`, `mix`, or `others` (unreliable signal).
-
-The findings inform a hybrid architecture: LLMs handle semantic
-descriptions, while symbolic rules enforce reliability constraints on
-quantitative features.
 
 ---
 
 ## Pipeline
 
 ```
-  ChildPlay annotations               (frame-level gaze + bbox)
+  ChildPlay annotations               (frame-level human gaze annotations + bbox)
             │
             ▼
   ┌────────────────────────┐
@@ -82,128 +52,76 @@ quantitative features.
   └────────────────────────────────────────────────────────────┘
             │
             ▼
-  ┌────────────────────────────────────────────┐
-  │  Phase A evaluation                        │
-  │  • Bootstrap 95% CI (1000 iterations)      │
-  │  • McNemar pairwise testing (153 pairs)    │
-  │  • Per-class metrics + confusion matrices  │
-  └────────────────────────────────────────────┘
-            │
-            ▼
-   THREECLASS_REPORT.md  +  PAPER_NOTES.md  +  publication-ready CSVs
+  Evaluation against the two-rater consensus and each rater
+  (original analysis: scripts/ and output/3class_eval/;
+   revised analysis: revision/)
 ```
 
 ---
 
 ## Evaluation Suite
 
-Eighteen systems are evaluated under the same 3-class consensus
-(`focused` / `mix` / `others`) on the test split of the ChildPlay-gaze
-69-sample manual evaluation set.
+Eighteen systems are evaluated under the same three classes (`focused` / `mix` / `others`) on all 69 child–clip sequences of the ChildPlay-gaze test split.
 
 | Family | Backends |
 |---|---|
-| **Rule-based** | Threshold-driven classifier on aggregated features |
-| **Zero-shot NLI** | DeBERTa-v3-MNLI · BART-large-MNLI · DistilBERT-base-MNLI |
-| **Supervised (OOF CV)** | LogisticRegression · LinearSVM · RandomForest · XGBoost · LightGBM · Dummy(majority) · Dummy(stratified) |
-| **LLMs (open-weight, zero-shot)** | Qwen2.5-72B-Instruct · Qwen2.5-7B-Instruct · qwen-7b · Yi-1.5-9B-Chat · Llama-3.1-8B-Instruct · Mistral-7B-Instruct-v0.3 · Phi-4-mini-instruct |
+| **Rule-based** | Threshold classifier on aggregated features (thresholds fixed before labelling) |
+| **Zero-shot NLI** | DeBERTa-v3 · BART-large-MNLI · DistilBERT-base-MNLI |
+| **Supervised (out-of-fold CV)** | LogisticRegression · LinearSVM · RandomForest · XGBoost · LightGBM · Dummy(majority) · Dummy(stratified) |
+| **LLMs (open-weight, zero-shot)** | Qwen2.5-72B-Instruct · Qwen2.5-7B-Instruct · qwen-7b (Qwen1.5-7B-Chat) · Yi-1.5-9B-Chat · Llama-3.1-8B-Instruct · Mistral-7B-Instruct-v0.3 · Phi-4-mini-instruct |
 
-Every backend is run **natively at 3-class** under the same input
-features and the same 69-clip consensus test set.
+"Phase A" in file names denotes the stage in which all systems were run from scratch under the three-class schema; it is not a separate study.
 
 ---
 
-## Headline Results
+## Results
 
-3-class accuracy and κ on the 69-sample consensus test set:
+The results of the revised analysis, with paired cluster-bootstrap intervals over YouTube channels, exact McNemar tests with Holm correction, grouped cross-validation, prompt ablations, out-of-fold few-shot prompting, NLI formulation sensitivity, LLM calibration and HRSF ablations, are in [`revision/`](revision/); start with [`revision/statistics/STATISTICS.md`](revision/statistics/STATISTICS.md).
 
-| Rank | System | Accuracy | 95% CI | κ | Macro-F1 |
-|---:|---|---:|---|---:|---:|
-| 1 | **rule_based** | **0.870** | [0.783, 0.942] | **0.706** | 0.575 |
-| 2 | Qwen2.5-72B-Instruct (LLM) | 0.812 | [0.710, 0.899] | 0.581 | 0.530 |
-| 3 | Yi-1.5-9B-Chat (LLM) | 0.812 | [0.725, 0.899] | 0.549 | 0.518 |
-| 4 | Llama-3.1-8B-Instruct (LLM) | 0.797 | [0.710, 0.884] | 0.521 | 0.509 |
-| 5 | RandomForest (sup.) | 0.797 | [0.696, 0.884] | 0.491 | 0.496 |
-| 6 | Phi-4-mini-instruct (LLM) | 0.797 | [0.710, 0.884] | 0.529 | 0.509 |
-| 7 | Mistral-7B-Instruct-v0.3 (LLM) | 0.797 | [0.696, 0.884] | 0.542 | 0.515 |
-| … | … | … | … | … | … |
-| 13 | Dummy(majority) baseline | 0.696 | [0.594, 0.797] | 0.000 | 0.274 |
-| 18 | BART-MNLI | 0.261 | [0.159, 0.362] | 0.000 | 0.138 |
+- The rule-based classifier has the highest point estimates (accuracy 0.870, κ = 0.706). After Holm correction it differs significantly only from LightGBM, the linear SVM, NLI BART and the stratified dummy; against the strongest LLMs the paired difference is 5 versus 1 discordant sequences (exact p = 0.22, Holm-adjusted 0.75).
+- Model-to-consensus κ and rater-to-rater κ describe different relationships and are not compared as a "ceiling".
+- F1 for `others` is 0 for all 18 systems; with three `others` sequences no conclusion about this class is possible.
+- Adding the rule's thresholds or three labelled examples to the LLM prompt lowered agreement for six of the seven LLMs.
+- The exploratory HRSF analysis (a reliability gate followed by a vote between the rule and the LLMs) did not improve on the rule.
 
-Full ranking, bootstrap intervals, and 153-pair McNemar significance
-table: [`output/3class_eval/phase_a/THREECLASS_REPORT.md`](output/3class_eval/phase_a/THREECLASS_REPORT.md).
+The original analysis (bootstrap over sequences, unadjusted McNemar tests) is kept in [`output/3class_eval/phase_a/`](output/3class_eval/phase_a/) for traceability.
 
-**Inter-rater agreement**: raw 82.61%, κ = 0.613 (substantial). The
-rule-based κ of 0.706 sits **above the human ceiling**.
+---
 
-**Shared limitation**: every system — including the rule-based one —
-yields F1 = 0 on the `others` class. With only 3 `others` samples in
-the 69-sample test set the metric is fragile, but the systematic
-failure of the LLMs on numerical-threshold cues
-([`PAPER_NOTES.md` §2–§9](output/PAPER_NOTES.md)) is the main empirical
-argument for the hybrid framework.
+## Human Reference Labels
+
+Two authors labelled all 69 sequences independently from the video clips, without feature values or model outputs, using the guideline of the original five-category protocol ([`output/paper_eval/annotation_guidelines.md`](output/paper_eval/annotation_guidelines.md)). The five categories were then merged into the three classes; no sequence was relabelled. Disagreements were resolved by joint discussion between the two raters. See [`output/paper_eval/README.md`](output/paper_eval/README.md).
 
 ---
 
 ## Repository Structure
 
 ```
-project.LLM/
 ├── pyproject.toml               # Build / lint / test config
 ├── requirements.txt             # Runtime dependencies
 ├── requirements-dev.txt         # Pinned dev deps (pytest, flake8, black)
 │
 ├── src/project_llm/             # Importable feature pipeline package
 │   ├── dataset.py               # ChildPlay annotation loader
-│   ├── features.py              # Per-(child × clip) 16-feature aggregation
+│   ├── features.py              # Per-(child × clip) feature aggregation
 │   ├── temporal.py              # Temporal segmentation
 │   ├── interactions.py          # Interaction inference layer
-│   ├── labels_3class.py         # 3-class schema + rule-based classifier
-│   ├── supervised_baselines.py  # OOF-CV supervised feature definitions
+│   ├── labels_3class.py         # 3-class schema, rule-based classifier, LLM prompt
+│   ├── supervised_baselines.py  # Supervised feature definitions
 │   └── io_utils_v2.py           # Safe write / read helpers
 │
-├── scripts/                     # Standalone analysis scripts
-│   ├── run_3class_pipeline.py
-│   ├── phase_a_3class.py        # Bootstrap CI + McNemar runner
-│   ├── build_3class_aggregate.py
-│   ├── run_llm_3class.py        # Zero-shot LLM inference (3-class)
-│   ├── predict_supervised_all_69.py
-│   ├── per_rater_analysis.py    # Per-rater κ + disagreement zone
-│   ├── run_hrsf.py              # HRSF formula + α sweep
-│   ├── generate_paper_figures.py    # Figures 1–4
-│   ├── generate_hrsf_figures.py     # Figures 6–8
-│   ├── run_local_hf_llm_inference.py
-│   └── download_models.py
-│
+├── scripts/                     # Original analysis scripts
+├── revision/                    # Revised analysis (see revision/README.md)
 ├── tests/                       # Pytest suite
-│
 ├── data set/                    # ChildPlay-gaze annotations
 │
 └── output/                      # Tracked: reports, figures, CSVs
-    ├── PAPER_DRAFT.md           ← complete first-pass paper draft
-    ├── PAPER_NOTES.md           # 17-section talking-point outline
-    ├── all_predictions_3class.csv
-    ├── 3class_eval/             # Native 3-class predictions
-    │   └── phase_a/
-    │       ├── THREECLASS_REPORT.md      ← main results report
-    │       ├── PER_RATER_REPORT.md
-    │       ├── hrsf/HRSF_REPORT.md       ← HRSF formula evaluation
-    │       ├── bootstrap_ci_3class.csv
-    │       ├── mcnemar_pairwise_3class.csv
-    │       ├── per_class_metrics_3class.csv
-    │       ├── per_rater_kappa.csv
-    │       ├── disagreement_zone_analysis.csv
-    │       ├── confusion_matrices/
-    │       └── figures/                  # 7 publication-ready PNGs
-    └── paper_eval/              # 69-sample manual annotation pack
+    ├── all_predictions_3class.csv    # 69 × 18 predictions + labels
+    ├── 3class_eval/                  # Native 3-class predictions and original reports
+    └── paper_eval/                   # Labelling guideline and label sheet
 ```
 
-Excluded from the repo (see [`.gitignore`](.gitignore)): the local
-HuggingFace model cache (`models/`, ≈218 GB), `backup/`, the Python
-virtualenv (`.venv/`), and the source-video files under
-`output/paper_eval/manual_labeling_package/source_videos/`.
-
----
+Excluded from the repository (see [`.gitignore`](.gitignore)): the local HuggingFace model cache (`models/`), `backup/`, virtual environments, the source videos, and any video frames. No images of children are included.
 
 ## Installation
 
@@ -300,71 +218,29 @@ CI runs `pytest -m "not slow"` on Python 3.10 / 3.11 / 3.12, plus
 
 ---
 
-## Reproducing Paper Artifacts
+## Reproducing the Paper
+
+Original analysis:
 
 ```bash
-# Phase A statistics (bootstrap CI + McNemar)
-python scripts/phase_a_3class.py
-
-# Per-rater analysis (κ vs r1, r2, consensus + disagreement zone)
-python scripts/per_rater_analysis.py
-
-# HRSF formula α-sweep
-python scripts/run_hrsf.py
-
-# Regenerate paper figures
-python scripts/generate_paper_figures.py
-python scripts/generate_hrsf_figures.py
+PYTHONPATH=src python scripts/phase_a_3class.py         # original statistics
+PYTHONPATH=src python scripts/per_rater_analysis.py     # per-rater κ
+PYTHONPATH=src python scripts/run_hrsf.py               # HRSF α sweep
 ```
 
----
-
-## Key Outputs
-
-| File | Purpose |
-|---|---|
-| [`output/3class_eval/phase_a/THREECLASS_REPORT.md`](output/3class_eval/phase_a/THREECLASS_REPORT.md) | Primary results report — ranking, CIs, McNemar pairwise table, per-class metrics |
-| [`output/3class_eval/phase_a/bootstrap_ci_3class.csv`](output/3class_eval/phase_a/bootstrap_ci_3class.csv) | Per-system accuracy / κ / F1 with 1000-iteration bootstrap CI |
-| [`output/3class_eval/phase_a/mcnemar_pairwise_3class.csv`](output/3class_eval/phase_a/mcnemar_pairwise_3class.csv) | All 153 pairwise McNemar tests |
-| [`output/3class_eval/phase_a/per_class_metrics_3class.csv`](output/3class_eval/phase_a/per_class_metrics_3class.csv) | Per-class precision / recall / F1 |
-| [`output/all_predictions_3class.csv`](output/all_predictions_3class.csv) | 69 × 18 model prediction matrix + ground truth |
-| [`output/3class_eval/phase_a/PER_RATER_REPORT.md`](output/3class_eval/phase_a/PER_RATER_REPORT.md) | Per-rater κ matrix, alignment fault-line, disagreement zone |
-| [`output/3class_eval/phase_a/hrsf/HRSF_REPORT.md`](output/3class_eval/phase_a/hrsf/HRSF_REPORT.md) | HRSF formula, α-sweep, and per-class evaluation |
-| [`output/3class_eval/phase_a/figures/`](output/3class_eval/phase_a/figures/) | Seven publication-ready PNG figures (300 DPI) |
-| [`output/PAPER_NOTES.md`](output/PAPER_NOTES.md) | 17-section paper-writing talking points + figure inventory |
-| [`output/PAPER_DRAFT.md`](output/PAPER_DRAFT.md) | Complete first-pass paper draft |
-
----
-
-## Paper Documentation
-
-The paper-writing notes are organized as 14 self-contained argument
-sections: see [`output/PAPER_NOTES.md`](output/PAPER_NOTES.md). Highlights:
-
-1. **§2 — Systematic LLM failure on the `others` class** (F1 = 0 across all 7 LLMs).
-2. **§3 — Lexical bias**: LLMs anchor on categorical tokens like
-   `dominant_gaze_class = outside_frame` rather than numerical features.
-3. **§4 — Numerical-threshold reasoning failure**: LLMs ignore
-   `occlusion_ratio` and `max_occlusion_streak` even when extreme.
-4. **§5 — Paired case study** of two samples that contrast lexical vs
-   numerical evidence, demonstrating §3 and §4 in the same dataset.
-5. **§8 — Hybrid framework justification**: combines LLM semantic
-   reasoning with symbolic rules for reliability constraints.
-6. **§14 — Final framing**: this work bridges perception and
-   interpretation rather than competing with video-based gaze models.
+Revised analysis (all tables, figures and supplementary files of the revised article): see [`revision/README.md`](revision/README.md).
 
 ---
 
 ## Citation
 
-Citation details will be added once the paper is publicly available.
-For interim reference, please cite this repository:
+Citation details will be added once the paper is publicly available. For interim reference, please cite this repository:
 
 ```bibtex
-@misc{aazaadef2026childplayllm,
-  author = {Aazaadef},
-  title  = {ChildPlay LLM-Based Behavioral Analysis: A Hybrid
-            Framework for Gaze-Based Attention Classification},
+@misc{faraji2026childattention,
+  author = {Faraji, Aazaade and Norscia, Ivan and Cordoni, Giada and Pombo, Nuno},
+  title  = {Attention Inference from Child Gaze Features: An Exploratory
+            Benchmark of Rules, Machine Learning, and LLMs},
   year   = {2026},
   url    = {https://github.com/aazaadef/Behavioral_Modeling_LLM}
 }
@@ -374,9 +250,7 @@ For interim reference, please cite this repository:
 
 ## Acknowledgements
 
-Built on the [ChildPlay-gaze](https://github.com/idiap/childplay) dataset.
-LLM inference uses open-weight models hosted on the HuggingFace Hub:
-Qwen, Yi, Llama, Mistral, and Phi families.
+Built on the ChildPlay-gaze dataset (Tafasca et al., ICCV 2023; [Zenodo record 8252535](https://zenodo.org/records/8252535)). LLM inference uses open-weight models from the Qwen, Yi, Llama, Mistral and Phi families.
 
 ---
 

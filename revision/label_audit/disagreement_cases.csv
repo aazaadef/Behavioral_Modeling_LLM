@@ -1,0 +1,13 @@
+sequence_id,clip_id,video_id,channel_id,rater1,rater2,consensus,consensus_matches,rule_prediction,gate_fires,visible_ratio,on_screen_ratio,occlusion_ratio,max_occlusion_streak,eyes_closed_ratio,gaze_shift_ratio,mean_gaze_motion,attention_stability_score,dominant_gaze_class
+31lG75MDwSA_4686-4764:person_2,31lG75MDwSA_4686-4764,31lG75MDwSA,UCH2C2GXT11f8Zs7NK9Utl6A,mix,focused,mix,rater1,mix,False,0.671,0.823,0.152,12,0.0,0.177,18.137,0.649,inside_visible
+6mA6UAoT3M0_6165-6361:person_1,6mA6UAoT3M0_6165-6361,6mA6UAoT3M0,UCB3eI3ENiFXGuchginHZP_Q,mix,others,others,rater2,mix,False,0.756,0.873,0.117,23,0.0,0.127,18.157,0.719,inside_visible
+9DNwRwt5kI4_10666-10822:person_2,9DNwRwt5kI4_10666-10822,9DNwRwt5kI4,UCEjCyBoWP57QRkmFRz-aOGw,mix,focused,focused,rater2,focused,False,0.943,0.962,0.019,3,0.0,0.038,33.919,0.829,inside_visible
+9DNwRwt5kI4_14988-15270:person_2,9DNwRwt5kI4_14988-15270,9DNwRwt5kI4,UCEjCyBoWP57QRkmFRz-aOGw,others,mix,others,rater1,mix,True,0.597,0.823,0.226,34,0.0,0.177,14.159,0.585,inside_visible
+9DNwRwt5kI4_14988-15270:person_3,9DNwRwt5kI4_14988-15270,9DNwRwt5kI4,UCEjCyBoWP57QRkmFRz-aOGw,focused,mix,mix,rater2,mix,False,0.76,0.827,0.067,19,0.0,0.173,31.664,0.651,inside_visible
+9DNwRwt5kI4_2442-3179:person_1,9DNwRwt5kI4_2442-3179,9DNwRwt5kI4,UCEjCyBoWP57QRkmFRz-aOGw,mix,others,focused,neither,focused,True,0.772,0.862,0.09,31,0.0,0.018,26.808,0.7,inside_visible
+LHT2zVYvObg_1790-1917:person_2,LHT2zVYvObg_1790-1917,LHT2zVYvObg,UCUyE-L2iWWV_tMoT20KF6xQ,focused,mix,focused,rater1,mix,False,0.625,0.625,0.0,0,0.0,0.016,3.69,0.733,inside_visible
+LS9Hztyrmmw_1768-1839:person_3,LS9Hztyrmmw_1768-1839,LS9Hztyrmmw,UCEjCyBoWP57QRkmFRz-aOGw,mix,focused,focused,rater2,mix,True,0.472,0.472,0.0,0,0.0,0.125,16.693,0.597,inside_visible
+Lva4fn4_q88_1270-1473:person_3,Lva4fn4_q88_1270-1473,Lva4fn4_q88,UCEjCyBoWP57QRkmFRz-aOGw,mix,focused,focused,rater2,mix,True,0.309,0.309,0.0,0,0.0,0.691,12.248,0.361,gaze_shift
+Lva4fn4_q88_4391-4523:person_3,Lva4fn4_q88_4391-4523,Lva4fn4_q88,UCEjCyBoWP57QRkmFRz-aOGw,mix,focused,mix,rater1,focused,False,1.0,1.0,0.0,0,0.0,0.0,6.788,0.997,inside_visible
+ND7pXuhs3VM_1800-1925:person_2,ND7pXuhs3VM_1800-1925,ND7pXuhs3VM,UCYYUNvhURfuC7zFli3TyPig,focused,mix,mix,rater2,mix,False,0.667,0.667,0.0,0,0.0,0.111,31.59,0.724,inside_visible
+aWV7UUMddCU_5934-6205:person_2,aWV7UUMddCU_5934-6205,aWV7UUMddCU,UCUunHJtnux8FZ7HIV3S0e4g,focused,mix,mix,rater2,mix,False,0.857,0.857,0.0,0,0.0,0.118,11.8,0.735,inside_visible

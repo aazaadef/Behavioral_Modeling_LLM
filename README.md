@@ -234,15 +234,19 @@ Revised analysis (all tables, figures and supplementary files of the revised art
 
 ## Citation
 
-Citation details will be added once the paper is publicly available. For interim reference, please cite this repository:
+If you use this code or data, please cite the article:
+
+A. Faraji, I. Norscia, G. Cordoni, and N. Pombo, "Attention Inference from Child Gaze Features: An Exploratory Benchmark of Rules, Machine Learning, and LLMs," *IEEE Access*, vol. 14, 2026, doi: [10.1109/ACCESS.2026.3751961](https://doi.org/10.1109/ACCESS.2026.3751961).
 
 ```bibtex
-@misc{faraji2026childattention,
-  author = {Faraji, Aazaade and Norscia, Ivan and Cordoni, Giada and Pombo, Nuno},
-  title  = {Attention Inference from Child Gaze Features: An Exploratory
-            Benchmark of Rules, Machine Learning, and LLMs},
-  year   = {2026},
-  url    = {https://github.com/aazaadef/Behavioral_Modeling_LLM}
+@article{faraji2026childattention,
+  author  = {Faraji, Aazaade and Norscia, Ivan and Cordoni, Giada and Pombo, Nuno},
+  title   = {Attention Inference from Child Gaze Features: An Exploratory
+             Benchmark of Rules, Machine Learning, and {LLMs}},
+  journal = {IEEE Access},
+  volume  = {14},
+  year    = {2026},
+  doi     = {10.1109/ACCESS.2026.3751961}
 }
 ```
 
